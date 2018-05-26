@@ -5,6 +5,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 // PAGES
 import { LoginPage } from '../pages/login/login';
+import { RegisterPage } from '../pages/register/register';
+import {ForgotpswdPage} from '../pages/forgotpswd/forgotpswd';
 
 @Component({
   templateUrl: 'app.html'

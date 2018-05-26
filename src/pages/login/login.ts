@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 // PAGES
 import { HomePage } from '../home/home';
+import { RegisterPage } from './../register/register';
+import { ForgotpswdPage } from './../forgotpswd/forgotpswd';
 
 // PROVIDER
 import { AuthProvider } from '../../providers/auth/auth';
@@ -29,10 +31,22 @@ export class LoginPage {
     if(this.auth.checkAuth(this.email, this.password)){
       this.navCtrl.setRoot(HomePage);
     }
+    else{
+      //afficher un label identifiant incorrect
+    }
   }
-
+  
   afficher(){
     console.log(this.email);
+    console.log(this.password);
   }
-
+  mdpforgot(){
+    console.log("Mot de passe oublié");
+    this.navCtrl.push(ForgotpswdPage);
+  }
+  register(){
+    console.log("Inscription");
+    this.navCtrl.push(RegisterPage);
+    //this.navCtrl.setRoot(RegisterPage);
+  }
 }

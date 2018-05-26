@@ -9,7 +9,8 @@ import { MyApp } from './app.component';
 // PAGES
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
-
+import { RegisterPage } from './../pages/register/register';
+import { ForgotpswdPage } from './../pages/forgotpswd/forgotpswd';
 // PROVIDER
 import { AuthProvider } from '../providers/auth/auth';
 
@@ -17,7 +18,9 @@ import { AuthProvider } from '../providers/auth/auth';
   declarations: [
     MyApp,
     HomePage,
-    LoginPage
+    LoginPage,
+    RegisterPage,
+    ForgotpswdPage
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,8 @@ import { AuthProvider } from '../providers/auth/auth';
   entryComponents: [
     MyApp,
     HomePage,
-    LoginPage
+    LoginPage,
+    RegisterPage
   ],
   providers: [
     StatusBar,

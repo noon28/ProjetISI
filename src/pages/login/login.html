@@ -1,15 +1,21 @@
 <ion-content padding>
+    <ion-title >Le Bon Angle</ion-title>
+    <img  class="logo" src="../../assets/imgs/logoprovisoire.png" />
     <ion-list>
-
+        <ion-label>{{test}}</ion-label>
         <ion-item>
-            <ion-input type="text" placeholder="Email" [(ngModel)]="email"></ion-input>
+                <ion-label stacked>Email</ion-label>
+            <ion-input type="text" [(ngModel)]="email"></ion-input>
         </ion-item>
 
         <ion-item>
             <ion-label stacked>Password</ion-label>
-            <ion-input type="password"></ion-input>
+            <ion-input type="password" [(ngModel)]="password"></ion-input>
         </ion-item>
 
     </ion-list>
-    <button ion-button class="btn" (click)="afficher()">Login</button>
+    <button ion-button class="btn" (click)="checkAuthentification()">Login</button>
+    <ion-label class="mdpforgot" (click)="mdpforgot()">Mot de passe oublié ?</ion-label>
+    <ion-label class="mdpforgot" (click)="register()">Inscription</ion-label>
+    
 </ion-content>

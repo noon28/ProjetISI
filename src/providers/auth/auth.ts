@@ -10,8 +10,12 @@ export class AuthProvider {
 
   checkAuth(email:String, password:String){
     // API
-
-    return(true);
+    if(!(email == "arnaud" && password=="test")){
+      return(false);
+    }
+    else{
+    return (true);  
+    }
   }
 
 }
