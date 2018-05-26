@@ -31,7 +31,8 @@ import { AuthProvider } from '../providers/auth/auth';
     MyApp,
     HomePage,
     LoginPage,
-    RegisterPage
+    RegisterPage,
+    ForgotpswdPage
   ],
   providers: [
     StatusBar,

@@ -25,18 +25,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var ForgotpswdPage = /** @class */ (function () {
-    function ForgotpswdPage(navCtrl, navParams) {
+    function ForgotpswdPage(navCtrl, navParams, alertCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.alertCtrl = alertCtrl;
     }
     ForgotpswdPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad ForgotpswdPage');
     };
+    ForgotpswdPage.prototype.afficher = function () {
+        console.log(this.email);
+    };
+    ForgotpswdPage.prototype.requestSend = function () {
+        var alert = this.alertCtrl.create({
+            title: 'Requête envoyée',
+            subTitle: 'Si votre email est associé à un compte, le mot de passe vous sera envoyé sous 24h',
+            buttons: ['OK']
+        });
+        alert.present();
+    };
     ForgotpswdPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-forgotpswd',template:/*ion-inline-start:"C:\Users\fouil\Desktop\EFREI\S6\IntroductionSystèmeINFO\GIT\ProjetISI\src\pages\forgotpswd\forgotpswd.html"*/'<!--\n  Generated template for the ForgotpswdPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Mot de passe oublié ? </ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <article>PROUT</article>\n</ion-content>\n'/*ion-inline-end:"C:\Users\fouil\Desktop\EFREI\S6\IntroductionSystèmeINFO\GIT\ProjetISI\src\pages\forgotpswd\forgotpswd.html"*/,
+            selector: 'page-forgotpswd',template:/*ion-inline-start:"C:\Users\fouil\Desktop\EFREI\S6\IntroductionSystèmeINFO\GIT\ProjetISI\src\pages\forgotpswd\forgotpswd.html"*/'<!--\n  Generated template for the ForgotpswdPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Mot de passe oublié ? </ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  \n    <ion-item>\n      <ion-label stacked>Email</ion-label>\n      <ion-input type="text" [(ngModel)]="email"></ion-input>\n    </ion-item>\n    <button ion-button (click)="requestSend()">Envoyé</button>\n</ion-content>\n\n<ion-footer>\n  <ion-toolbar>\n    <ion-title align=\'center\'>Le bon coin </ion-title>\n    <ion-icon name="mail"></ion-icon>\n  </ion-toolbar>\n</ion-footer>'/*ion-inline-end:"C:\Users\fouil\Desktop\EFREI\S6\IntroductionSystèmeINFO\GIT\ProjetISI\src\pages\forgotpswd\forgotpswd.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
     ], ForgotpswdPage);
     return ForgotpswdPage;
 }());
@@ -72,38 +84,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var RegisterPage = /** @class */ (function () {
-    function RegisterPage(navCtrl, navParams) {
+    function RegisterPage(navCtrl, navParams, alertCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.alertCtrl = alertCtrl;
     }
     RegisterPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad RegisterPage');
     };
     RegisterPage.prototype.checkInputEmpty = function () {
         this.missingparameter = false;
-        if (this.nom == null) {
-            alert('Remplissez le champs Nom');
-        }
-        if (this.prenom == null) {
-            alert('Remplissez le champs Prenom');
-        }
-        if (this.email == null) {
-            alert('Remplissez le champs Email');
-        }
-        if (this.login == null) {
-            alert('Remplissez le champs Login');
-        }
-        if (this.mdp == null) {
-            alert('Remplissez le champs Mot de Passe');
-        }
-        if (this.adresse == null) {
-            alert('Remplissez le champs Adresse');
-        }
-        if (this.cp == null) {
-            alert('Remplissez le champs Code Postal');
-        }
-        if (this.ville == null) {
-            alert('Remplissez le champs Ville');
+        if (this.nom == null || this.prenom == null || this.email == null || this.login == null || this.mdp == null || this.adresse == null || this.cp == null || this.ville == null) {
+            this.AlertMissing();
+            this.missingparameter = true;
         }
         if (!this.missingparameter) {
             this.registerUser();
@@ -123,13 +116,21 @@ var RegisterPage = /** @class */ (function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__login_login__["a" /* LoginPage */]);
         // POST API 
         //PoPuP pour confirmer l'inscription et retour à la page de co 
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__login_login__["a" /* LoginPage */]);
+        //this.navCtrl.push(LoginPage);
+    };
+    RegisterPage.prototype.AlertMissing = function () {
+        var alert = this.alertCtrl.create({
+            title: 'Oups ...',
+            subTitle: 'Un ou des champ(s) sont manquants pour compléter votre inscription',
+            buttons: ['OK']
+        });
+        alert.present();
     };
     RegisterPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-register',template:/*ion-inline-start:"C:\Users\fouil\Desktop\EFREI\S6\IntroductionSystèmeINFO\GIT\ProjetISI\src\pages\register\register.html"*/'<!--\n  Generated template for the RegisterPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar >\n    <ion-title>Inscription</ion-title>\n  </ion-navbar>\n\n</ion-header>\n<ion-content padding>\n  <ion-list>\n\n    <ion-item>\n      <ion-label stacked>Nom</ion-label>\n      <ion-input type="text" [(ngModel)]="nom"></ion-input>\n    </ion-item>\n  \n    <ion-item>\n      <ion-label stacked>Prenom</ion-label>\n      <ion-input type="text" [(ngModel)]="prenom"></ion-input>\n    </ion-item>\n    \n    <ion-item>\n      <ion-label stacked>Login</ion-label>\n      <ion-input type="text" [(ngModel)]="login"></ion-input>\n    </ion-item>\n    \n    <ion-item>\n      <ion-label stacked>Mot de Passe</ion-label>\n      <ion-input type="password" [(ngModel)]="mdp"></ion-input>\n    </ion-item>\n    \n    <ion-item>\n      <ion-label stacked>Email</ion-label>\n      <ion-input type="email" [(ngModel)]="email"></ion-input>\n    </ion-item>\n    \n    <ion-item>\n      <ion-label stacked>Adresse</ion-label>\n      <ion-input type="text" [(ngModel)]="adresse"></ion-input>\n    </ion-item>\n    \n    <ion-item>\n      <ion-label stacked>Code Postal</ion-label>\n      <ion-input type="number" [(ngModel)]="cp" ></ion-input>\n    </ion-item>\n    \n    <ion-item>\n      <ion-label stacked>Ville</ion-label>\n      <ion-input type="text" [(ngModel)]="ville"></ion-input>\n    </ion-item>\n\n  </ion-list>\n  <button ion-button class="btn" (click)="checkInputEmpty()">Inscription</button>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\fouil\Desktop\EFREI\S6\IntroductionSystèmeINFO\GIT\ProjetISI\src\pages\register\register.html"*/,
+            selector: 'page-register',template:/*ion-inline-start:"C:\Users\fouil\Desktop\EFREI\S6\IntroductionSystèmeINFO\GIT\ProjetISI\src\pages\register\register.html"*/'<!--\n  Generated template for the RegisterPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar >\n    <ion-title>Inscription</ion-title>\n  </ion-navbar>\n\n</ion-header>\n<ion-content padding>\n  <ion-list>\n\n    <ion-item>\n      <ion-label stacked>Nom</ion-label>\n      <ion-input type="text" [(ngModel)]="nom"></ion-input>\n    </ion-item>\n  \n    <ion-item>\n      <ion-label stacked>Prenom</ion-label>\n      <ion-input type="text" [(ngModel)]="prenom"></ion-input>\n    </ion-item>\n    \n    <ion-item>\n      <ion-label stacked>Login</ion-label>\n      <ion-input type="text" [(ngModel)]="login"></ion-input>\n    </ion-item>\n    \n    <ion-item>\n      <ion-label stacked>Mot de Passe</ion-label>\n      <ion-input type="password" [(ngModel)]="mdp"></ion-input>\n    </ion-item>\n    \n    <ion-item>\n      <ion-label stacked>Email</ion-label>\n      <ion-input type="email" [(ngModel)]="email"></ion-input>\n    </ion-item>\n    \n    <ion-item>\n      <ion-label stacked>Adresse</ion-label>\n      <ion-input type="text" [(ngModel)]="adresse"></ion-input>\n    </ion-item>\n    \n    <ion-item>\n      <ion-label stacked>Code Postal</ion-label>\n      <ion-input type="number" [(ngModel)]="cp" ></ion-input>\n    </ion-item>\n    \n    <ion-item>\n      <ion-label stacked>Ville</ion-label>\n      <ion-input type="text" [(ngModel)]="ville"></ion-input>\n    </ion-item>\n\n  </ion-list>\n  <button ion-button class="btn" (click)="checkInputEmpty()">Inscription</button>\n\n</ion-content>\n<ion-footer>\n  <ion-toolbar>\n    <ion-title align=\'center\'>Le bon coin </ion-title>\n    <ion-icon name="mail"></ion-icon>\n  </ion-toolbar>\n</ion-footer>'/*ion-inline-end:"C:\Users\fouil\Desktop\EFREI\S6\IntroductionSystèmeINFO\GIT\ProjetISI\src\pages\register\register.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
     ], RegisterPage);
     return RegisterPage;
 }());
@@ -214,7 +215,7 @@ var HomePage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-home',template:/*ion-inline-start:"C:\Users\fouil\Desktop\EFREI\S6\IntroductionSystèmeINFO\GIT\ProjetISI\src\pages\home\home.html"*/'<ion-header>\n\n    <ion-navbar>\n\n        <ion-title>\n\n            LeBonAngle\n\n        </ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n    Le Bon Angle C\'est Notre Projet\n\n    <br>\n\n    <br>\n\n    <br>\n\n    <br>\n\n    <br>\n\n    <p>\n\n        If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.\n\n    </p>\n\n</ion-content>'/*ion-inline-end:"C:\Users\fouil\Desktop\EFREI\S6\IntroductionSystèmeINFO\GIT\ProjetISI\src\pages\home\home.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
     ], HomePage);
     return HomePage;
 }());
@@ -326,7 +327,7 @@ var AppModule = /** @class */ (function () {
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */], {}, {
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */], {}, {
                     links: [
                         { loadChildren: '../pages/forgotpswd/forgotpswd.module#ForgotpswdPageModule', name: 'ForgotpswdPage', segment: 'forgotpswd', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
@@ -334,17 +335,18 @@ var AppModule = /** @class */ (function () {
                     ]
                 })
             ],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* IonicApp */]],
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicApp */]],
             entryComponents: [
                 __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */],
                 __WEBPACK_IMPORTED_MODULE_6__pages_home_home__["a" /* HomePage */],
                 __WEBPACK_IMPORTED_MODULE_7__pages_login_login__["a" /* LoginPage */],
-                __WEBPACK_IMPORTED_MODULE_8__pages_register_register__["a" /* RegisterPage */]
+                __WEBPACK_IMPORTED_MODULE_8__pages_register_register__["a" /* RegisterPage */],
+                __WEBPACK_IMPORTED_MODULE_9__pages_forgotpswd_forgotpswd__["a" /* ForgotpswdPage */]
             ],
             providers: [
                 __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__["a" /* StatusBar */],
                 __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */],
-                { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicErrorHandler */] },
+                { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicErrorHandler */] },
                 __WEBPACK_IMPORTED_MODULE_10__providers_auth_auth__["a" /* AuthProvider */]
             ]
         })
@@ -394,7 +396,7 @@ var MyApp = /** @class */ (function () {
     MyApp = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\fouil\Desktop\EFREI\S6\IntroductionSystèmeINFO\GIT\ProjetISI\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n\n'/*ion-inline-end:"C:\Users\fouil\Desktop\EFREI\S6\IntroductionSystèmeINFO\GIT\ProjetISI\src\app\app.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
     return MyApp;
 }());
@@ -432,10 +434,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 // PROVIDER
 
 var LoginPage = /** @class */ (function () {
-    function LoginPage(navCtrl, navParams, auth) {
+    function LoginPage(navCtrl, navParams, auth, alertCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.auth = auth;
+        this.alertCtrl = alertCtrl;
     }
     LoginPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad LoginPage');
@@ -445,6 +448,7 @@ var LoginPage = /** @class */ (function () {
             this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_2__home_home__["a" /* HomePage */]);
         }
         else {
+            this.AlertFailedAuth();
             //afficher un label identifiant incorrect
         }
     };
@@ -461,13 +465,22 @@ var LoginPage = /** @class */ (function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__register_register__["a" /* RegisterPage */]);
         //this.navCtrl.setRoot(RegisterPage);
     };
+    LoginPage.prototype.AlertFailedAuth = function () {
+        var alert = this.alertCtrl.create({
+            title: 'Oups ...',
+            subTitle: 'Identifiant incorrects',
+            buttons: ['Retry']
+        });
+        alert.present();
+    };
     LoginPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"C:\Users\fouil\Desktop\EFREI\S6\IntroductionSystèmeINFO\GIT\ProjetISI\src\pages\login\login.html"*/'<ion-content padding>\n\n    <ion-title >Le Bon Angle</ion-title>\n\n    <img  class="logo" src="../../assets/imgs/logoprovisoire.png" />\n\n    <ion-list>\n\n        <ion-label>{{test}}</ion-label>\n\n        <ion-item>\n\n                <ion-label stacked>Email</ion-label>\n\n            <ion-input type="text" [(ngModel)]="email"></ion-input>\n\n        </ion-item>\n\n\n\n        <ion-item>\n\n            <ion-label stacked>Password</ion-label>\n\n            <ion-input type="password" [(ngModel)]="password"></ion-input>\n\n        </ion-item>\n\n\n\n    </ion-list>\n\n    <button ion-button class="btn" (click)="checkAuthentification()">Login</button>\n\n    <ion-label class="mdpforgot" (click)="mdpforgot()">Mot de passe oublié ?</ion-label>\n\n    <ion-label class="mdpforgot" (click)="register()">Inscription</ion-label>\n\n    \n\n</ion-content>'/*ion-inline-end:"C:\Users\fouil\Desktop\EFREI\S6\IntroductionSystèmeINFO\GIT\ProjetISI\src\pages\login\login.html"*/,
+            selector: 'page-login',template:/*ion-inline-start:"C:\Users\fouil\Desktop\EFREI\S6\IntroductionSystèmeINFO\GIT\ProjetISI\src\pages\login\login.html"*/'<ion-content padding>\n\n    <ion-title >Le Bon Angle</ion-title>\n\n    <img  class="logo" align =\'center\' src="../../assets/imgs/logoprovisoire.png" />\n\n    <ion-list>\n\n        <ion-label>{{test}}</ion-label>\n\n        <ion-item>\n\n                <ion-label stacked>Email</ion-label>\n\n            <ion-input type="text" [(ngModel)]="email"></ion-input>\n\n        </ion-item>\n\n\n\n        <ion-item>\n\n            <ion-label stacked>Password</ion-label>\n\n            <ion-input type="password" [(ngModel)]="password"></ion-input>\n\n        </ion-item>\n\n\n\n    </ion-list>\n\n    <button ion-button class="btn" (click)="checkAuthentification()">Login</button>\n\n    <ion-label class="mdpforgot" (click)="mdpforgot()">Mot de passe oublié ?</ion-label>\n\n    <ion-label class="mdpforgot" (click)="register()">Inscription</ion-label>\n\n    \n\n</ion-content>'/*ion-inline-end:"C:\Users\fouil\Desktop\EFREI\S6\IntroductionSystèmeINFO\GIT\ProjetISI\src\pages\login\login.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */], __WEBPACK_IMPORTED_MODULE_5__providers_auth_auth__["a" /* AuthProvider */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_5__providers_auth_auth__["a" /* AuthProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__providers_auth_auth__["a" /* AuthProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _d || Object])
     ], LoginPage);
     return LoginPage;
+    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=login.js.map

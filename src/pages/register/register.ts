@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,AlertController } from 'ionic-angular';
 
 // PAGES
 import { HomePage } from '../home/home';
@@ -29,7 +29,7 @@ export class RegisterPage {
     ville : String;
     missingparameter : Boolean; 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
   }
 
   ionViewDidLoad() {
@@ -38,30 +38,10 @@ export class RegisterPage {
   checkInputEmpty(){
     this.missingparameter=false;
 
-    if(this.nom == null){
-      alert('Remplissez le champs Nom');
-    }
-    if(this.prenom == null){
-      alert('Remplissez le champs Prenom');
-    }
-    if(this.email == null){
-      alert('Remplissez le champs Email');
-    }
-    if(this.login == null){
-      alert('Remplissez le champs Login');
-    }
-    if(this.mdp == null){
-      alert('Remplissez le champs Mot de Passe');
-    }
-    if(this.adresse == null){
-      alert('Remplissez le champs Adresse');
-    }
-    if(this.cp == null){
-      alert('Remplissez le champs Code Postal');
-    }
-    if(this.ville == null){
-      alert('Remplissez le champs Ville');
-    }
+    if(this.nom == null ||this.prenom == null||this.email == null||this.login == null||this.mdp == null||this.adresse == null||this.cp == null||this.ville == null){
+     this.AlertMissing();
+     this.missingparameter=true;
+     }
     if(!this.missingparameter)
     {
       this.registerUser();
@@ -82,7 +62,16 @@ export class RegisterPage {
     this.navCtrl.push(LoginPage);
     // POST API 
     //PoPuP pour confirmer l'inscription et retour à la page de co 
-    this.navCtrl.push(LoginPage);
+    //this.navCtrl.push(LoginPage);
+  }
+  AlertMissing(){
+    let alert = this.alertCtrl.create({
+      title: 'Oups ...',
+      subTitle: 'Un ou des champ(s) sont manquants pour compléter votre inscription',
+      buttons: ['OK']
+    });
+    alert.present();
+
   }
 
 
