@@ -37,11 +37,21 @@ var ForgotpswdPage = /** @class */ (function () {
         console.log(this.email);
     };
     ForgotpswdPage.prototype.requestSend = function () {
-        var alert = this.alertCtrl.create({
-            title: 'Requête envoyée',
-            subTitle: 'Si votre email est associé à un compte, le mot de passe vous sera envoyé sous 24h',
-            buttons: ['OK']
-        });
+        var alert;
+        if (this.email != null) {
+            alert = this.alertCtrl.create({
+                title: 'Requête envoyée',
+                subTitle: 'Si votre email est associé à un compte, le mot de passe vous sera envoyé sous 24h',
+                buttons: ['OK']
+            });
+        }
+        else {
+            alert = this.alertCtrl.create({
+                title: 'Oups ...',
+                subTitle: 'Merci de renseigner votre adresse mail',
+                buttons: ['OK']
+            });
+        }
         alert.present();
     };
     ForgotpswdPage = __decorate([
@@ -125,6 +135,28 @@ var RegisterPage = /** @class */ (function () {
             buttons: ['OK']
         });
         alert.present();
+    };
+    RegisterPage.prototype.CheckEmail = function () {
+        this.emailAlready = false;
+    };
+    RegisterPage.prototype.AlertEmailAlready = function () {
+        if (this.emailAlready == true) {
+            var alert_1 = this.alertCtrl.create({
+                title: 'Inscription',
+                subTitle: 'Votre email est déja associé à un compte',
+                buttons: [
+                    {
+                        text: 'Connexion',
+                        role: 'connexion'
+                    },
+                    {
+                        text: 'Cancel',
+                        role: 'cancel'
+                    }
+                ]
+            });
+            alert_1.present();
+        }
     };
     RegisterPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
@@ -475,12 +507,11 @@ var LoginPage = /** @class */ (function () {
     };
     LoginPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"C:\Users\fouil\Desktop\EFREI\S6\IntroductionSystèmeINFO\GIT\ProjetISI\src\pages\login\login.html"*/'<ion-content padding>\n\n    <ion-title >Le Bon Angle</ion-title>\n\n    <img  class="logo" align =\'center\' src="../../assets/imgs/logoprovisoire.png" />\n\n    <ion-list>\n\n        <ion-label>{{test}}</ion-label>\n\n        <ion-item>\n\n                <ion-label stacked>Email</ion-label>\n\n            <ion-input type="text" [(ngModel)]="email"></ion-input>\n\n        </ion-item>\n\n\n\n        <ion-item>\n\n            <ion-label stacked>Password</ion-label>\n\n            <ion-input type="password" [(ngModel)]="password"></ion-input>\n\n        </ion-item>\n\n\n\n    </ion-list>\n\n    <button ion-button class="btn" (click)="checkAuthentification()">Login</button>\n\n    <ion-label class="mdpforgot" (click)="mdpforgot()">Mot de passe oublié ?</ion-label>\n\n    <ion-label class="mdpforgot" (click)="register()">Inscription</ion-label>\n\n    \n\n</ion-content>'/*ion-inline-end:"C:\Users\fouil\Desktop\EFREI\S6\IntroductionSystèmeINFO\GIT\ProjetISI\src\pages\login\login.html"*/,
+            selector: 'page-login',template:/*ion-inline-start:"C:\Users\fouil\Desktop\EFREI\S6\IntroductionSystèmeINFO\GIT\ProjetISI\src\pages\login\login.html"*/'<ion-content padding>\n\n    <ion-title >Le Bon Angle</ion-title>\n\n    <img  class="logo" align =\'center\' src="../../assets/imgs/logoprovisoire.png" />\n\n    <ion-list>\n\n        <ion-label>{{test}}</ion-label>\n\n        <ion-item>\n\n                <ion-label stacked>Email</ion-label>\n\n            <ion-input type="text" [(ngModel)]="email"></ion-input>\n\n        </ion-item>\n\n\n\n        <ion-item>\n\n            <ion-label stacked>Password</ion-label>\n\n            <ion-input type="password" [(ngModel)]="password"></ion-input>\n\n        </ion-item>\n\n\n\n    </ion-list>\n\n    <button ion-button class="btn" (click)="checkAuthentification()">Connexion</button>\n\n    <ion-label class="mdpforgot" (click)="mdpforgot()">Mot de passe oublié ?</ion-label>\n\n    <ion-label class="mdpforgot" (click)="register()">Inscription</ion-label>\n\n    \n\n</ion-content>'/*ion-inline-end:"C:\Users\fouil\Desktop\EFREI\S6\IntroductionSystèmeINFO\GIT\ProjetISI\src\pages\login\login.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_5__providers_auth_auth__["a" /* AuthProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__providers_auth_auth__["a" /* AuthProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _d || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_5__providers_auth_auth__["a" /* AuthProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
     ], LoginPage);
     return LoginPage;
-    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=login.js.map

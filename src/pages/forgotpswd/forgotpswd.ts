@@ -31,11 +31,20 @@ export class ForgotpswdPage {
   }
 
   requestSend() {
-    let alert = this.alertCtrl.create({
-      title: 'Requête envoyée',
-      subTitle: 'Si votre email est associé à un compte, le mot de passe vous sera envoyé sous 24h',
-      buttons: ['OK']
+    let alert;
+    if(this.email!=null){
+        alert = this.alertCtrl.create({
+        title: 'Requête envoyée',
+        subTitle: 'Si votre email est associé à un compte, le mot de passe vous sera envoyé sous 24h',
+        buttons: ['OK']
     });
+    }else{
+        alert = this.alertCtrl.create({
+        title: 'Oups ...',
+        subTitle: 'Merci de renseigner votre adresse mail',
+        buttons: ['OK']
+      });
+    }
     alert.present();
   }
 

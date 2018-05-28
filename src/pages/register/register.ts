@@ -28,6 +28,7 @@ export class RegisterPage {
     cp : Number;
     ville : String;
     missingparameter : Boolean; 
+    emailAlready : Boolean;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
   }
@@ -71,7 +72,29 @@ export class RegisterPage {
       buttons: ['OK']
     });
     alert.present();
-
+  }
+  CheckEmail(){
+    this.emailAlready=false;
+  }
+  AlertEmailAlready(){
+    
+    if(this.emailAlready==true){
+      let alert = this.alertCtrl.create({
+        title: 'Inscription',
+        subTitle: 'Votre email est déja associé à un compte',
+        buttons: [
+          {
+            text:'Connexion',
+            role:'connexion'
+          },
+          {
+            text:'Cancel',
+            role:'cancel'
+          }
+        ]        
+      });
+      alert.present();
+    }
   }
 
 
