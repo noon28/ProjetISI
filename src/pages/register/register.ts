@@ -17,6 +17,10 @@ import { LoginPage } from './../login/login';
 @Component({
   selector: 'page-register',
   templateUrl: 'register.html',
+  styles: [`
+    .ng-valid { border-color: green; }
+    .ng-invalid { border-color: red; }    
+  `]
 })
 export class RegisterPage {
     nom : String;
@@ -85,7 +89,11 @@ export class RegisterPage {
         buttons: [
           {
             text:'Connexion',
-            role:'connexion'
+            role:'connexion',
+            handler: data => {
+              this.navCtrl.push(LoginPage);
+            }
+    
           },
           {
             text:'Cancel',
