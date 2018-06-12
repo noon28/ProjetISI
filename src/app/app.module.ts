@@ -16,6 +16,7 @@ import { ForgotpswdPage } from './../pages/forgotpswd/forgotpswd';
 // PROVIDER
 import { AuthProvider } from '../providers/auth/auth';
 import { RegisterProvider } from '../providers/register/register';
+import { AnnonceProvider } from '../providers/annonce/annonce';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { RegisterProvider } from '../providers/register/register';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthProvider,
-    RegisterProvider
+    RegisterProvider,
+    AnnonceProvider
   ]
 })
 export class AppModule {}

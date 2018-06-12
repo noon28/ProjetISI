@@ -25678,8 +25678,12 @@ ion-navbar.toolbar {
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
 
+page-login {
+  background-color: #2ecc71;
+}
+
 page-login .btn {
-  background-color: darkblue !important;
+  background-color: #2ecc71 !important;
 }
 
 page-login .logo {
@@ -25690,12 +25694,18 @@ page-login .logo {
 
 page-login .mdpforgot {
   font-size: 9px;
+  color: white;
 }
 
 page-login .inscription {
   font-size: 10px;
   margin-left: 80%;
   display: block;
+  color: white;
+}
+
+page-login .form {
+  background-color: #2ecc71;
 }
 
 page-register .btn {

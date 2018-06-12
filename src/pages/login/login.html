@@ -1,13 +1,13 @@
-<ion-content padding>
+<ion-content padding style="background-color: #27ae60;">
     <img  class="logo" align ='center' src="../../assets/imgs/lebonangle1.png" width="150px" />
     <ion-list>
         <ion-label>{{test}}</ion-label>
-        <ion-item>
+        <ion-item class="form">
                 <ion-label stacked>Email</ion-label>
-            <ion-input type="text" [(ngModel)]="email"></ion-input>
+            <ion-input  type="text" [(ngModel)]="email"></ion-input>
         </ion-item>
 
-        <ion-item>
+        <ion-item class="form">
             <ion-label stacked>Password</ion-label>
             <ion-input type="password" [(ngModel)]="password"></ion-input>
         </ion-item>

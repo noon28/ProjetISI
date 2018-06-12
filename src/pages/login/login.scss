@@ -1,6 +1,7 @@
     page-login {
+        background-color: #2ecc71;
         .btn {
-            background-color: darkblue !important;
+            background-color: #2ecc71 !important;
         }
         .logo{
             display: block;
@@ -9,10 +10,15 @@
         }
         .mdpforgot{
             font-size:9px;
+            color: white;
         }
         .inscription{
             font-size:10px;
             margin-left: 80%;
             display: block;
+            color: white;
+        }
+        .form{
+            background-color: #2ecc71;
         }
     }
