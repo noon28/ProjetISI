@@ -5,13 +5,8 @@ import { IonicPage, NavController, NavParams,AlertController } from 'ionic-angul
 import { HomePage } from '../home/home';
 import { LoginPage } from './../login/login';
 
-
-/**
- * Generated class for the RegisterPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+//PROVIDERS 
+import { RegisterProvider } from './../../providers/register/register';
 
 @IonicPage()
 @Component({
@@ -33,9 +28,10 @@ export class RegisterPage {
     ville : String;
     missingparameter : Boolean; 
     emailAlready : Boolean;
+    people: Array<any>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
-  }
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, public register : RegisterProvider ) {
+    }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegisterPage');
@@ -63,7 +59,12 @@ export class RegisterPage {
     console.log(this.adresse);
     console.log(this.cp);
     console.log(this.ville);
+    this.people=[this.nom,this.prenom,this.login,this.mdp,this.email,this.adresse,this.cp,this.ville];
+    this.register.postUser(this.people);
+
+
     //PoPuP pour confirmer l'inscription et retour à la page de co 
+    
     this.navCtrl.push(LoginPage);
     // POST API 
     //PoPuP pour confirmer l'inscription et retour à la page de co 

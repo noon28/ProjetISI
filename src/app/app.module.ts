@@ -3,6 +3,8 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { HttpModule } from '@angular/http';
+
 
 import { MyApp } from './app.component';
 
@@ -13,6 +15,7 @@ import { RegisterPage } from './../pages/register/register';
 import { ForgotpswdPage } from './../pages/forgotpswd/forgotpswd';
 // PROVIDER
 import { AuthProvider } from '../providers/auth/auth';
+import { RegisterProvider } from '../providers/register/register';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,8 @@ import { AuthProvider } from '../providers/auth/auth';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -38,7 +42,8 @@ import { AuthProvider } from '../providers/auth/auth';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthProvider
+    AuthProvider,
+    RegisterProvider
   ]
 })
 export class AppModule {}
