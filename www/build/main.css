@@ -25678,6 +25678,121 @@ ion-navbar.toolbar {
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
 
+@font-face {
+  font-family: 'Arial Rounded MT Bold';
+  font-weight: 600;
+  font-style: normal;
+  src: url("../assets/fonts/arlrdbd.ttf");
+}
+
+.side-menu {
+  background-color: #2ecc71;
+}
+
+.side-menu button {
+  color: #27AE60;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 27px;
+  height: 60px;
+  background-color: #fff;
+  font-family: "Arial Rounded MT Bold";
+  border-bottom: .5px solid #27AE60;
+}
+
+.side-menu .item-inner {
+  border: none !important;
+}
+
+.side-menu-header .toolbar-background {
+  background-color: #27AE60;
+}
+
+.side-menu-header .toolbar {
+  height: 60px;
+}
+
+.side-menu-header .img {
+  width: 42.75px;
+  height: 38.25px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+page-home .toolbar {
+  height: 60px;
+  border: none;
+}
+
+page-home .toolbar-background {
+  background-color: #27AE60 !important;
+  border: none !important;
+}
+
+page-home .toolbar-title {
+  color: white !important;
+  font-family: "Arial Rounded MT Bold";
+  font-size: 17px;
+}
+
+page-home ion-icon {
+  color: white !important;
+}
+
+page-home .left-button {
+  padding-right: 10px;
+}
+
+page-home .search-menu {
+  background-color: #2ecc71;
+  height: 300px;
+  width: 100%;
+  -webkit-box-shadow: inset 0px 10px 10px rgba(39, 174, 96, 0.5);
+  box-shadow: inset 0px 10px 10px rgba(39, 174, 96, 0.5);
+  border: none;
+}
+
+page-home .input-ville-cp {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+page-home .input-search-menu {
+  -webkit-box-shadow: inset 0px 1px 5px rgba(51, 51, 51, 0.26);
+  box-shadow: inset 0px 1px 5px rgba(51, 51, 51, 0.26);
+  background-color: white;
+  border-radius: 5px;
+}
+
+page-home .input-search-menu .text-input {
+  padding-left: 10px;
+}
+
+page-home .input-short {
+  width: 40%;
+  margin-right: auto;
+  display: inline-block;
+}
+
+page-home .input-left {
+  margin-left: 5.5%;
+}
+
+page-home .dash {
+  margin-left: 2.3%;
+  margin-right: 2.3%;
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+page-home .double-input {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 page-login {
   background-color: #2ecc71;
 }
