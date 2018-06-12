@@ -1,6 +1,9 @@
+import { md5 } from './../../assets/md5';
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { SelectPopover } from 'ionic-angular';
+import {Md5} from 'ts-md5/dist/md5';
+
 
 
 @Injectable()
@@ -16,6 +19,7 @@ export class AuthProvider {
 
   checkAuth(email:String, password:String){
     // API
+    password=md5(password);
     var jsonUser;
     var test =false;
     console.log("checkAuth")
@@ -33,7 +37,7 @@ export class AuthProvider {
       else{
         console.log("auth KO ")
       }
-    }
+    }  
     return test;
   }
  
