@@ -29,7 +29,7 @@ export class LoginPage {
 
   checkAuthentification(){
     if(this.auth.checkAuth(this.email, this.password)){
-      this.navCtrl.setRoot(HomePage);
+      this.navCtrl.setRoot(HomePage,);
     }
     else{
       this.AlertFailedAuth()

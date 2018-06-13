@@ -25793,10 +25793,6 @@ page-home .double-input {
   margin-right: auto;
 }
 
-page-login {
-  background-color: #2ecc71;
-}
-
 page-login .btn {
   background-color: #2ecc71 !important;
 }
@@ -25820,7 +25816,7 @@ page-login .inscription {
 }
 
 page-login .form {
-  background-color: #2ecc71;
+  background-color: #27AE60;
 }
 
 page-register .btn {

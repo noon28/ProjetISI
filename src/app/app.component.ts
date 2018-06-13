@@ -10,14 +10,14 @@ import { FavoriPage } from '../pages/favori/favori';
 import { ProfilPage } from '../pages/profil/profil';
 import { RegisterPage } from '../pages/register/register';
 import {ForgotpswdPage} from '../pages/forgotpswd/forgotpswd';
-
+import { AccountPage } from './../pages/account/account';
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
   
-  rootPage:any = HomePage;
+  rootPage:any = AccountPage;
 
   pages: Array<{title: string, component: any, icon: string, color: string}>;
 
@@ -27,8 +27,13 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Annonces Immobilières', component: HomePage, icon: 'md-home', color: ''},
+<<<<<<< HEAD
       { title: 'Favoris', component: FavoriPage, icon: 'star', color: ''},
       { title: 'Profil', component: ProfilPage, icon: 'md-contact', color: ''}
+=======
+      { title: 'Favoris', component: ListPage, icon: 'star', color: ''},
+      { title: 'Profil', component: AccountPage, icon: 'md-contact', color: ''}
+>>>>>>> feature
     ];
 
   }
