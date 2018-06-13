@@ -17,7 +17,7 @@ import { AccountPage } from './../pages/account/account';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
   
-  rootPage:any = AccountPage;
+  rootPage:any = HomePage;
 
   pages: Array<{title: string, component: any, icon: string, color: string}>;
 
@@ -27,13 +27,9 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Annonces Immobilières', component: HomePage, icon: 'md-home', color: ''},
-<<<<<<< HEAD
       { title: 'Favoris', component: FavoriPage, icon: 'star', color: ''},
-      { title: 'Profil', component: ProfilPage, icon: 'md-contact', color: ''}
-=======
-      { title: 'Favoris', component: ListPage, icon: 'star', color: ''},
-      { title: 'Profil', component: AccountPage, icon: 'md-contact', color: ''}
->>>>>>> feature
+      { title: 'Profil', component: ProfilPage, icon: 'md-contact', color: ''},
+      { title: 'Account', component: AccountPage, icon: 'md-contact', color: ''}
     ];
 
   }

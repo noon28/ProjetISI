@@ -31,13 +31,9 @@ import { AnnonceProvider } from '../providers/annonce/annonce';
     LoginPage,
     RegisterPage,
     ForgotpswdPage,
-<<<<<<< HEAD
     FavoriPage,
-    ProfilPage
-=======
-    ListPage,
+    ProfilPage,
     AccountPage
->>>>>>> feature
   ],
   imports: [
     BrowserModule,
@@ -52,12 +48,9 @@ import { AnnonceProvider } from '../providers/annonce/annonce';
     LoginPage,
     RegisterPage,
     ForgotpswdPage,
-<<<<<<< HEAD
     FavoriPage,
-    ProfilPage
-=======
+    ProfilPage,
     AccountPage
->>>>>>> feature
   ],
   providers: [
     StatusBar,

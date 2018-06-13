@@ -182,7 +182,7 @@ var LoginPage = /** @class */ (function () {
     };
     LoginPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"/Users/benjamin/Documents/GitKraken/ProjetISI/src/pages/login/login.html"*/'<ion-content padding style="background-color: #27ae60;">\n    <img  class="logo" align =\'center\' src="../../assets/imgs/lebonangle1.png" width="150px" />\n    <ion-list>\n        <ion-label>{{test}}</ion-label>\n        <ion-item class="form">\n                <ion-label stacked>Email</ion-label>\n            <ion-input  type="text" [(ngModel)]="email"></ion-input>\n        </ion-item>\n\n        <ion-item class="form">\n            <ion-label stacked>Password</ion-label>\n            <ion-input type="password" [(ngModel)]="password"></ion-input>\n        </ion-item>\n\n    </ion-list>\n    <button ion-button class="btn" (click)="checkAuthentification()">Connexion</button>\n    <ion-label class="mdpforgot" (click)="mdpforgot()">Mot de passe oublié ?</ion-label>\n    <ion-label class="mdpforgot" (click)="register()">Inscription</ion-label>\n    \n</ion-content>'/*ion-inline-end:"/Users/benjamin/Documents/GitKraken/ProjetISI/src/pages/login/login.html"*/,
+            selector: 'page-login',template:/*ion-inline-start:"/Users/benjamin/Documents/GitKraken/ProjetISI/src/pages/login/login.html"*/'<ion-content padding style="background-color: #27AE60;">\n    <img  class="logo" align =\'center\' src="../../assets/imgs/lebonangle1.png" width="150px" />\n    <ion-list>\n        <ion-label>{{test}}</ion-label>\n        <ion-item class="form">\n                <ion-label stacked>Email</ion-label>\n            <ion-input  type="text" [(ngModel)]="email"></ion-input>\n        </ion-item>\n\n        <ion-item class="form">\n            <ion-label stacked>Password</ion-label>\n            <ion-input type="password" [(ngModel)]="password"></ion-input>\n        </ion-item>\n\n    </ion-list>\n    <button ion-button class="btn" (click)="checkAuthentification()">Connexion</button>\n    <ion-label class="mdpforgot" (click)="mdpforgot()">Mot de passe oublié ?</ion-label>\n    <ion-label class="mdpforgot" (click)="register()">Inscription</ion-label>\n    \n</ion-content>'/*ion-inline-end:"/Users/benjamin/Documents/GitKraken/ProjetISI/src/pages/login/login.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_5__providers_auth_auth__["a" /* AuthProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
     ], LoginPage);
@@ -323,25 +323,29 @@ webpackEmptyAsyncContext.id = 116;
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
+	"../pages/account/account.module": [
+		288,
+		7
+	],
 	"../pages/favori/favori.module": [
 		283,
-		4
+		12
 	],
 	"../pages/forgotpswd/forgotpswd.module": [
 		284,
-		3
+		11
 	],
 	"../pages/login/login.module": [
 		286,
-		2
+		10
 	],
 	"../pages/profil/profil.module": [
 		285,
-		1
+		9
 	],
 	"../pages/register/register.module": [
 		287,
-		0
+		8
 	]
 };
 function webpackAsyncContext(req) {
@@ -657,9 +661,10 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_login_login__ = __webpack_require__(105);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_register_register__ = __webpack_require__(106);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_forgotpswd_forgotpswd__ = __webpack_require__(103);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__providers_auth_auth__ = __webpack_require__(160);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__providers_register_register__ = __webpack_require__(159);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__providers_annonce_annonce__ = __webpack_require__(158);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_account_account__ = __webpack_require__(289);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__providers_auth_auth__ = __webpack_require__(160);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__providers_register_register__ = __webpack_require__(159);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__providers_annonce_annonce__ = __webpack_require__(158);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -675,6 +680,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 // PAGES
+
 
 
 
@@ -697,7 +703,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_12__pages_register_register__["a" /* RegisterPage */],
                 __WEBPACK_IMPORTED_MODULE_13__pages_forgotpswd_forgotpswd__["a" /* ForgotpswdPage */],
                 __WEBPACK_IMPORTED_MODULE_9__pages_favori_favori__["a" /* FavoriPage */],
-                __WEBPACK_IMPORTED_MODULE_10__pages_profil_profil__["a" /* ProfilPage */]
+                __WEBPACK_IMPORTED_MODULE_10__pages_profil_profil__["a" /* ProfilPage */],
+                __WEBPACK_IMPORTED_MODULE_14__pages_account_account__["a" /* AccountPage */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -708,7 +715,8 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/forgotpswd/forgotpswd.module#ForgotpswdPageModule', name: 'ForgotpswdPage', segment: 'forgotpswd', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/profil/profil.module#ProfilPageModule', name: 'ProfilPage', segment: 'profil', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/register/register.module#RegisterPageModule', name: 'RegisterPage', segment: 'register', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/register/register.module#RegisterPageModule', name: 'RegisterPage', segment: 'register', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/account/account.module#AccountPageModule', name: 'AccountPage', segment: 'account', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_5__angular_http__["b" /* HttpModule */]
@@ -719,15 +727,18 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_8__pages_home_home__["a" /* HomePage */],
                 __WEBPACK_IMPORTED_MODULE_11__pages_login_login__["a" /* LoginPage */],
                 __WEBPACK_IMPORTED_MODULE_12__pages_register_register__["a" /* RegisterPage */],
-                __WEBPACK_IMPORTED_MODULE_13__pages_forgotpswd_forgotpswd__["a" /* ForgotpswdPage */]
+                __WEBPACK_IMPORTED_MODULE_13__pages_forgotpswd_forgotpswd__["a" /* ForgotpswdPage */],
+                __WEBPACK_IMPORTED_MODULE_9__pages_favori_favori__["a" /* FavoriPage */],
+                __WEBPACK_IMPORTED_MODULE_10__pages_profil_profil__["a" /* ProfilPage */],
+                __WEBPACK_IMPORTED_MODULE_14__pages_account_account__["a" /* AccountPage */]
             ],
             providers: [
                 __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__["a" /* StatusBar */],
                 __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */],
                 { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicErrorHandler */] },
-                __WEBPACK_IMPORTED_MODULE_14__providers_auth_auth__["a" /* AuthProvider */],
-                __WEBPACK_IMPORTED_MODULE_15__providers_register_register__["a" /* RegisterProvider */],
-                __WEBPACK_IMPORTED_MODULE_16__providers_annonce_annonce__["a" /* AnnonceProvider */]
+                __WEBPACK_IMPORTED_MODULE_15__providers_auth_auth__["a" /* AuthProvider */],
+                __WEBPACK_IMPORTED_MODULE_16__providers_register_register__["a" /* RegisterProvider */],
+                __WEBPACK_IMPORTED_MODULE_17__providers_annonce_annonce__["a" /* AnnonceProvider */]
             ]
         })
     ], AppModule);
@@ -961,6 +972,7 @@ var md5 = function (string) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(79);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_favori_favori__ = __webpack_require__(51);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_profil_profil__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_account_account__ = __webpack_require__(289);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -970,6 +982,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -988,7 +1001,8 @@ var MyApp = /** @class */ (function () {
         this.pages = [
             { title: 'Annonces Immobilières', component: __WEBPACK_IMPORTED_MODULE_4__pages_home_home__["a" /* HomePage */], icon: 'md-home', color: '' },
             { title: 'Favoris', component: __WEBPACK_IMPORTED_MODULE_5__pages_favori_favori__["a" /* FavoriPage */], icon: 'star', color: '' },
-            { title: 'Profil', component: __WEBPACK_IMPORTED_MODULE_6__pages_profil_profil__["a" /* ProfilPage */], icon: 'md-contact', color: '' }
+            { title: 'Profil', component: __WEBPACK_IMPORTED_MODULE_6__pages_profil_profil__["a" /* ProfilPage */], icon: 'md-contact', color: '' },
+            { title: 'Account', component: __WEBPACK_IMPORTED_MODULE_7__pages_account_account__["a" /* AccountPage */], icon: 'md-contact', color: '' }
         ];
     }
     MyApp.prototype.initializeApp = function () {
@@ -1007,17 +1021,83 @@ var MyApp = /** @class */ (function () {
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Nav */]),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Nav */])
+        __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Nav */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Nav */]) === "function" && _a || Object)
     ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/benjamin/Documents/GitKraken/ProjetISI/src/app/app.html"*/'<ion-menu [content]="content" class="side-menu-header">\n    <ion-header>\n      <ion-toolbar>\n        <img  class="img" src="../../assets/imgs/pyramide.png" />\n        <!--<ion-title>Menu</ion-title>-->\n      </ion-toolbar>\n    </ion-header>\n  \n    <ion-content class="side-menu">\n      <ion-list>\n        <button menuClose icon-start ion-item *ngFor="let p of pages" (click)="openPage(p)">\n          <ion-icon name="{{p.icon}}"></ion-icon>\n          {{p.title}}\n        </button>\n      </ion-list>\n    </ion-content>\n  \n  </ion-menu>\n  \n  \n  \n  <!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n  <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"/Users/benjamin/Documents/GitKraken/ProjetISI/src/app/app.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]) === "function" && _d || Object])
     ], MyApp);
     return MyApp;
+    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=app.component.js.map
+
+/***/ }),
+
+/***/ 289:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AccountPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_animations__ = __webpack_require__(80);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var AccountPage = /** @class */ (function () {
+    function AccountPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.searchMenuVisible = 'invisible';
+    }
+    AccountPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad AccountPage');
+    };
+    AccountPage.prototype.toggleSearchMenu = function () {
+        this.searchMenuVisible = (this.searchMenuVisible == 'visible') ? 'invisible' : 'visible';
+    };
+    AccountPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-account',template:/*ion-inline-start:"/Users/benjamin/Documents/GitKraken/ProjetISI/src/pages/account/account.html"*/'<ion-header>\n  <ion-navbar>\n\n    <!-- LEFT SIDE -->\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n\n    <!-- CENTER SIDE -->\n    <ion-title>Profil</ion-title>\n\n    <!-- RIGHT SIDE -->\n    <div class="left-button">\n      <ion-buttons end>\n        <button (click)="toggleSearchMenu()" ion-button icon-only>\n          <ion-icon name="search"></ion-icon>\n        </button>\n      </ion-buttons>\n    </div>\n    \n  </ion-navbar>\n</ion-header>\n\n<ion-content >\n  <div class="search-menu" [@myvisibility]="searchMenuVisible">\n    <br/>\n    <ion-input class="input-search-menu input-ville-cp" type="text" placeholder="Ville ou code postal" ></ion-input>\n    <br/>\n    <div class="double-input">\n      <ion-input class="input-search-menu input-short input-left" type="text" placeholder="Loyer Min" ></ion-input>\n      <span class="dash">-</span>\n      <ion-input class="input-search-menu input-short input-right" type="text" placeholder="Loyer Max" ></ion-input>\n    </div>\n    <br/>\n    <div class="double-input">\n      <ion-input class="input-search-menu input-short input-left" type="text" placeholder="Surface Min" ></ion-input>\n      <span class="dash">-</span>\n      <ion-input class="input-search-menu input-short input-right" type="text" placeholder="Surface Max" ></ion-input>\n    </div>\n    <br/>\n    <div class="double-input">\n      <ion-input class="input-search-menu input-short input-left" type="text" placeholder="Pièces Min" ></ion-input>\n      <span class="dash">-</span>\n      <ion-input class="input-search-menu input-short input-right" type="text" placeholder="Pièces Max" ></ion-input>\n    </div>\n  </div>\n  \n \n</ion-content>'/*ion-inline-end:"/Users/benjamin/Documents/GitKraken/ProjetISI/src/pages/account/account.html"*/,
+            animations: [
+                Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["k" /* trigger */])('myvisibility', [
+                    Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["h" /* state */])('visible', Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["i" /* style */])({ height: 300, opacity: 1 })),
+                    Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["h" /* state */])('invisible', Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["i" /* style */])({ height: 0, opacity: 0 })),
+                    Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["j" /* transition */])('invisible => visible', [
+                        Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["e" /* animate */])(300, Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["f" /* keyframes */])([
+                            Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["i" /* style */])({ opacity: 0, height: 0, offset: 0 }),
+                            Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["i" /* style */])({ opacity: .5, height: 150, offset: 0.5 }),
+                            Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["i" /* style */])({ opacity: 1, height: 300, offset: 1.0 })
+                        ]))
+                    ]),
+                    Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["j" /* transition */])('visible => invisible', [
+                        Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["e" /* animate */])(300, Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["f" /* keyframes */])([
+                            Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["i" /* style */])({ opacity: 1, height: '*', offset: 0 }),
+                            Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["i" /* style */])({ opacity: .5, height: 150, offset: 0.5 }),
+                            Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["i" /* style */])({ opacity: 0, height: 0, offset: 1.0 })
+                        ]))
+                    ]),
+                ])
+            ]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
+    ], AccountPage);
+    return AccountPage;
+}());
+
+//# sourceMappingURL=account.js.map
 
 /***/ }),
 
@@ -1106,11 +1186,12 @@ var HomePage = /** @class */ (function () {
         this.searchMenuVisible = (this.searchMenuVisible == 'visible') ? 'invisible' : 'visible';
     };
     HomePage.prototype.sendData = function () {
+        // tu mets ce que tu veux et autant que tu veux dans l'objet JSON
         this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_4__favori_favori__["a" /* FavoriPage */], { data: this.dataToSend });
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/Users/benjamin/Documents/GitKraken/ProjetISI/src/pages/home/home.html"*/'<ion-header>\n    <ion-navbar>\n  \n      <!-- LEFT SIDE -->\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n  \n      <!-- CENTER SIDE -->\n      <ion-title>Annonces Immobilières</ion-title>\n  \n      <!-- RIGHT SIDE -->\n      <div class="left-button">\n        <ion-buttons end>\n          <button (click)="toggleSearchMenu()" ion-button icon-only>\n            <ion-icon name="search"></ion-icon>\n          </button>\n        </ion-buttons>\n      </div>\n      \n    </ion-navbar>\n  </ion-header>\n  \n  <ion-content >\n    <div class="search-menu" [@myvisibility]="searchMenuVisible">\n      <br/>\n      <ion-input class="input-search-menu input-ville-cp" type="text" placeholder="Ville ou code postal" ></ion-input>\n      <br/>\n      <div class="double-input">\n        <ion-input class="input-search-menu input-short input-left" type="text" placeholder="Loyer Min" ></ion-input>\n        <span class="dash">-</span>\n        <ion-input class="input-search-menu input-short input-right" type="text" placeholder="Loyer Max" ></ion-input>\n      </div>\n      <br/>\n      <div class="double-input">\n        <ion-input class="input-search-menu input-short input-left" type="text" placeholder="Surface Min" ></ion-input>\n        <span class="dash">-</span>\n        <ion-input class="input-search-menu input-short input-right" type="text" placeholder="Surface Max" ></ion-input>\n      </div>\n      <br/>\n      <div class="double-input">\n        <ion-input class="input-search-menu input-short input-left" type="text" placeholder="Pièces Min" ></ion-input>\n        <span class="dash">-</span>\n        <ion-input class="input-search-menu input-short input-right" type="text" placeholder="Pièces Max" ></ion-input>\n      </div>\n    </div>\n    <ion-input type="text" placeholder="Enter a data to send" [(ngModel)]="dataToSend"></ion-input>\n    <button ion-button color="danger" outline (click)="sendData()">Envoyer des données !</button>\n  </ion-content>'/*ion-inline-end:"/Users/benjamin/Documents/GitKraken/ProjetISI/src/pages/home/home.html"*/,
+            selector: 'page-home',template:/*ion-inline-start:"/Users/benjamin/Documents/GitKraken/ProjetISI/src/pages/home/home.html"*/'<ion-header>\n    <ion-navbar>\n  \n      <!-- LEFT SIDE -->\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n  \n      <!-- CENTER SIDE -->\n      <ion-title>Annonces Immobilières</ion-title>\n\n      <!-- RIGHT SIDE -->\n      <div class="left-button">\n        <ion-buttons end>\n          <button (click)="toggleSearchMenu()" ion-button icon-only>\n            <ion-icon name="search"></ion-icon>\n          </button>\n        </ion-buttons>\n      </div>\n      \n    </ion-navbar>\n  </ion-header>\n  \n  <ion-content >\n    <div class="search-menu" [@myvisibility]="searchMenuVisible">\n      <br/>\n      <ion-input class="input-search-menu input-ville-cp" type="text" placeholder="Ville ou code postal" ></ion-input>\n      <br/>\n      <div class="double-input">\n        <ion-input class="input-search-menu input-short input-left" type="text" placeholder="Loyer Min" ></ion-input>\n        <span class="dash">-</span>\n        <ion-input class="input-search-menu input-short input-right" type="text" placeholder="Loyer Max" ></ion-input>\n      </div>\n      <br/>\n      <div class="double-input">\n        <ion-input class="input-search-menu input-short input-left" type="text" placeholder="Surface Min" ></ion-input>\n        <span class="dash">-</span>\n        <ion-input class="input-search-menu input-short input-right" type="text" placeholder="Surface Max" ></ion-input>\n      </div>\n      <br/>\n      <div class="double-input">\n        <ion-input class="input-search-menu input-short input-left" type="text" placeholder="Pièces Min" ></ion-input>\n        <span class="dash">-</span>\n        <ion-input class="input-search-menu input-short input-right" type="text" placeholder="Pièces Max" ></ion-input>\n      </div>\n    </div>\n<<<<<<< HEAD\n    <ion-input type="text" placeholder="Enter a data to send" [(ngModel)]="dataToSend"></ion-input>\n    <button ion-button color="danger" outline (click)="sendData()">Envoyer des données !</button>\n=======\n    \n   \n>>>>>>> feature\n  </ion-content>'/*ion-inline-end:"/Users/benjamin/Documents/GitKraken/ProjetISI/src/pages/home/home.html"*/,
             animations: [
                 Object(__WEBPACK_IMPORTED_MODULE_3__angular_animations__["k" /* trigger */])('myvisibility', [
                     Object(__WEBPACK_IMPORTED_MODULE_3__angular_animations__["h" /* state */])('visible', Object(__WEBPACK_IMPORTED_MODULE_3__angular_animations__["i" /* style */])({ height: 300, opacity: 1 })),
@@ -1132,9 +1213,10 @@ var HomePage = /** @class */ (function () {
                 ])
             ]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_0__providers_annonce_annonce__["a" /* AnnonceProvider */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__providers_annonce_annonce__["a" /* AnnonceProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__providers_annonce_annonce__["a" /* AnnonceProvider */]) === "function" && _b || Object])
     ], HomePage);
     return HomePage;
+    var _a, _b;
 }());
 
 //# sourceMappingURL=home.js.map

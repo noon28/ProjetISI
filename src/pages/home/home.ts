@@ -48,6 +48,7 @@ export class HomePage {
   }
 
   sendData(){
+    // tu mets ce que tu veux et autant que tu veux dans l'objet JSON
     this.navCtrl.setRoot(FavoriPage, {data: this.dataToSend});
   }
   
