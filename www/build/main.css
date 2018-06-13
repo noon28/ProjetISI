@@ -25720,6 +25720,79 @@ ion-navbar.toolbar {
   display: block;
 }
 
+page-account .toolbar {
+  height: 60px;
+  border: none;
+}
+
+page-account .toolbar-background {
+  background-color: #27AE60 !important;
+  border: none !important;
+}
+
+page-account .toolbar-title {
+  color: white !important;
+  font-family: "Arial Rounded MT Bold";
+  font-size: 17px;
+}
+
+page-account ion-icon {
+  color: white !important;
+}
+
+page-account .left-button {
+  padding-right: 10px;
+}
+
+page-account .search-menu {
+  background-color: #2ecc71;
+  height: 300px;
+  width: 100%;
+  -webkit-box-shadow: inset 0px 10px 10px rgba(39, 174, 96, 0.5);
+  box-shadow: inset 0px 10px 10px rgba(39, 174, 96, 0.5);
+  border: none;
+}
+
+page-account .input-ville-cp {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+page-account .input-search-menu {
+  -webkit-box-shadow: inset 0px 1px 5px rgba(51, 51, 51, 0.26);
+  box-shadow: inset 0px 1px 5px rgba(51, 51, 51, 0.26);
+  background-color: white;
+  border-radius: 5px;
+}
+
+page-account .input-search-menu .text-input {
+  padding-left: 10px;
+}
+
+page-account .input-short {
+  width: 40%;
+  margin-right: auto;
+  display: inline-block;
+}
+
+page-account .input-left {
+  margin-left: 5.5%;
+}
+
+page-account .dash {
+  margin-left: 2.3%;
+  margin-right: 2.3%;
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+page-account .double-input {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 page-home .toolbar {
   height: 60px;
   border: none;

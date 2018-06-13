@@ -15,6 +15,7 @@ import { ListPage } from '../pages/list/list';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from './../pages/register/register';
 import { ForgotpswdPage } from './../pages/forgotpswd/forgotpswd';
+import { AccountPage } from './../pages/account/account';
 // PROVIDER
 import { AuthProvider } from '../providers/auth/auth';
 import { RegisterProvider } from '../providers/register/register';
@@ -29,7 +30,8 @@ import { AnnonceProvider } from '../providers/annonce/annonce';
     LoginPage,
     RegisterPage,
     ForgotpswdPage,
-    ListPage
+    ListPage,
+    AccountPage
   ],
   imports: [
     BrowserModule,
@@ -43,7 +45,8 @@ import { AnnonceProvider } from '../providers/annonce/annonce';
     HomePage,
     LoginPage,
     RegisterPage,
-    ForgotpswdPage
+    ForgotpswdPage,
+    AccountPage
   ],
   providers: [
     StatusBar,
