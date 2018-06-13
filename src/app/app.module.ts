@@ -11,7 +11,8 @@ import { MyApp } from './app.component';
 
 // PAGES
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+import { FavoriPage } from '../pages/favori/favori';
+import { ProfilPage } from '../pages/profil/profil';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from './../pages/register/register';
 import { ForgotpswdPage } from './../pages/forgotpswd/forgotpswd';
@@ -29,7 +30,8 @@ import { AnnonceProvider } from '../providers/annonce/annonce';
     LoginPage,
     RegisterPage,
     ForgotpswdPage,
-    ListPage
+    FavoriPage,
+    ProfilPage
   ],
   imports: [
     BrowserModule,
@@ -43,7 +45,9 @@ import { AnnonceProvider } from '../providers/annonce/annonce';
     HomePage,
     LoginPage,
     RegisterPage,
-    ForgotpswdPage
+    ForgotpswdPage,
+    FavoriPage,
+    ProfilPage
   ],
   providers: [
     StatusBar,

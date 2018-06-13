@@ -6,7 +6,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 // PAGES
 import { LoginPage } from '../pages/login/login';
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+import { FavoriPage } from '../pages/favori/favori';
+import { ProfilPage } from '../pages/profil/profil';
 import { RegisterPage } from '../pages/register/register';
 import {ForgotpswdPage} from '../pages/forgotpswd/forgotpswd';
 
@@ -26,8 +27,8 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Annonces Immobilières', component: HomePage, icon: 'md-home', color: ''},
-      { title: 'Favoris', component: ListPage, icon: 'star', color: ''},
-      { title: 'Profil', component: ListPage, icon: 'md-contact', color: ''}
+      { title: 'Favoris', component: FavoriPage, icon: 'star', color: ''},
+      { title: 'Profil', component: ProfilPage, icon: 'md-contact', color: ''}
     ];
 
   }

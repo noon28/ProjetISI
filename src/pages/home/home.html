@@ -44,4 +44,6 @@
         <ion-input class="input-search-menu input-short input-right" type="text" placeholder="Pièces Max" ></ion-input>
       </div>
     </div>
+    <ion-input type="text" placeholder="Enter a data to send" [(ngModel)]="dataToSend"></ion-input>
+    <button ion-button color="danger" outline (click)="sendData()">Envoyer des données !</button>
   </ion-content>

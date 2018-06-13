@@ -3,6 +3,9 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
 
+// PAGES
+import { FavoriPage } from '../favori/favori';
+
 
 @Component({
   selector: 'page-home',
@@ -30,6 +33,7 @@ import { trigger, state, style, transition, animate, keyframes } from '@angular/
 })
 export class HomePage {
 
+  dataToSend : any;
   searchMenuVisible = 'invisible';
 
   constructor(public navCtrl: NavController ,  public annonceP : AnnonceProvider) {
@@ -41,6 +45,10 @@ export class HomePage {
 
   toggleSearchMenu(){
     this.searchMenuVisible = (this.searchMenuVisible == 'visible') ? 'invisible' : 'visible';
+  }
+
+  sendData(){
+    this.navCtrl.setRoot(FavoriPage, {data: this.dataToSend});
   }
   
 }
