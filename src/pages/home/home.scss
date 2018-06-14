@@ -24,8 +24,10 @@ page-home {
     }
 
     .search-menu{
+        z-index: 999;
+        position: absolute;
         background-color: #2ecc71;
-        height: 300px;
+        height: 500px;
         width: 100%;
         box-shadow: inset 0px 10px 10px rgba(39,174,96,.5);
         border: none;
@@ -70,5 +72,39 @@ page-home {
         margin-right: auto;
     }
 
+    .inline-block{
+        display: inline-block;
+    }
+
+    .checkbox-label{
+        margin: 0;
+        vertical-align: top;
+        padding-left: 5px;
+        color: #fff;
+        font-weight: 400;
+    }
+    .checkbox-div{
+        padding-top: 10px;
+        padding-left: 5.5%;
+    }
+
+    .content-checkbox{
+        padding-top: 10px;
+    }
+
+    .title-checkbox{
+        padding-left: 5.5%;
+        font-weight: 700;
+        color: #fff;
+        font-size: 15px;
+    }
+
+    .rechercher{
+        position: absolute;
+        right: 20px;
+        bottom: 15px;
+        height: 40px;
+        font-weight: 600;
+    }
 
 }

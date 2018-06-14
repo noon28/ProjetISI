@@ -21,7 +21,7 @@
     </ion-navbar>
   </ion-header>
   
-  <ion-content >
+  <ion-content class="no-scroll">
     <div class="search-menu" [@myvisibility]="searchMenuVisible">
       <br/>
       <ion-input class="input-search-menu input-ville-cp" type="text" placeholder="Ville ou code postal" ></ion-input>
@@ -43,12 +43,32 @@
         <span class="dash">-</span>
         <ion-input class="input-search-menu input-short input-right" type="text" placeholder="Pièces Max" ></ion-input>
       </div>
+      <div class="content-checkbox">
+        <ion-label class="title-checkbox">Type</ion-label>
+        <div class="checkbox-div inline-block">
+          <ion-checkbox color="checkbox" checked="false" class=" inline-block"></ion-checkbox>
+          <ion-label class="checkbox-label inline-block">Maison</ion-label>
+        </div>
+        <div class="checkbox-div inline-block">
+          <ion-checkbox color="checkbox" checked="false" class="inline-block"></ion-checkbox>
+          <ion-label class="checkbox-label inline-block">Appartement</ion-label>
+        </div>
+        <div class="checkbox-div inline-block">
+          <ion-checkbox color="checkbox" checked="false" class="inline-block"></ion-checkbox>
+          <ion-label class="checkbox-label inline-block">Terrain</ion-label>
+        </div>
+        <div class="checkbox-div inline-block">
+          <ion-checkbox color="checkbox" checked="false" class="inline-block"></ion-checkbox>
+          <ion-label class="checkbox-label inline-block">Parking</ion-label>
+        </div>
+        <div class="checkbox-div inline-block">
+            <ion-checkbox color="checkbox" checked="false" class="inline-block"></ion-checkbox>
+            <ion-label class="checkbox-label inline-block">Autre</ion-label>
+        </div>
+        <br/>
+        <button color="checkbox" ion-button class="rechercher" (click)="rechercher()">Rechercher</button>
+      </div>
     </div>
-<<<<<<< HEAD
     <ion-input type="text" placeholder="Enter a data to send" [(ngModel)]="dataToSend"></ion-input>
     <button ion-button color="danger" outline (click)="sendData()">Envoyer des données !</button>
-=======
-    
-   
->>>>>>> feature
   </ion-content>

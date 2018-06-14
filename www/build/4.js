@@ -1,21 +1,14 @@
 webpackJsonp([4],{
 
-/***/ 283:
+/***/ 285:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-<<<<<<< HEAD
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FavoriPageModule", function() { return FavoriPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__favori__ = __webpack_require__(51);
-=======
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ForgotpswdPageModule", function() { return ForgotpswdPageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__forgotpswd__ = __webpack_require__(103);
->>>>>>> feature
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__favori__ = __webpack_require__(52);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -25,7 +18,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-<<<<<<< HEAD
 var FavoriPageModule = /** @class */ (function () {
     function FavoriPageModule() {
     }
@@ -43,25 +35,6 @@ var FavoriPageModule = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=favori.module.js.map
-=======
-var ForgotpswdPageModule = /** @class */ (function () {
-    function ForgotpswdPageModule() {
-    }
-    ForgotpswdPageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
-            declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__forgotpswd__["a" /* ForgotpswdPage */],
-            ],
-            imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__forgotpswd__["a" /* ForgotpswdPage */]),
-            ],
-        })
-    ], ForgotpswdPageModule);
-    return ForgotpswdPageModule;
-}());
-
-//# sourceMappingURL=forgotpswd.module.js.map
->>>>>>> feature
 
 /***/ })
 
