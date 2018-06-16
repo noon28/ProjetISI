@@ -33619,6 +33619,10 @@ page-login .titlelab {
   color: white !important;
 }
 
+page-login .input {
+  color: #ecf0f1 !important;
+}
+
 page-register .btn {
   background-color: darkblue !important;
 }
