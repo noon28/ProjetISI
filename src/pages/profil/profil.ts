@@ -15,7 +15,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ProfilPage {
 
+  userConnect : any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    // receive the data send by other pages
+    this.userConnect= navParams.get('UserCo');
   }
 
   ionViewDidLoad() {

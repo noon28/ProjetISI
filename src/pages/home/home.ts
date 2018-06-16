@@ -40,8 +40,6 @@ export class HomePage {
   constructor(public navCtrl: NavController ,  public annonceP : AnnonceProvider,public navParams: NavParams ) {
     this.annonceP.getHttpAnnonce();
     this.userConnect= navParams.get('userCo');
-    
-
   }
   useAnnonce(){
     this.annonceP.useAnnonces();

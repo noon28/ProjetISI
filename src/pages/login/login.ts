@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams,AlertController } from 'ionic-angul
 
 // PAGES
 import { HomePage } from '../home/home';
+import { ProfilPage } from '../profil/profil';
 import { RegisterPage } from './../register/register';
 import { ForgotpswdPage } from './../forgotpswd/forgotpswd';
 
@@ -30,7 +31,9 @@ export class LoginPage {
   checkAuthentification(){
       var userConnect=this.auth.checkAuth(this.email, this.password);
     if(userConnect!=null){
+      // send data to other pages
       this.navCtrl.setRoot(HomePage,{userCo: userConnect});
+      this.navCtrl.setRoot(ProfilPage,{userCo: userConnect});
     }
     else{
       this.AlertFailedAuth()

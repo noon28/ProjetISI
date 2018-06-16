@@ -16,6 +16,7 @@ export class AnnonceProvider {
     var jsonAnnonces;
     jsonAnnonces=JSON.parse(this.annonces)
     console.log(jsonAnnonces)
+    console.log("test")
     return jsonAnnonces;
   }
 
