@@ -33583,7 +33583,12 @@ page-home .rechercher {
 }
 
 page-login .btn {
+  margin-top: 10%;
   background-color: #2ecc71 !important;
+  border-radius: 8px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 page-login .logo {
@@ -33595,6 +33600,7 @@ page-login .logo {
 page-login .mdpforgot {
   font-size: 9px;
   color: white;
+  margin-top: 5%;
 }
 
 page-login .inscription {
@@ -33602,10 +33608,15 @@ page-login .inscription {
   margin-left: 80%;
   display: block;
   color: white;
+  margin-top: 5%;
 }
 
 page-login .form {
   background-color: #27AE60;
+}
+
+page-login .titlelab {
+  color: white !important;
 }
 
 page-register .btn {

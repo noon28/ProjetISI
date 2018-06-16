@@ -32,7 +32,7 @@ export class LoginPage {
       var userConnect=this.auth.checkAuth(this.email, this.password);
     if(userConnect!=null){
       // send data to other pages
-      //this.navCtrl.setRoot(HomePage,{userCo: userConnect});
+      this.navCtrl.setRoot(HomePage,{userCo: userConnect});
       this.navCtrl.setRoot(ProfilPage, {userCo: userConnect} );
     }
     else{

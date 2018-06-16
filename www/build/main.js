@@ -1035,10 +1035,11 @@ var FavoriPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__profil_profil__ = __webpack_require__(54);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__register_register__ = __webpack_require__(107);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__forgotpswd_forgotpswd__ = __webpack_require__(106);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_auth_auth__ = __webpack_require__(161);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__profil_profil__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__register_register__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__forgotpswd_forgotpswd__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_auth_auth__ = __webpack_require__(161);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1049,6 +1050,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+// PAGES
 
 
 
@@ -1069,8 +1072,8 @@ var LoginPage = /** @class */ (function () {
         var userConnect = this.auth.checkAuth(this.email, this.password);
         if (userConnect != null) {
             // send data to other pages
-            //this.navCtrl.setRoot(HomePage,{userCo: userConnect});
-            this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_2__profil_profil__["a" /* ProfilPage */], { userCo: userConnect });
+            this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_2__home_home__["a" /* HomePage */], { userCo: userConnect });
+            this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_3__profil_profil__["a" /* ProfilPage */], { userCo: userConnect });
         }
         else {
             this.AlertFailedAuth();
@@ -1083,11 +1086,11 @@ var LoginPage = /** @class */ (function () {
     };
     LoginPage.prototype.mdpforgot = function () {
         console.log("Mot de passe oublié");
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__forgotpswd_forgotpswd__["a" /* ForgotpswdPage */]);
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__forgotpswd_forgotpswd__["a" /* ForgotpswdPage */]);
     };
     LoginPage.prototype.register = function () {
         console.log("Inscription");
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__register_register__["a" /* RegisterPage */]);
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__register_register__["a" /* RegisterPage */]);
         //this.navCtrl.setRoot(RegisterPage);
     };
     LoginPage.prototype.AlertFailedAuth = function () {
@@ -1100,12 +1103,11 @@ var LoginPage = /** @class */ (function () {
     };
     LoginPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"C:\Users\fouil\Desktop\EFREI\S6\IntroductionSystèmeINFO\GIT\ProjetISI\src\pages\login\login.html"*/'<ion-content padding style="background-color: #27AE60;">\n\n    <img  class="logo" align =\'center\' src="../../assets/imgs/lebonangle1.png" width="150px" />\n\n    <ion-list>\n\n        <ion-label>{{test}}</ion-label>\n\n        <ion-item class="form">\n\n                <ion-label stacked>Email</ion-label>\n\n            <ion-input  type="text" [(ngModel)]="email"></ion-input>\n\n        </ion-item>\n\n\n\n        <ion-item class="form">\n\n            <ion-label stacked>Password</ion-label>\n\n            <ion-input type="password" [(ngModel)]="password"></ion-input>\n\n        </ion-item>\n\n\n\n    </ion-list>\n\n    <button ion-button class="btn" (click)="checkAuthentification()">Connexion</button>\n\n    <ion-label class="mdpforgot" (click)="mdpforgot()">Mot de passe oublié ?</ion-label>\n\n    <ion-label class="mdpforgot" (click)="register()">Inscription</ion-label>\n\n    \n\n</ion-content>'/*ion-inline-end:"C:\Users\fouil\Desktop\EFREI\S6\IntroductionSystèmeINFO\GIT\ProjetISI\src\pages\login\login.html"*/,
+            selector: 'page-login',template:/*ion-inline-start:"C:\Users\fouil\Desktop\EFREI\S6\IntroductionSystèmeINFO\GIT\ProjetISI\src\pages\login\login.html"*/'<ion-content padding style="background-color: #27AE60;">\n\n    <img  class="logo" align =\'center\' src="../../assets/imgs/pyramide.png" width="150px" />\n\n    \n\n        \n\n\n\n        <ion-item class="form">\n\n                <ion-label class="titlelab" stacked>Email</ion-label>\n\n            <ion-input  type="text" [(ngModel)]="email"></ion-input>\n\n        </ion-item>\n\n\n\n        <ion-item class="form">\n\n            <ion-label class="titlelab" stacked>Password</ion-label>\n\n            <ion-input type="password" [(ngModel)]="password"></ion-input>\n\n        </ion-item>\n\n\n\n    \n\n    <button ion-button class="btn" (click)="checkAuthentification()">Connexion</button>\n\n    <ion-label class="mdpforgot" (click)="mdpforgot()">Mot de passe oublié ?</ion-label>\n\n    <ion-label class="mdpforgot" (click)="register()">Inscription</ion-label>\n\n    \n\n</ion-content>'/*ion-inline-end:"C:\Users\fouil\Desktop\EFREI\S6\IntroductionSystèmeINFO\GIT\ProjetISI\src\pages\login\login.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_5__providers_auth_auth__["a" /* AuthProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__providers_auth_auth__["a" /* AuthProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _d || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_6__providers_auth_auth__["a" /* AuthProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
     ], LoginPage);
     return LoginPage;
-    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=login.js.map
@@ -1151,10 +1153,9 @@ var ProfilPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-profil',template:/*ion-inline-start:"C:\Users\fouil\Desktop\EFREI\S6\IntroductionSystèmeINFO\GIT\ProjetISI\src\pages\profil\profil.html"*/'<!--\n\n  Generated template for the ProfilPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>profil</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n    <div><p>ID user : {{ userConnect.ID }} </p>\n\n    Name : {{ userConnect.NOM }}\n\n    <!--Plus qu\'a mettre en forme whala  -->\n\n    </div>\n\n    \n\n    coucou\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\fouil\Desktop\EFREI\S6\IntroductionSystèmeINFO\GIT\ProjetISI\src\pages\profil\profil.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
     ], ProfilPage);
     return ProfilPage;
-    var _a, _b;
 }());
 
 //# sourceMappingURL=profil.js.map

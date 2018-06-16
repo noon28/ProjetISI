@@ -1,18 +1,19 @@
 <ion-content padding style="background-color: #27AE60;">
-    <img  class="logo" align ='center' src="../../assets/imgs/lebonangle1.png" width="150px" />
-    <ion-list>
-        <ion-label>{{test}}</ion-label>
+    <img  class="logo" align ='center' src="../../assets/imgs/pyramide.png" width="150px" />
+    
+        
+
         <ion-item class="form">
-                <ion-label stacked>Email</ion-label>
+                <ion-label class="titlelab" stacked>Email</ion-label>
             <ion-input  type="text" [(ngModel)]="email"></ion-input>
         </ion-item>
 
         <ion-item class="form">
-            <ion-label stacked>Password</ion-label>
+            <ion-label class="titlelab" stacked>Password</ion-label>
             <ion-input type="password" [(ngModel)]="password"></ion-input>
         </ion-item>
 
-    </ion-list>
+    
     <button ion-button class="btn" (click)="checkAuthentification()">Connexion</button>
     <ion-label class="mdpforgot" (click)="mdpforgot()">Mot de passe oublié ?</ion-label>
     <ion-label class="mdpforgot" (click)="register()">Inscription</ion-label>
