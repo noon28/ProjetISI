@@ -33471,6 +33471,28 @@ page-account .double-input {
   margin-right: auto;
 }
 
+page-forgotpswd .btn {
+  margin-top: 10%;
+  margin-bottom: 10%;
+  background-color: #2ecc71 !important;
+  border-radius: 8px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+page-forgotpswd .input {
+  color: #ecf0f1 !important;
+}
+
+page-forgotpswd .form {
+  background-color: #27AE60;
+}
+
+page-forgotpswd .titlelab {
+  color: white !important;
+}
+
 page-home .toolbar {
   height: 60px;
   border: none;
@@ -33624,5 +33646,23 @@ page-login .input {
 }
 
 page-register .btn {
-  background-color: darkblue !important;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  background-color: #2ecc71 !important;
+  border-radius: 8px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+page-register .input {
+  color: #ecf0f1 !important;
+}
+
+page-register .form {
+  background-color: #27AE60;
+}
+
+page-register .titlelab {
+  color: white !important;
 }

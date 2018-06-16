@@ -1,59 +1,52 @@
 <ion-header>
 
-  <ion-navbar >
+  <ion-navbar>
     <ion-title>Inscription</ion-title>
   </ion-navbar>
 
 </ion-header>
-<ion-content padding>  
-  <ion-list>
-    <ion-item>
-      <ion-label stacked>Nom</ion-label>
-      <ion-input type="text"  [(ngModel)]="nom"></ion-input>
+<ion-content padding style="background-color: #27AE60;">  
+  
+    <ion-item class="form">
+      <ion-label class="titlelab" stacked>Nom</ion-label>
+      <ion-input class="input" type="text"  [(ngModel)]="nom"></ion-input>
     </ion-item>
   
-    <ion-item>
-      <ion-label stacked>Prenom</ion-label>
-      <ion-input type="text"   [(ngModel)]="prenom"></ion-input>
+    <ion-item class="form">
+      <ion-label class="titlelab" stacked>Prenom</ion-label>
+      <ion-input class="input" type="text"   [(ngModel)]="prenom"></ion-input>
     </ion-item>
     
-    <ion-item>
-      <ion-label stacked>Login</ion-label>
-      <ion-input type="text"  [(ngModel)]="login"></ion-input>
+    <ion-item class="form">
+      <ion-label class="titlelab" stacked>Login</ion-label>
+      <ion-input class="input" type="text"  [(ngModel)]="login"></ion-input>
     </ion-item>
     
-    <ion-item>
-      <ion-label stacked>Mot de Passe</ion-label>
-      <ion-input  type="password"  [(ngModel)]="mdp"></ion-input>
+    <ion-item class="form">
+      <ion-label  class="titlelab" stacked>Mot de Passe</ion-label>
+      <ion-input class="input" type="password"  [(ngModel)]="mdp"></ion-input>
     </ion-item>
     
-    <ion-item>
-      <ion-label stacked>Email</ion-label>
-      <ion-input type="email"  [(ngModel)]="email"></ion-input>
+    <ion-item class="form">
+      <ion-label class="titlelab" stacked>Email</ion-label>
+      <ion-input class="input" type="email"  [(ngModel)]="email"></ion-input>
     </ion-item>
     
-    <ion-item>
-      <ion-label stacked>Adresse</ion-label>
-      <ion-input type="text"  [(ngModel)]="adresse"></ion-input>
+    <ion-item class="form">
+      <ion-label  class="titlelab" stacked>Adresse</ion-label>
+      <ion-input class="input" type="text"  [(ngModel)]="adresse"></ion-input>
     </ion-item>
     
-    <ion-item>
-      <ion-label stacked>Code Postal</ion-label>
-      <ion-input type="number"  [(ngModel)]="cp" ></ion-input>
+    <ion-item class="form">
+      <ion-label class="titlelab" stacked>Code Postal</ion-label>
+      <ion-input class="input" type="number"  [(ngModel)]="cp" ></ion-input>
     </ion-item>
     
-    <ion-item>
-      <ion-label stacked>Ville</ion-label>
-      <ion-input type="text"  [(ngModel)]="ville"></ion-input>
+    <ion-item class="form">
+      <ion-label class="titlelab" stacked>Ville</ion-label>
+      <ion-input class="input" type="text"  [(ngModel)]="ville"></ion-input>
     </ion-item>
 
-  </ion-list>
+  
   <button ion-button class="btn" (click)="checkInputEmpty()">Inscription</button>
-
 </ion-content>
-<ion-footer>
-  <ion-toolbar>
-    <ion-title align='center'>Le bon coin </ion-title>
-    <ion-icon name="mail"></ion-icon>
-  </ion-toolbar>
-</ion-footer>
