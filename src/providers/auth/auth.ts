@@ -9,7 +9,7 @@ import { SelectPopover } from 'ionic-angular';
 @Injectable()
 export class AuthProvider {
   user:any = {};
-
+  userConnect:any;
   constructor(public http: Http) {
     
     console.log('Hello AuthProvider Provider');
@@ -32,13 +32,15 @@ export class AuthProvider {
      
       if((email == jsonUser.users[k].MAIL && md5password==jsonUser.users[k].MDP)){
         console.log("auth OK" )
+        this.userConnect = jsonUser.users[k];
+        console.log(this.userConnect);
         test=true;
       }
       else{
         console.log("auth KO ")
       }
     }  
-    return test;
+    return this.userConnect;
   }
  
 

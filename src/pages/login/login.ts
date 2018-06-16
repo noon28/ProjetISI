@@ -16,10 +16,10 @@ import { AuthProvider } from '../../providers/auth/auth';
   templateUrl: 'login.html',
 })
 export class LoginPage {
-
+  
   email : String;
   password : String;
-
+  
   constructor(public navCtrl: NavController, public navParams: NavParams, public auth : AuthProvider,public alertCtrl:AlertController ) {
   }
 
@@ -28,8 +28,9 @@ export class LoginPage {
   }
 
   checkAuthentification(){
-    if(this.auth.checkAuth(this.email, this.password)){
-      this.navCtrl.setRoot(HomePage,);
+      var userConnect=this.auth.checkAuth(this.email, this.password);
+    if(userConnect!=null){
+      this.navCtrl.setRoot(HomePage,{userCo: userConnect});
     }
     else{
       this.AlertFailedAuth()
