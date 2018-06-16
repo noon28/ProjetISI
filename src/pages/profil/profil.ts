@@ -19,7 +19,8 @@ export class ProfilPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     // receive the data send by other pages
-    this.userConnect= navParams.get('UserCo');
+    this.userConnect= navParams.get('userCo');
+    console.log(this.userConnect)
   }
 
   ionViewDidLoad() {
