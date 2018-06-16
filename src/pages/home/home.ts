@@ -1,6 +1,6 @@
 import { AnnonceProvider } from './../../providers/annonce/annonce';
 import { Component } from '@angular/core';
-import { NavController,NavParams } from 'ionic-angular';
+import { NavController,NavParams, MenuController } from 'ionic-angular';
 import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
 
 // PAGES
@@ -37,10 +37,15 @@ export class HomePage {
   userConnect : any;
   searchMenuVisible = 'invisible';
 
-  constructor(public navCtrl: NavController ,  public annonceP : AnnonceProvider,public navParams: NavParams ) {
+  constructor(public navCtrl: NavController ,  public annonceP : AnnonceProvider,public navParams: NavParams, public menu: MenuController ) {
     this.annonceP.getHttpAnnonce();
     this.userConnect= navParams.get('userCo');
   }
+
+  ionViewWillEnter(){
+      this.menu.enable(false, 'Menu');
+  }
+
   useAnnonce(){
     this.annonceP.useAnnonces();
   }

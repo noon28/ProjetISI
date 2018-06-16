@@ -1,38 +1,49 @@
-    page-login {
+page-login {
+    
+    .btn {
+        margin-top: 10%;
+        background-color: #2ecc71 !important;
+        border-radius: 8px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
         
-        .btn {
-            margin-top: 10%;
-            background-color: #2ecc71 !important;
-            border-radius: 8px;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            
-        }
-        .logo{
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .mdpforgot{
-            font-size:9px;
-            color: white;
-            margin-top: 5%;
-        }
-        .inscription{
-            font-size:10px;
-            margin-left: 80%;
-            display: block;
-            color: white;
-            margin-top: 5%;
-        }
-        .form{
-            background-color: #27AE60;
-        }
-        .titlelab{
-            color:white !important;
-        }
-        .input{
-            color:#ecf0f1 !important;
-        }
     }
+    .logo{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .mdpforgot{
+        font-size:9px;
+        color: white;
+        margin-top: 5%;
+    }
+    .inscription{
+        font-size:10px;
+        margin-left: 80%;
+        display: block;
+        color: white;
+        margin-top: 5%;
+    }
+    .form{
+        background-color: #27AE60;
+    }
+    .titlelab{
+        color:white !important;
+    }
+    .input{
+        color:#ecf0f1 !important;
+    }
+
+    .btn-insc {
+        position: absolute;
+        left: 10%;
+    }
+
+    .btn-mdp {
+        position: absolute;
+        
+        right: 10px;
+    }
+}

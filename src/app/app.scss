@@ -23,6 +23,10 @@
     src: url('../assets/fonts/arlrdbd.ttf');
 }
 
+* {
+    font-family: "Arial Rounded MT Bold";
+}
+
 .side-menu{
     background-color: #2ecc71;
 }
@@ -61,3 +65,27 @@
 .no-scroll .scroll-content{
     overflow: hidden;
 }
+
+.toolbar{
+    height: 60px;
+    border: none;
+}
+
+.toolbar-background{
+    background-color: #27AE60 !important;
+    border: none !important;
+}
+
+.toolbar-title{
+    color: white !important;
+    font-family: "Arial Rounded MT Bold";
+    font-size: 17px;
+}
+
+.back-button{
+    color: #2ecc71 !important;
+    font-family: "Arial Rounded MT Bold";
+    font-size: 15px;
+}
+
+

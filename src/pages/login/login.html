@@ -1,5 +1,5 @@
-<ion-content padding style="background-color: #27AE60;">
-    <img  class="logo" align ='center' src="../../assets/imgs/pyramide.png" width="150px" />
+<ion-content padding style="background-color: #27AE60;" class="no-scroll">
+    <img  class="logo" align ='center' src="assets/imgs/logo-login.png" width="220px" />
     
         
 
@@ -13,9 +13,10 @@
             <ion-input class="input" type="password" [(ngModel)]="password"></ion-input>
         </ion-item>
 
-    
+    <ion-label class="btn-mdp mdpforgot" (click)="mdpforgot()">Mot de passe oublié ?</ion-label>
+    <ion-label class="btn-insc mdpforgot" (click)="register()">Inscription</ion-label>
+    <br/>
     <button ion-button class="btn" (click)="checkAuthentification()">Connexion</button>
-    <ion-label class="mdpforgot" (click)="mdpforgot()">Mot de passe oublié ?</ion-label>
-    <ion-label class="mdpforgot" (click)="register()">Inscription</ion-label>
+    
     
 </ion-content>

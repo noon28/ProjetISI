@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams,AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,AlertController, MenuController } from 'ionic-angular';
 
 // PAGES
 import { HomePage } from '../home/home';
@@ -21,11 +21,15 @@ export class LoginPage {
   email : String;
   password : String;
   
-  constructor(public navCtrl: NavController, public navParams: NavParams, public auth : AuthProvider,public alertCtrl:AlertController ) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public auth : AuthProvider,public alertCtrl:AlertController, public menu: MenuController ) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
+  }
+
+  ionViewWillEnter(){
+      this.menu.enable(false, 'Menu');
   }
 
   checkAuthentification(){

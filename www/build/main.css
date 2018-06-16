@@ -33359,6 +33359,10 @@ ion-navbar.toolbar {
   src: url("../assets/fonts/arlrdbd.ttf");
 }
 
+* {
+  font-family: "Arial Rounded MT Bold";
+}
+
 .side-menu {
   background-color: #2ecc71;
 }
@@ -33396,6 +33400,28 @@ ion-navbar.toolbar {
 
 .no-scroll .scroll-content {
   overflow: hidden;
+}
+
+.toolbar {
+  height: 60px;
+  border: none;
+}
+
+.toolbar-background {
+  background-color: #27AE60 !important;
+  border: none !important;
+}
+
+.toolbar-title {
+  color: white !important;
+  font-family: "Arial Rounded MT Bold";
+  font-size: 17px;
+}
+
+.back-button {
+  color: #2ecc71 !important;
+  font-family: "Arial Rounded MT Bold";
+  font-size: 15px;
 }
 
 page-account .toolbar {
@@ -33486,27 +33512,11 @@ page-forgotpswd .input {
 }
 
 page-forgotpswd .form {
-  background-color: #27AE60;
+  background-color: transparent;
 }
 
 page-forgotpswd .titlelab {
   color: white !important;
-}
-
-page-home .toolbar {
-  height: 60px;
-  border: none;
-}
-
-page-home .toolbar-background {
-  background-color: #27AE60 !important;
-  border: none !important;
-}
-
-page-home .toolbar-title {
-  color: white !important;
-  font-family: "Arial Rounded MT Bold";
-  font-size: 17px;
 }
 
 page-home ion-icon {
@@ -33643,6 +33653,16 @@ page-login .titlelab {
 
 page-login .input {
   color: #ecf0f1 !important;
+}
+
+page-login .btn-insc {
+  position: absolute;
+  left: 10%;
+}
+
+page-login .btn-mdp {
+  position: absolute;
+  right: 10px;
 }
 
 page-register .btn {
