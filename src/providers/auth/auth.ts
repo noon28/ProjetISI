@@ -11,6 +11,8 @@ export class AuthProvider {
   user:any = {};
   userConnect:any;
   emailApp:any;
+  userSpec:any={};
+
   constructor(public http: Http) {
     
     console.log('Hello AuthProvider Provider');
@@ -67,7 +69,22 @@ return await this.user;
     this.emailApp=test;
     return this.emailApp;
   }
-  
 
+  async  getHttpUserSpec(id:number){
+    var link = 'http://lebonangle.ddns.net:3000/api/users/'+id;
+    this.http.get(link)
+    .subscribe(res => {
+    this.userSpec = res['_body'];
+    console.log(this.userSpec);
+});
+return await this.user;
+  };
+
+  userSpecif(){
+   var jsonUser;
+   jsonUser=JSON.parse(this.user);
+   console.log(jsonUser); 
+   return jsonUser;
+  }
 
 }
