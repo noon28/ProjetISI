@@ -5,6 +5,10 @@ import { IonicPage, NavController, NavParams,AlertController } from 'ionic-angul
 //PROVIDERS 
 import { RegisterProvider } from './../../providers/register/register';
 
+//PAGES
+import { ProfilPage } from '../profil/profil';
+
+
 /**
  * Generated class for the ProfileditPage page.
  *
@@ -19,6 +23,7 @@ import { RegisterProvider } from './../../providers/register/register';
 })
 export class ProfileditPage {
   userConnect : any;
+  newUserConnect: any;
   people: Array<any>;
   nom : String;
   prenom : String;
@@ -52,13 +57,28 @@ export class ProfileditPage {
       this.mdp=this.userConnect.MDP;
       console.log(this.mdp);
       this.postUpdate();
+
     }
   }
   
   postUpdate(){
 
     this.people=[this.nom,this.prenom,this.login,this.mdp,this.email,this.adresse,this.cp,this.ville];
+    this.newUserConnect = {
+      ID: this.userConnect.ID,
+      NOM : this.nom,
+      PRENOM : this.prenom,
+      LOGIN : this.login,
+      MDP : this.mdp,
+      MAIL : this.email,
+      ADRESSE : this.adresse,
+      CP : this.cp,
+      VILLE : this.ville
+    }
+    console.log(this.newUserConnect);
+    this.navCtrl.setRoot(ProfilPage, {userCo: this.newUserConnect} );
     this.register.updateUser(this.people,this.userConnect.ID);
+
   }
 
   AlertMissing(){

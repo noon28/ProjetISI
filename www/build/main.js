@@ -141,6 +141,7 @@ var ForgotpswdPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_register_register__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__profil_profil__ = __webpack_require__(54);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -154,6 +155,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 //PROVIDERS 
+
+//PAGES
 
 /**
  * Generated class for the ProfileditPage page.
@@ -187,6 +190,19 @@ var ProfileditPage = /** @class */ (function () {
     };
     ProfileditPage.prototype.postUpdate = function () {
         this.people = [this.nom, this.prenom, this.login, this.mdp, this.email, this.adresse, this.cp, this.ville];
+        this.newUserConnect = {
+            ID: this.userConnect.ID,
+            NOM: this.nom,
+            PRENOM: this.prenom,
+            LOGIN: this.login,
+            MDP: this.mdp,
+            MAIL: this.email,
+            ADRESSE: this.adresse,
+            CP: this.cp,
+            VILLE: this.ville
+        };
+        console.log(this.newUserConnect);
+        this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_4__profil_profil__["a" /* ProfilPage */], { userCo: this.newUserConnect });
         this.register.updateUser(this.people, this.userConnect.ID);
     };
     ProfileditPage.prototype.AlertMissing = function () {
@@ -211,9 +227,10 @@ var ProfileditPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({
             selector: 'page-profiledit',template:/*ion-inline-start:"/home/elouen/workspace/ProjetISI/src/pages/profiledit/profiledit.html"*/'<!--\n  Generated template for the ProfileditPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Edition de votre profil</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding style="background-color: #27AE60; ">\n  <div>\n      <ion-item class="form">\n          <ion-label class="titlelab" stacked>Nom</ion-label>\n          <ion-input class="input" type="text"  value=\'{{ userConnect.NOM }}\' [(ngModel)]="nom"></ion-input>\n        </ion-item>\n      \n        <ion-item class="form">\n          <ion-label class="titlelab" stacked>Prenom</ion-label>\n          <ion-input class="input" type="text" value=\'{{ userConnect.PRENOM }}\'  [(ngModel)]="prenom"></ion-input>\n        </ion-item>\n        \n        <ion-item class="form">\n          <ion-label class="titlelab" stacked>Login</ion-label>\n          <ion-input class="input" readonly=true type="text" value=\'{{ userConnect.LOGIN }}\'  [(ngModel)]="login"></ion-input>\n        </ion-item>\n        \n        <ion-item class="form">\n          <ion-label class="titlelab" stacked>Email</ion-label>\n          <ion-input class="input" type="email"  value=\'{{ userConnect.MAIL }}\' [(ngModel)]="email"></ion-input>\n        </ion-item>\n        \n        <ion-item class="form">\n          <ion-label  class="titlelab" stacked>Adresse</ion-label>\n          <ion-input class="input" type="text" value=\'{{ userConnect.ADRESSE }}\' [(ngModel)]="adresse"></ion-input>\n        </ion-item>\n        \n        <ion-item class="form">\n          <ion-label class="titlelab" stacked>Code Postal</ion-label>\n          <ion-input class="input" type="number"  value=\'{{ userConnect.CP }}\' [(ngModel)]="cp" ></ion-input>\n        </ion-item>\n        \n        <ion-item class="form">\n          <ion-label class="titlelab" stacked>Ville</ion-label>\n          <ion-input class="input" type="text" value=\'{{ userConnect.VILLE }}\' [(ngModel)]="ville"></ion-input>\n        </ion-item>\n        <button ion-button  (click)="checkInputEmpty()">Enregister</button>\n  </div>\n  <!--Partie Mot de passe-->\n  <div>\n    <br>\n    <br>\n    <p class="input">Modification Mot de Passe </p>\n    <ion-item class="form">\n        <ion-label  class="titlelab" stacked>Mot de Passe Actuel</ion-label>\n        <ion-input class="input" type="password"  [(ngModel)]="mdp"></ion-input>\n    </ion-item>\n    <ion-item class="form">\n        <ion-label  class="titlelab" stacked>Nouveau Mot de Passe </ion-label>\n        <ion-input class="input" type="password"  [(ngModel)]="mdpnew"></ion-input>\n    </ion-item>\n\n    <button ion-button  (click)="updatePwd()">Valider</button>\n  </div>\n\n</ion-content>\n'/*ion-inline-end:"/home/elouen/workspace/ProjetISI/src/pages/profiledit/profiledit.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_3__providers_register_register__["a" /* RegisterProvider */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__providers_register_register__["a" /* RegisterProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_register_register__["a" /* RegisterProvider */]) === "function" && _d || Object])
     ], ProfileditPage);
     return ProfileditPage;
+    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=profiledit.js.map
