@@ -1,3 +1,25 @@
 page-profil {
+    .titlelab{
+        color:white !important;
+        font-size: 18px;
+        padding-left: 21px;
+    }
 
+    .infoProfil{
+        color:white ;
+        margin: 10px;
+        font-size: 15px;
+        padding-left: 18px;
+        
+    }
+
+    .idUser{
+        color:#ecf0f1 !important;
+        $base-font-size: 18px;
+    }
+
+    .mainDivProfil{
+        background-color: #27AE60;
+        $base-padding: 16px;
+    }
 }

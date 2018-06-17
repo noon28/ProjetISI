@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { ProfileditPage } from '../profiledit/profiledit';
+// PROVIDER
+import { AuthProvider } from '../../providers/auth/auth';
 /**
  * Generated class for the ProfilPage page.
  *
@@ -16,15 +18,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class ProfilPage {
 
   userConnect : any;
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  
+  constructor(public navCtrl: NavController, public navParams: NavParams, public auth : AuthProvider) {
     // receive the data send by other pages
     this.userConnect= navParams.get('userCo');
-    console.log(this.userConnect)
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProfilPage');
+  }
+  edit(){
+    this.navCtrl.push(ProfileditPage,{userCo: this.userConnect});
   }
 
 }

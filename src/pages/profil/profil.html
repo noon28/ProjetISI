@@ -7,17 +7,42 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>profil</ion-title>
+    <ion-title>pssrofil</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-    <div><p>ID user : {{ userConnect.ID }} </p>
-    Name : {{ userConnect.NOM }}
-    <!--Plus qu'a mettre en forme whala  -->
-    </div>
+<ion-content padding class="mainDivProfil">
+    <div>
+      <ion-label class="idUser" >ID user : {{ userConnect.ID }} </ion-label>
+      
+      <ion-label class="titlelab" >Nom</ion-label>
+      <ion-label class="infoProfil" >{{ userConnect.NOM }}</ion-label>
     
-    coucou
-</ion-content>
+      <ion-label class="titlelab" >Prenom</ion-label>
+      <ion-label class="infoProfil" >{{ userConnect.PRENOM }}</ion-label>
+
+      <ion-label class="titlelab" >Login</ion-label>
+      <ion-label class="infoProfil" >{{ userConnect.LOGIN }}</ion-label>
+
+      <ion-label class="titlelab" >Email</ion-label>
+      <ion-label class="infoProfil" >{{ userConnect.MAIL }}</ion-label>
+
+      <ion-label  class="titlelab" >Adresse</ion-label>
+      <ion-label class="infoProfil" >{{ userConnect.ADRESSE }}</ion-label>
+
+      <ion-label class="titlelab" >Code Postal</ion-label>
+      <ion-label class="infoProfil" >{{ userConnect.CP }}</ion-label>
+
+      <ion-label class="titlelab" >Ville</ion-label>
+      <ion-label class="infoProfil" >{{ userConnect.VILLE }}</ion-label>
+
+    </div>
+
+    
+    <div>
+        
+      <button ion-button  (click)="edit()">edit</button>
+    </div>
+  </ion-content>

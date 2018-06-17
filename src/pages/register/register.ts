@@ -29,25 +29,37 @@ export class RegisterPage {
     missingparameter : Boolean; 
     emailAlready : Boolean;
     people: Array<any>;
+    userApp:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, public register : RegisterProvider ) {
-    }
+    this.userApp=navParams.get('userApp');  
+    console.log('userApp : '+this.userApp);
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegisterPage');
   }
   checkInputEmpty(){
     this.missingparameter=false;
-
+    this.emailAlready==false;
     if(this.nom == null ||this.prenom == null||this.email == null||this.login == null||this.mdp == null||this.adresse == null||this.cp == null||this.ville == null){
      this.AlertMissing();
      this.missingparameter=true;
      }
+
     if(!this.missingparameter)
-    {
-      this.registerUser();
+    { 
+      this.CheckEmail(this.email)
+     
+      if(!this.emailAlready)
+        {
+          this.registerUser();
+      }else{
+
+        this.AlertEmailAlready();
+      }
+            
     }
-    
   }
   registerUser(){
     console.log('RegisterAct');
@@ -59,6 +71,8 @@ export class RegisterPage {
     console.log(this.adresse);
     console.log(this.cp);
     console.log(this.ville);
+    
+
     this.people=[this.nom,this.prenom,this.login,this.mdp,this.email,this.adresse,this.cp,this.ville];
     this.register.postUser(this.people);
 
@@ -70,6 +84,7 @@ export class RegisterPage {
     //PoPuP pour confirmer l'inscription et retour à la page de co 
     //this.navCtrl.push(LoginPage);
   }
+
   AlertMissing(){
     let alert = this.alertCtrl.create({
       title: 'Oups ...',
@@ -78,8 +93,15 @@ export class RegisterPage {
     });
     alert.present();
   }
-  CheckEmail(){
-    this.emailAlready=false;
+  CheckEmail(email:String){
+   for(var k in this.userApp) {
+     console.log(email)
+     console.log(this.userApp[k])
+      if(email==this.userApp[k])
+      { 
+        this.emailAlready=true;
+      }
+    }
   }
   AlertEmailAlready(){
     
@@ -98,7 +120,11 @@ export class RegisterPage {
           },
           {
             text:'Cancel',
-            role:'cancel'
+            role:'cancel',
+            handler: data => {
+              this.email='';
+              this.emailAlready=false;
+            }
           }
         ]        
       });

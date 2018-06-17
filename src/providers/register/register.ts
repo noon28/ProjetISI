@@ -23,7 +23,20 @@ export class RegisterProvider {
             console.log("Oooops!");
         });
   }
+  updateUser(tableau : Array<any>,id:number){
+    var jasonprepare ={nom:tableau[0],prenom:tableau[1],login:tableau[2],mdp:tableau[3],mail:tableau[4],adresse:tableau[5],cp:tableau[6],ville :tableau[7]};
+    var link = "http://lebonangle.ddns.net:3000/api/users/"+id;
+    console.log(link);
+    this.http.put(link, jasonprepare)
+        .subscribe(data => {
+            this.data.response = data["_body"];
+            console.log(this.data); 
+        }, error => {
+            console.log("Oooops!");
+        });
+  }
   
+
   
   
 

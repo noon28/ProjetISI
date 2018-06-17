@@ -20,8 +20,10 @@ export class LoginPage {
   
   email : String;
   password : String;
-  
+  userEmail:any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public auth : AuthProvider,public alertCtrl:AlertController, public menu: MenuController ) {
+    
   }
 
   ionViewDidLoad() {
@@ -33,7 +35,14 @@ export class LoginPage {
   }
 
   checkAuthentification(){
-      var userConnect=this.auth.checkAuth(this.email, this.password);
+      var userConnect;
+      if((this.email==null)||(this.password==null)){
+        this.AlertFailedAuth();
+      }
+      else{
+        userConnect=this.auth.checkAuth(this.email, this.password);
+      }
+      
     if(userConnect!=null){
       // send data to other pages
       this.navCtrl.setRoot(HomePage,{userCo: userConnect});
@@ -54,8 +63,9 @@ export class LoginPage {
     this.navCtrl.push(ForgotpswdPage);
   }
   register(){
+    this.userEmail=this.auth.userMail();
     console.log("Inscription");
-    this.navCtrl.push(RegisterPage);
+    this.navCtrl.push(RegisterPage,{userApp:this.userEmail});
     //this.navCtrl.setRoot(RegisterPage);
   }
   AlertFailedAuth(){
