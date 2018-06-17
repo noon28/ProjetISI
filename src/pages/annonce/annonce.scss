@@ -1,0 +1,84 @@
+page-annonce {
+    img{
+        width: 100%;
+    }
+
+    .title-annonce{
+        background-color: #27AE60;
+        margin: 0;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 18px;
+        color: #fff;
+        padding-left: 15px;
+        box-shadow: inset 0px 10px 10px rgba(39,174,96,.5);
+    }
+
+    .prix{
+        text-align: right;
+        color: #27AE60;
+        font-size: 20px;
+    }
+
+    .desc{
+        padding: 10px;
+        color: #777;
+    }
+
+    .logo{
+        color: #27AE60;
+        padding-right: 10px;
+        vertical-align: top;
+    }
+
+    .text-logo{
+        color: #27AE60;
+        padding-right: 10px;
+    }
+
+    .cp-rel{
+        position: relative;
+        margin : 0;
+        bottom: 35px;
+        left: 10px; 
+        background-color: rgba(0,0,0, 0.5);
+        border-radius: 5px;
+        padding: 4px;
+        color: #fff;
+    }
+
+    .cp-abs{
+        position:absolute;
+    }
+
+    .date{
+        text-align: right;
+        color: #CCC;
+    }
+
+    .fav-ajouter{
+        background-color: #27AE60;
+        margin: 0;
+    }
+
+    .fav-ajouter:hover{
+        background-color: #27AE60;
+    }
+
+    .fav-ajouter:active{
+        background-color: rgb(29, 126, 69);
+    }
+
+    .fav-retirer{
+        background-color: #f53d3d;
+        margin: 0;
+    }
+
+    .fav-retirer:hover{
+        background-color: #f53d3d;
+    }
+
+    .fav-retirer:active{
+        background-color: #b92f2f;
+    }
+}

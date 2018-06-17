@@ -33424,77 +33424,118 @@ ion-navbar.toolbar {
   font-size: 15px;
 }
 
-page-account .toolbar {
-  height: 60px;
-  border: none;
+page-annonce img {
+  width: 100%;
 }
 
-page-account .toolbar-background {
-  background-color: #27AE60 !important;
-  border: none !important;
+page-annonce .title-annonce {
+  background-color: #27AE60;
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 18px;
+  color: #fff;
+  padding-left: 15px;
+  -webkit-box-shadow: inset 0px 10px 10px rgba(39, 174, 96, 0.5);
+  box-shadow: inset 0px 10px 10px rgba(39, 174, 96, 0.5);
 }
 
-page-account .toolbar-title {
-  color: white !important;
-  font-family: "Arial Rounded MT Bold";
-  font-size: 17px;
+page-annonce .prix {
+  text-align: right;
+  color: #27AE60;
+  font-size: 20px;
 }
 
-page-account ion-icon {
-  color: white !important;
+page-annonce .desc {
+  padding: 10px;
+  color: #777;
 }
 
-page-account .left-button {
+page-annonce .logo {
+  color: #27AE60;
+  padding-right: 10px;
+  vertical-align: top;
+}
+
+page-annonce .text-logo {
+  color: #27AE60;
   padding-right: 10px;
 }
 
-page-account .search-menu {
-  background-color: #2ecc71;
-  height: 300px;
-  width: 100%;
-  -webkit-box-shadow: inset 0px 10px 10px rgba(39, 174, 96, 0.5);
-  box-shadow: inset 0px 10px 10px rgba(39, 174, 96, 0.5);
-  border: none;
-}
-
-page-account .input-ville-cp {
-  width: 95%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-page-account .input-search-menu {
-  -webkit-box-shadow: inset 0px 1px 5px rgba(51, 51, 51, 0.26);
-  box-shadow: inset 0px 1px 5px rgba(51, 51, 51, 0.26);
-  background-color: white;
+page-annonce .cp-rel {
+  position: relative;
+  margin: 0;
+  bottom: 35px;
+  left: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
   border-radius: 5px;
-}
-
-page-account .input-search-menu .text-input {
-  padding-left: 10px;
-}
-
-page-account .input-short {
-  width: 40%;
-  margin-right: auto;
-  display: inline-block;
-}
-
-page-account .input-left {
-  margin-left: 5.5%;
-}
-
-page-account .dash {
-  margin-left: 2.3%;
-  margin-right: 2.3%;
+  padding: 4px;
   color: #fff;
-  font-weight: 700;
-  font-size: 15px;
 }
 
-page-account .double-input {
-  margin-left: auto;
-  margin-right: auto;
+page-annonce .cp-abs {
+  position: absolute;
+}
+
+page-annonce .date {
+  text-align: right;
+  color: #CCC;
+}
+
+page-annonce .fav-ajouter {
+  background-color: #27AE60;
+  margin: 0;
+}
+
+page-annonce .fav-ajouter:hover {
+  background-color: #27AE60;
+}
+
+page-annonce .fav-ajouter:active {
+  background-color: #1d7e45;
+}
+
+page-annonce .fav-retirer {
+  background-color: #f53d3d;
+  margin: 0;
+}
+
+page-annonce .fav-retirer:hover {
+  background-color: #f53d3d;
+}
+
+page-annonce .fav-retirer:active {
+  background-color: #b92f2f;
+}
+
+page-favori ion-icon {
+  color: white !important;
+}
+
+page-favori ion-card-content {
+  background-color: #2ecc71;
+}
+
+page-favori .cp-rel {
+  position: relative;
+  margin: 0;
+  bottom: 50px;
+  right: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  padding: 4px;
+  color: #fff;
+}
+
+page-favori .cp-abs {
+  position: absolute;
+}
+
+page-favori .prix-rel {
+  text-align: right;
+  margin: 0;
+  font-size: 20px;
+  color: #fff;
 }
 
 page-forgotpswd .btn {

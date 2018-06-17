@@ -4,7 +4,7 @@ import { NavController,NavParams, MenuController } from 'ionic-angular';
 import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
 
 // PAGES
-import { FavoriPage } from '../favori/favori';
+import { AnnoncePage } from '../annonce/annonce';
 
 
 @Component({
@@ -92,6 +92,10 @@ export class HomePage {
 
   checkFiltre(){
     return this.ville_cp != null || this.loyer_min != null || this.loyer_max != null || this.surf_max != null || this.surf_min != null|| this.piece_min != null || this.piece_max != null || this.maison || this.terrain || this.parking || this.appart || this.autre ;
+  }
+
+  detailAnnonce(a : any){
+    this.navCtrl.push(AnnoncePage, {"annonce": a, "comeFrom": "home"})
   }
 
 

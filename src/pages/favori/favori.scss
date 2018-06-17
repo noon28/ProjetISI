@@ -1,3 +1,31 @@
 page-favori {
+    ion-icon{
+        color: white !important;
+    }
 
+    ion-card-content{
+        background-color: #2ecc71;
+    }
+
+    .cp-rel{
+        position: relative;
+        margin : 0;
+        bottom: 50px;
+        right: 5px; 
+        background-color: rgba(0,0,0, 0.5);
+        border-radius: 5px;
+        padding: 4px;
+        color: #fff;
+    }
+
+    .cp-abs{
+        position:absolute;
+    }
+
+    .prix-rel{
+        text-align: right;
+        margin: 0;
+        font-size: 20px;
+        color: #fff;
+    }
 }

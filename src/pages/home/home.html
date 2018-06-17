@@ -13,7 +13,7 @@
       <div class="left-button">
         <ion-buttons end>
           <button (click)="toggleSearchMenu()" ion-button icon-only>
-            <ion-icon name="search"></ion-icon>
+            <ion-icon name="ios-funnel"></ion-icon>
           </button>
         </ion-buttons>
       </div>
@@ -71,38 +71,42 @@
     </div>
     <div>
       <div *ngIf="flitre">
-        <ion-card *ngFor="let a of data">
-          <img *ngIf="a.image == ''" src="assets/imgs/noImage.jpg"/>
-          <img *ngIf="a.image != null" src="{{ a.image }}"/>
-          <ion-card-content>
-              <span class="cp-abs"><ion-label class="cp-rel">{{ a.CP }} - {{ a.VILLE }}</ion-label></span>
-            <ion-card-title >
-              {{ (a.TITRE.length>50)? (a.TITRE | slice:0:50)+'..':(a.TITRE) }}
-            </ion-card-title>
-            <p>
-              {{ (a.DESCRIPTION.length>100)? (a.DESCRIPTION | slice:0:100)+'..':(a.DESCRIPTION) }}
-            </p>
-            <!-- <ion-label class="">{{ (a.DATE_EN | slice:8:10) }}-{{ (a.DATE_EN | slice:5:7) }}-{{ (a.DATE_EN | slice:0:4)}}</ion-label> -->
-            <ion-label class="prix-rel">{{ a.PRIX }} €</ion-label>
-          </ion-card-content>
-        </ion-card>
+        <div *ngFor="let a of data">
+          <ion-card (click)="detailAnnonce(a)">
+            <img *ngIf="a.image == ''" src="assets/imgs/noImage.jpg"/>
+            <img *ngIf="a.image != null" src="{{ a.image }}"/>
+            <ion-card-content>
+                <span class="cp-abs"><ion-label class="cp-rel">{{ a.CP }} - {{ a.VILLE }}</ion-label></span>
+              <ion-card-title >
+                {{ (a.TITRE.length>50)? (a.TITRE | slice:0:50)+'..':(a.TITRE) }}
+              </ion-card-title>
+              <p>
+                {{ (a.DESCRIPTION.length>100)? (a.DESCRIPTION | slice:0:100)+'..':(a.DESCRIPTION) }}
+              </p>
+              <!-- <ion-label class="">{{ (a.DATE_EN | slice:8:10) }}-{{ (a.DATE_EN | slice:5:7) }}-{{ (a.DATE_EN | slice:0:4)}}</ion-label> -->
+              <ion-label class="prix-rel">{{ a.PRIX }} €</ion-label>
+            </ion-card-content>
+          </ion-card>
+        </div>
       </div>
       <div *ngIf="!flitre">
-        <ion-card *ngFor="let a of annonces">
-          <img *ngIf="a.image == ''" src="assets/imgs/noImage.jpg"/>
-          <img *ngIf="a.image != null" src="{{ a.image }}"/>
-          <ion-card-content>
-              <span class="cp-abs"><ion-label class="cp-rel">{{ a.CP }} - {{ a.VILLE }}</ion-label></span>
-            <ion-card-title >
-              {{ (a.TITRE.length>50)? (a.TITRE | slice:0:50)+'..':(a.TITRE) }}
-            </ion-card-title>
-            <p>
-              {{ (a.DESCRIPTION.length>100)? (a.DESCRIPTION | slice:0:100)+'..':(a.DESCRIPTION) }}
-            </p>
-            <!-- <ion-label class="">{{ (a.DATE_EN | slice:8:10) }}-{{ (a.DATE_EN | slice:5:7) }}-{{ (a.DATE_EN | slice:0:4)}}</ion-label> -->
-            <ion-label class="prix-rel">{{ a.PRIX }} €</ion-label>
-          </ion-card-content>
-        </ion-card>
+        <div *ngFor="let a of annonces">
+          <ion-card (click)="detailAnnonce(a)">
+            <img *ngIf="a.image == ''" src="assets/imgs/noImage.jpg"/>
+            <img *ngIf="a.image != null" src="{{ a.image }}"/>
+            <ion-card-content>
+                <span class="cp-abs"><ion-label class="cp-rel">{{ a.CP }} - {{ a.VILLE }}</ion-label></span>
+              <ion-card-title >
+                {{ (a.TITRE.length>50)? (a.TITRE | slice:0:50)+'..':(a.TITRE) }}
+              </ion-card-title>
+              <p>
+                {{ (a.DESCRIPTION.length>100)? (a.DESCRIPTION | slice:0:100)+'..':(a.DESCRIPTION) }}
+              </p>
+              <!-- <ion-label class="">{{ (a.DATE_EN | slice:8:10) }}-{{ (a.DATE_EN | slice:5:7) }}-{{ (a.DATE_EN | slice:0:4)}}</ion-label> -->
+              <ion-label class="prix-rel">{{ a.PRIX }} €</ion-label>
+            </ion-card-content>
+          </ion-card>
+        </div>
       </div>
     </div>
 

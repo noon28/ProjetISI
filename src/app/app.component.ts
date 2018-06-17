@@ -8,9 +8,7 @@ import { LoginPage } from '../pages/login/login';
 import { HomePage } from '../pages/home/home';
 import { FavoriPage } from '../pages/favori/favori';
 import { ProfilPage } from '../pages/profil/profil';
-import { RegisterPage } from '../pages/register/register';
-import {ForgotpswdPage} from '../pages/forgotpswd/forgotpswd';
-import { AccountPage } from './../pages/account/account';
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -28,8 +26,7 @@ export class MyApp {
     this.pages = [
       { title: 'Annonces Immobilières', component: HomePage, icon: 'md-home', color: ''},
       { title: 'Favoris', component: FavoriPage, icon: 'star', color: ''},
-      { title: 'Profil', component: ProfilPage, icon: 'md-contact', color: ''},
-      { title: 'Account', component: AccountPage, icon: 'md-contact', color: ''}
+      { title: 'Profil', component: ProfilPage, icon: 'md-contact', color: ''}
     ];
 
   }

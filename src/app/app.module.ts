@@ -16,8 +16,8 @@ import { ProfilPage } from '../pages/profil/profil';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from './../pages/register/register';
 import { ForgotpswdPage } from './../pages/forgotpswd/forgotpswd';
-import { AccountPage } from './../pages/account/account';
 import { ProfileditPage } from './../pages/profiledit/profiledit';
+import { AnnoncePage } from '../pages/annonce/annonce';
 
 // PROVIDER
 import { AuthProvider } from '../providers/auth/auth';
@@ -35,8 +35,8 @@ import { AnnonceProvider } from '../providers/annonce/annonce';
     ForgotpswdPage,
     FavoriPage,
     ProfilPage,
-    AccountPage,
-    ProfileditPage
+    ProfileditPage,
+    AnnoncePage
   ],
   imports: [
     BrowserModule,
@@ -53,8 +53,8 @@ import { AnnonceProvider } from '../providers/annonce/annonce';
     ForgotpswdPage,
     FavoriPage,
     ProfilPage,
-    AccountPage,
-    ProfileditPage
+    ProfileditPage,
+    AnnoncePage
   ],
   providers: [
     StatusBar,

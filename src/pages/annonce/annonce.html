@@ -1,0 +1,62 @@
+<ion-header>
+    <ion-navbar>
+  
+      <!-- CENTER SIDE -->
+      <ion-title>Annonce</ion-title>
+
+      <!-- RIGHT SIDE -->
+      <a href="{{ link }}">
+        <ion-buttons end>
+          <button ion-button icon-only>
+            <ion-icon name="md-open" style="color: #FFF; padding-right: 10px;"></ion-icon>
+          </button>
+        </ion-buttons>
+      </a>
+      
+    </ion-navbar>
+  </ion-header>
+
+<ion-content>
+    <ion-card>
+      <div class="title-annonce">{{ titre }}</div>
+      <img *ngIf="!imageDispo" src="assets/imgs/noImage.jpg"/>
+      <img *ngIf="imageDispo" src="{{ annonce.image }}"/>
+      <span class="cp-abs"><ion-label class="cp-rel">{{ cp }} - {{ ville }}</ion-label></span>
+      <ion-item class="prix">{{ prix }}€ TTC</ion-item>
+      <div class="desc">{{ desc }}</div>
+      <ion-item>
+        <ion-icon name="md-home" class="logo"></ion-icon><span class="text-logo">Type de bien </span>
+        {{ type }} 
+      </ion-item>
+      <ion-item>
+        <ion-icon name="md-resize" class="logo"></ion-icon><span class="text-logo">Superficie </span>
+        {{ superficie }} m2
+      </ion-item>
+      <ion-item>
+        <ion-icon name="md-map" class="logo"></ion-icon><span class="text-logo">Nombre de Pièce(s) </span>
+        {{ nbpiece }}
+      </ion-item>
+      <ion-item>
+        <ion-icon name="md-cube" class="logo"></ion-icon><span class="text-logo">Meublé ? </span>
+        {{ meuble }} 
+      </ion-item>
+      <ion-item>
+        <ion-icon name="md-key" class="logo"></ion-icon><span class="text-logo">Location ? </span>
+        {{ location }}
+      </ion-item>
+      <ion-item class="date">{{ (date | slice:8:10) }}-{{ (date | slice:5:7) }}-{{ (date | slice:0:4)}}</ion-item>
+      <div *ngIf="comeFrom == 'home'">
+          <button ion-button icon-start full class="fav-ajouter" (click)="ajouterFav()">
+            <ion-icon name="md-heart"></ion-icon>
+            Mettre en Favori
+          </button>
+      </div>
+      <div *ngIf="comeFrom == 'favori'">
+          <button ion-button icon-start full class="fav-retirer" (click)="retirerFav()">
+            <ion-icon name="md-close"></ion-icon>
+            Retirer des Favoris
+          </button>
+        </div>
+    </ion-card>
+    
+</ion-content>

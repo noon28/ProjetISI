@@ -1,18 +1,54 @@
-<!--
-  Generated template for the FavoriPage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
   <ion-navbar>
-    <ion-title>favori</ion-title>
+    <!-- LEFT SIDE -->
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <!-- CENTER SIDE -->
+    <ion-title>Favori</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-  {{ data }}
+<ion-content>
+    <div>
+      <div *ngIf="flitre">
+        <div *ngFor="let a of data">
+          <ion-card (click)="detailAnnonce(a)">
+            <img *ngIf="a.image == ''" src="assets/imgs/noImage.jpg"/>
+            <img *ngIf="a.image != null" src="{{ a.image }}"/>
+            <ion-card-content>
+                <span class="cp-abs"><ion-label class="cp-rel">{{ a.CP }} - {{ a.VILLE }}</ion-label></span>
+              <ion-card-title >
+                {{ (a.TITRE.length>50)? (a.TITRE | slice:0:50)+'..':(a.TITRE) }}
+              </ion-card-title>
+              <p>
+                {{ (a.DESCRIPTION.length>100)? (a.DESCRIPTION | slice:0:100)+'..':(a.DESCRIPTION) }}
+              </p>
+              <ion-label class="prix-rel">{{ a.PRIX }} €</ion-label>
+            </ion-card-content>
+          </ion-card>
+        </div>
+      </div>
+      <div *ngIf="!flitre">
+        <div *ngFor="let a of annonces">
+          <ion-card (click)="detailAnnonce(a)">
+            <img *ngIf="a.image == ''" src="assets/imgs/noImage.jpg"/>
+            <img *ngIf="a.image != null" src="{{ a.image }}"/>
+            <ion-card-content>
+                <span class="cp-abs"><ion-label class="cp-rel">{{ a.CP }} - {{ a.VILLE }}</ion-label></span>
+              <ion-card-title >
+                {{ (a.TITRE.length>50)? (a.TITRE | slice:0:50)+'..':(a.TITRE) }}
+              </ion-card-title>
+              <p>
+                {{ (a.DESCRIPTION.length>100)? (a.DESCRIPTION | slice:0:100)+'..':(a.DESCRIPTION) }}
+              </p>
+              <ion-label class="prix-rel">{{ a.PRIX }} €</ion-label>
+            </ion-card-content>
+          </ion-card>
+        </div>
+      </div>
+    </div>
 </ion-content>
