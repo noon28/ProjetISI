@@ -33665,6 +33665,28 @@ page-login .btn-mdp {
   right: 10px;
 }
 
+page-profiledit .btn {
+  margin-top: 10%;
+  margin-bottom: 10%;
+  background-color: #2ecc71 !important;
+  border-radius: 8px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+page-profiledit .input {
+  color: #ecf0f1 !important;
+}
+
+page-profiledit .form {
+  background-color: #27AE60;
+}
+
+page-profiledit .titlelab {
+  color: white !important;
+}
+
 page-register .btn {
   margin-top: 10%;
   margin-bottom: 10%;

@@ -28,7 +28,7 @@ export class ProfilPage {
     console.log('ionViewDidLoad ProfilPage');
   }
   edit(){
-    this.navCtrl.push(ProfileditPage);
+    this.navCtrl.push(ProfileditPage,{userCo: this.userConnect});
   }
 
 }
