@@ -33529,7 +33529,7 @@ page-home .left-button {
 
 page-home .search-menu {
   z-index: 999;
-  position: absolute;
+  position: fixed;
   background-color: #2ecc71;
   height: 500px;
   width: 100%;
@@ -33612,6 +33612,40 @@ page-home .rechercher {
   bottom: 15px;
   height: 40px;
   font-weight: 600;
+}
+
+page-home .vider {
+  position: absolute;
+  bottom: 15px;
+  height: 40px;
+  left: 20px;
+  font-weight: 600;
+}
+
+page-home ion-card-content {
+  background-color: #2ecc71;
+}
+
+page-home .cp-rel {
+  position: relative;
+  margin: 0;
+  bottom: 50px;
+  right: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  padding: 4px;
+  color: #fff;
+}
+
+page-home .cp-abs {
+  position: absolute;
+}
+
+page-home .prix-rel {
+  text-align: right;
+  margin: 0;
+  font-size: 20px;
+  color: #fff;
 }
 
 page-login .btn {

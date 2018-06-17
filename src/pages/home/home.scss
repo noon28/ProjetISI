@@ -10,7 +10,7 @@ page-home {
 
     .search-menu{
         z-index: 999;
-        position: absolute;
+        position: fixed;
         background-color: #2ecc71;
         height: 500px;
         width: 100%;
@@ -92,4 +92,37 @@ page-home {
         font-weight: 600;
     }
 
+    .vider{
+        position: absolute;
+        bottom: 15px;
+        height: 40px;
+        left: 20px;
+        font-weight: 600;
+    }
+
+    ion-card-content{
+        background-color: #2ecc71;
+    }
+
+    .cp-rel{
+        position: relative;
+        margin : 0;
+        bottom: 50px;
+        right: 5px; 
+        background-color: rgba(0,0,0, 0.5);
+        border-radius: 5px;
+        padding: 4px;
+        color: #fff;
+    }
+
+    .cp-abs{
+        position:absolute;
+    }
+
+    .prix-rel{
+        text-align: right;
+        margin: 0;
+        font-size: 20px;
+        color: #fff;
+    }
 }

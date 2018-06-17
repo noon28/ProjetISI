@@ -21,56 +21,90 @@
     </ion-navbar>
   </ion-header>
   
-  <ion-content class="no-scroll">
+  <ion-content >
     <div class="search-menu" [@myvisibility]="searchMenuVisible">
       <br/>
-      <ion-input class="input-search-menu input-ville-cp" type="text" placeholder="Ville ou code postal" ></ion-input>
+      <ion-input class="input-search-menu input-ville-cp" type="text" placeholder="Ville ou code postal" [(ngModel)]="ville_cp"></ion-input>
       <br/>
       <div class="double-input">
-        <ion-input class="input-search-menu input-short input-left" type="text" placeholder="Loyer Min" ></ion-input>
+        <ion-input class="input-search-menu input-short input-left" type="text" placeholder="Loyer Min" [(ngModel)]="loyer_min"></ion-input>
         <span class="dash">-</span>
-        <ion-input class="input-search-menu input-short input-right" type="text" placeholder="Loyer Max" ></ion-input>
+        <ion-input class="input-search-menu input-short input-right" type="text" placeholder="Loyer Max" [(ngModel)]="loyer_max"></ion-input>
       </div>
       <br/>
       <div class="double-input">
-        <ion-input class="input-search-menu input-short input-left" type="text" placeholder="Surface Min" ></ion-input>
+        <ion-input class="input-search-menu input-short input-left" type="text" placeholder="Surface Min" [(ngModel)]="surf_min"></ion-input>
         <span class="dash">-</span>
-        <ion-input class="input-search-menu input-short input-right" type="text" placeholder="Surface Max" ></ion-input>
+        <ion-input class="input-search-menu input-short input-right" type="text" placeholder="Surface Max" [(ngModel)]="surf_max"></ion-input>
       </div>
       <br/>
       <div class="double-input">
-        <ion-input class="input-search-menu input-short input-left" type="text" placeholder="Pièces Min" ></ion-input>
+        <ion-input class="input-search-menu input-short input-left" type="text" placeholder="Pièces Min" [(ngModel)]="piece_min"></ion-input>
         <span class="dash">-</span>
-        <ion-input class="input-search-menu input-short input-right" type="text" placeholder="Pièces Max" ></ion-input>
+        <ion-input class="input-search-menu input-short input-right" type="text" placeholder="Pièces Max" [(ngModel)]="piece_max"></ion-input>
       </div>
       <div class="content-checkbox">
         <ion-label class="title-checkbox">Type</ion-label>
         <div class="checkbox-div inline-block">
-          <ion-checkbox color="checkbox" checked="false" class=" inline-block"></ion-checkbox>
+          <ion-checkbox color="checkbox" checked="false" class=" inline-block" [(ngModel)]="maison"></ion-checkbox>
           <ion-label class="checkbox-label inline-block">Maison</ion-label>
         </div>
         <div class="checkbox-div inline-block">
-          <ion-checkbox color="checkbox" checked="false" class="inline-block"></ion-checkbox>
+          <ion-checkbox color="checkbox" checked="false" class="inline-block" [(ngModel)]="appart"></ion-checkbox>
           <ion-label class="checkbox-label inline-block">Appartement</ion-label>
         </div>
         <div class="checkbox-div inline-block">
-          <ion-checkbox color="checkbox" checked="false" class="inline-block"></ion-checkbox>
+          <ion-checkbox color="checkbox" checked="false" class="inline-block" [(ngModel)]="terrain"></ion-checkbox>
           <ion-label class="checkbox-label inline-block">Terrain</ion-label>
         </div>
         <div class="checkbox-div inline-block">
-          <ion-checkbox color="checkbox" checked="false" class="inline-block"></ion-checkbox>
+          <ion-checkbox color="checkbox" checked="false" class="inline-block" [(ngModel)]="parking"></ion-checkbox>
           <ion-label class="checkbox-label inline-block">Parking</ion-label>
         </div>
         <div class="checkbox-div inline-block">
-            <ion-checkbox color="checkbox" checked="false" class="inline-block"></ion-checkbox>
+            <ion-checkbox color="checkbox" checked="false" class="inline-block" [(ngModel)]="autre"></ion-checkbox>
             <ion-label class="checkbox-label inline-block">Autre</ion-label>
         </div>
-        <br/>
+        <button color="checkbox" ion-button class="vider" (click)="vider()">Vider</button>
         <button color="checkbox" ion-button class="rechercher" (click)="rechercher()">Rechercher</button>
       </div>
     </div>
-    <ion-input type="text" placeholder="Enter a data to send" [(ngModel)]="dataToSend"></ion-input>
-    <button ion-button color="danger" outline (click)="sendData()">Envoyer des données !</button>
+    <div>
+      <div *ngIf="flitre">
+        <ion-card *ngFor="let a of data">
+          <img *ngIf="a.image == ''" src="assets/imgs/noImage.jpg"/>
+          <img *ngIf="a.image != null" src="{{ a.image }}"/>
+          <ion-card-content>
+              <span class="cp-abs"><ion-label class="cp-rel">{{ a.CP }} - {{ a.VILLE }}</ion-label></span>
+            <ion-card-title >
+              {{ (a.TITRE.length>50)? (a.TITRE | slice:0:50)+'..':(a.TITRE) }}
+            </ion-card-title>
+            <p>
+              {{ (a.DESCRIPTION.length>100)? (a.DESCRIPTION | slice:0:100)+'..':(a.DESCRIPTION) }}
+            </p>
+            <!-- <ion-label class="">{{ (a.DATE_EN | slice:8:10) }}-{{ (a.DATE_EN | slice:5:7) }}-{{ (a.DATE_EN | slice:0:4)}}</ion-label> -->
+            <ion-label class="prix-rel">{{ a.PRIX }} €</ion-label>
+          </ion-card-content>
+        </ion-card>
+      </div>
+      <div *ngIf="!flitre">
+        <ion-card *ngFor="let a of annonces">
+          <img *ngIf="a.image == ''" src="assets/imgs/noImage.jpg"/>
+          <img *ngIf="a.image != null" src="{{ a.image }}"/>
+          <ion-card-content>
+              <span class="cp-abs"><ion-label class="cp-rel">{{ a.CP }} - {{ a.VILLE }}</ion-label></span>
+            <ion-card-title >
+              {{ (a.TITRE.length>50)? (a.TITRE | slice:0:50)+'..':(a.TITRE) }}
+            </ion-card-title>
+            <p>
+              {{ (a.DESCRIPTION.length>100)? (a.DESCRIPTION | slice:0:100)+'..':(a.DESCRIPTION) }}
+            </p>
+            <!-- <ion-label class="">{{ (a.DATE_EN | slice:8:10) }}-{{ (a.DATE_EN | slice:5:7) }}-{{ (a.DATE_EN | slice:0:4)}}</ion-label> -->
+            <ion-label class="prix-rel">{{ a.PRIX }} €</ion-label>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </div>
 
     
   </ion-content>
