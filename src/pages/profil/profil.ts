@@ -22,9 +22,6 @@ export class ProfilPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public auth : AuthProvider) {
     // receive the data send by other pages
     this.userConnect= navParams.get('userCo');
-    this.auth.getHttpUserSpec(this.userConnect.ID);
-    this.userConnect=this.auth.userSpecif();
-    console.log(this.userConnect)
   }
 
   ionViewDidLoad() {

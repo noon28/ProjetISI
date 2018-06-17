@@ -1111,9 +1111,6 @@ var ProfilPage = /** @class */ (function () {
         this.auth = auth;
         // receive the data send by other pages
         this.userConnect = navParams.get('userCo');
-        this.auth.getHttpUserSpec(this.userConnect.ID);
-        this.userConnect = this.auth.userSpecif();
-        console.log(this.userConnect);
     }
     ProfilPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad ProfilPage');
@@ -1428,10 +1425,9 @@ var AuthProvider = /** @class */ (function () {
     };
     AuthProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Http */]) === "function" && _a || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Http */]])
     ], AuthProvider);
     return AuthProvider;
-    var _a;
 }());
 
 //# sourceMappingURL=auth.js.map
