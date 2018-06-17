@@ -33665,6 +33665,27 @@ page-login .btn-mdp {
   right: 10px;
 }
 
+page-profil .titlelab {
+  color: white !important;
+  font-size: 18px;
+  padding-left: 21px;
+}
+
+page-profil .infoProfil {
+  color: white;
+  margin: 10px;
+  font-size: 15px;
+  padding-left: 18px;
+}
+
+page-profil .idUser {
+  color: #ecf0f1 !important;
+}
+
+page-profil .mainDivProfil {
+  background-color: #27AE60;
+}
+
 page-profiledit .btn {
   margin-top: 10%;
   margin-bottom: 10%;
