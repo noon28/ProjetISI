@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ProfileditPage } from '../profiledit/profiledit';
 
 /**
  * Generated class for the ProfilPage page.
@@ -25,6 +26,9 @@ export class ProfilPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProfilPage');
+  }
+  edit(){
+    this.navCtrl.push(ProfileditPage);
   }
 
 }
