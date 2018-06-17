@@ -1,5 +1,9 @@
+import { md5 } from './../../assets/md5';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,AlertController } from 'ionic-angular';
+
+//PROVIDERS 
+import { RegisterProvider } from './../../providers/register/register';
 
 /**
  * Generated class for the ProfileditPage page.
@@ -15,19 +19,21 @@ import { IonicPage, NavController, NavParams,AlertController } from 'ionic-angul
 })
 export class ProfileditPage {
   userConnect : any;
-
+  people: Array<any>;
   nom : String;
   prenom : String;
   login : String;
   mdp : String;
+  mdpnew :String;
   email : String;
   adresse : String;
   cp : Number;
   ville : String;
   missingparameter : Boolean; 
   
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController,public register : RegisterProvider) {
     this.userConnect= navParams.get('userCo');
+    console.log(this.userConnect.MDP);
   }
 
   ionViewDidLoad() {
@@ -43,15 +49,18 @@ export class ProfileditPage {
      }
     if(!this.missingparameter)
     {
-      
+      this.mdp=this.userConnect.MDP;
+      console.log(this.mdp);
       this.postUpdate();
     }
-    
   }
   
   postUpdate(){
 
+    this.people=[this.nom,this.prenom,this.login,this.mdp,this.email,this.adresse,this.cp,this.ville];
+    this.register.updateUser(this.people,this.userConnect.ID);
   }
+
   AlertMissing(){
     let alert = this.alertCtrl.create({
       title: 'Oups ...',
@@ -59,6 +68,16 @@ export class ProfileditPage {
       buttons: ['OK']
     });
     alert.present();
+  }
+  updatePwd(){
+    if(this.mdpnew!=null){
+      if(md5(this.mdp)==this.userConnect.MDP){
+        this.mdp=md5(this.mdpnew);
+        console.log(this.mdp)
+        console.log("this.updatePwd")
+        this.postUpdate();
+      }
+    }
   }
 
 }
