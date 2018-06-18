@@ -15,7 +15,7 @@ import { ProfilPage } from '../pages/profil/profil';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
   
-  rootPage:any = HomePage;
+  rootPage:any = LoginPage;
 
   pages: Array<{title: string, component: any, icon: string, color: string}>;
 
@@ -37,6 +37,7 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      
     });
   }
 

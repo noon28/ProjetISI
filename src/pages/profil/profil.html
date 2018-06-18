@@ -5,17 +5,19 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar>
-    <ion-title>pssrofil</ion-title>
+    <!-- LEFT SIDE -->
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <!-- CENTER SIDE -->
+    <ion-title>Profil</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
 <ion-content padding class="mainDivProfil">
     <div>
-      <ion-label class="idUser" >ID user : {{ userConnect.ID }} </ion-label>
       
       <ion-label class="titlelab" >Nom</ion-label>
       <ion-label class="infoProfil" >{{ userConnect.NOM }}</ion-label>
@@ -43,6 +45,6 @@
     
     <div>
         
-      <button ion-button  (click)="edit()">edit</button>
+      <button ion-button class="btn" (click)="edit()">Editer votre profil</button>
     </div>
   </ion-content>

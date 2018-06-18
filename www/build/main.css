@@ -33758,7 +33758,16 @@ page-profil .idUser {
 }
 
 page-profil .mainDivProfil {
-  background-color: #27AE60;
+  background-color: #3bdb7e;
+}
+
+page-profil .btn {
+  margin-top: 10%;
+  background-color: #27AE60 !important;
+  border-radius: 8px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 page-profiledit .btn {

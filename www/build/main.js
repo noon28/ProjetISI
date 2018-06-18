@@ -1,64 +1,5 @@
 webpackJsonp([7],{
 
-/***/ 105:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AnnoncePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var AnnoncePage = /** @class */ (function () {
-    function AnnoncePage(navCtrl, navParams, menu) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.menu = menu;
-        this.imageDispo = false;
-    }
-    AnnoncePage.prototype.ionViewWillEnter = function () {
-    };
-    AnnoncePage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad AnnoncePage');
-        this.menu.enable(false, 'Menu');
-        this.annonce = this.navParams.get('annonce');
-        this.imageDispo = this.annonce.image != "";
-        this.link = this.annonce.LINK;
-        this.titre = this.annonce.TITRE;
-        this.desc = this.annonce.DESCRIPTION;
-        this.cp = this.annonce.CP;
-        this.date = this.annonce.DATE_EN;
-        this.location = this.annonce.LOCATION == 1 ? true : false;
-        this.meuble = this.annonce.MEUBLE == 1 ? true : false;
-        this.nbpiece = this.annonce.NBPIECES;
-        this.prix = this.annonce.PRIX;
-        this.superficie = this.annonce.SUPERFICIE;
-        this.type = this.annonce.TYPEBIEN;
-        this.ville = this.annonce.VILLE;
-        console.log(this.annonce);
-    };
-    AnnoncePage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-annonce',template:/*ion-inline-start:"/Users/benjamin/Documents/GitKraken/ProjetISI/src/pages/annonce/annonce.html"*/'<ion-header>\n    <ion-navbar>\n  \n      <!-- CENTER SIDE -->\n      <ion-title>Annonce</ion-title>\n\n      <!-- RIGHT SIDE -->\n      <a href="{{ link }}">\n        <ion-buttons end>\n          <button ion-button icon-only>\n            <ion-icon name="md-open" style="color: #FFF; padding-right: 10px;"></ion-icon>\n          </button>\n        </ion-buttons>\n      </a>\n      \n    </ion-navbar>\n  </ion-header>\n\n<ion-content>\n    <ion-card>\n      <div class="title-annonce">{{ titre }}</div>\n      <img *ngIf="!imageDispo" src="assets/imgs/noImage.jpg"/>\n      <img *ngIf="imageDispo" src="{{ annonce.image }}"/>\n      <span class="cp-abs"><ion-label class="cp-rel">{{ cp }} - {{ ville }}</ion-label></span>\n      <ion-item class="prix">{{ prix }}€ TTC</ion-item>\n      <div class="desc">{{ desc }}</div>\n      <ion-item>\n        <ion-icon name="md-home" class="logo"></ion-icon><span class="text-logo">Type de bien </span>\n        {{ type }} \n      </ion-item>\n      <ion-item>\n        <ion-icon name="md-resize" class="logo"></ion-icon><span class="text-logo">Superficie </span>\n        {{ superficie }} m2\n      </ion-item>\n      <ion-item>\n        <ion-icon name="md-map" class="logo"></ion-icon><span class="text-logo">Nombre de Pièce(s) </span>\n        {{ nbpiece }}\n      </ion-item>\n      <ion-item>\n        <ion-icon name="md-cube" class="logo"></ion-icon><span class="text-logo">Meublé ? </span>\n        {{ meuble }} \n      </ion-item>\n      <ion-item>\n        <ion-icon name="md-key" class="logo"></ion-icon><span class="text-logo">Location ? </span>\n        {{ location }}\n      </ion-item>\n      <ion-item class="date">{{ (date | slice:8:10) }}-{{ (date | slice:5:7) }}-{{ (date | slice:0:4)}}</ion-item>\n      <div *ngIf="comeFrom == \'home\'">\n          <button ion-button icon-start full class="fav-ajouter" (click)="ajouterFav()">\n            <ion-icon name="md-heart"></ion-icon>\n            Mettre en Favori\n          </button>\n      </div>\n      <div *ngIf="comeFrom == \'favori\'">\n          <button ion-button icon-start full class="fav-retirer" (click)="retirerFav()">\n            <ion-icon name="md-close"></ion-icon>\n            Retirer des Favoris\n          </button>\n        </div>\n    </ion-card>\n    \n</ion-content>\n'/*ion-inline-end:"/Users/benjamin/Documents/GitKraken/ProjetISI/src/pages/annonce/annonce.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* MenuController */]])
-    ], AnnoncePage);
-    return AnnoncePage;
-}());
-
-//# sourceMappingURL=annonce.js.map
-
-/***/ }),
-
 /***/ 106:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -66,6 +7,7 @@ var AnnoncePage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FavoriPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__annonce_annonce__ = __webpack_require__(52);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -77,27 +19,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-/**
- * Generated class for the FavoriPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+
 var FavoriPage = /** @class */ (function () {
-    function FavoriPage(navCtrl, navParams) {
+    function FavoriPage(navCtrl, navParams, menu) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        // C'est la que l'on recupère les datas
-        this.data = navParams.get('data');
+        this.menu = menu;
+        this.annonces = [{ "ID": 1, "TITRE": "T2 - Metro Motte Picquet Grenelle", "DESCRIPTION": "Description Loue appartement type 2 de 35m2 entre les métros motte picquet grenelle et commerce   Loué non meublé  Situé en RDC sur cour arborée  Cuisine ouverte sur le salon Salle d,eau avec douche à l,italienne  Chambre   Dispo début juin   1200Euro(s)/mois CC", "SUPERFICIE": 35, "CP": 75014, "DELETED": 0, "DATE_EN": "2018-05-20T00:00:00.000Z", "ID_AUTHOR": 1, "PRIX": 1200, "LINK": "https://www.leboncoin.fr/locations/1435318623.htm/?ca=12_s", "TYPEBIEN": "Appartement", "MEUBLE": 0, "NBPIECES": 2, "VILLE": "Paris", "LOCATION": 1, "image": "http://mmf.logic-immo.com/mmf/ads/photo-prop-800x600/837/1/16c0455f-7770-4bfc-8501-b21652fd54b4.jpg" }, { "ID": 2, "TITRE": "T3 - Metro Motte Picquet Grenelle", "DESCRIPTION": "Description Loue appartement type 3 de 40m2 entre les métros motte picquet grenelle et commerce   Loué non meublé  Situé en RDC sur cour arborée  Cuisine ouverte sur le salon Salle d,eau avec douche à l,italienne  Chambre   Dispo début juin   1500Euro(s)/mois CC", "SUPERFICIE": 40, "CP": 75015, "DELETED": 0, "DATE_EN": "2017-11-12T00:00:00.000Z", "ID_AUTHOR": 2, "PRIX": 1500, "LINK": "https://www.leboncoin.fr/locations/1435318623.htm/?ca=12_s", "TYPEBIEN": "Appartement", "MEUBLE": 1, "NBPIECES": 3, "VILLE": "Paris", "LOCATION": 1, "image": "" }];
     }
     FavoriPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad FavoriPage');
     };
+    FavoriPage.prototype.ionViewWillEnter = function () {
+        this.menu.enable(true, 'Menu');
+    };
+    FavoriPage.prototype.detailAnnonce = function (a) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__annonce_annonce__["a" /* AnnoncePage */], { "annonce": a, "comeFrom": "favori" });
+    };
     FavoriPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-favori',template:/*ion-inline-start:"/Users/benjamin/Documents/GitKraken/ProjetISI/src/pages/favori/favori.html"*/'\n<ion-header>\n  <ion-navbar>\n    <!-- LEFT SIDE -->\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <!-- CENTER SIDE -->\n    <ion-title>Favori</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n    <div>\n      <div *ngIf="flitre">\n        <div *ngFor="let a of data">\n          <ion-card (click)="detailAnnonce(a)">\n            <img *ngIf="a.image == \'\'" src="assets/imgs/noImage.jpg"/>\n            <img *ngIf="a.image != null" src="{{ a.image }}"/>\n            <ion-card-content>\n                <span class="cp-abs"><ion-label class="cp-rel">{{ a.CP }} - {{ a.VILLE }}</ion-label></span>\n              <ion-card-title >\n                {{ (a.TITRE.length>50)? (a.TITRE | slice:0:50)+\'..\':(a.TITRE) }}\n              </ion-card-title>\n              <p>\n                {{ (a.DESCRIPTION.length>100)? (a.DESCRIPTION | slice:0:100)+\'..\':(a.DESCRIPTION) }}\n              </p>\n              <ion-label class="prix-rel">{{ a.PRIX }} €</ion-label>\n            </ion-card-content>\n          </ion-card>\n        </div>\n      </div>\n      <div *ngIf="!flitre">\n        <div *ngFor="let a of annonces">\n          <ion-card (click)="detailAnnonce(a)">\n            <img *ngIf="a.image == \'\'" src="assets/imgs/noImage.jpg"/>\n            <img *ngIf="a.image != null" src="{{ a.image }}"/>\n            <ion-card-content>\n                <span class="cp-abs"><ion-label class="cp-rel">{{ a.CP }} - {{ a.VILLE }}</ion-label></span>\n              <ion-card-title >\n                {{ (a.TITRE.length>50)? (a.TITRE | slice:0:50)+\'..\':(a.TITRE) }}\n              </ion-card-title>\n              <p>\n                {{ (a.DESCRIPTION.length>100)? (a.DESCRIPTION | slice:0:100)+\'..\':(a.DESCRIPTION) }}\n              </p>\n              <ion-label class="prix-rel">{{ a.PRIX }} €</ion-label>\n            </ion-card-content>\n          </ion-card>\n        </div>\n      </div>\n    </div>\n</ion-content>\n'/*ion-inline-end:"/Users/benjamin/Documents/GitKraken/ProjetISI/src/pages/favori/favori.html"*/,
+            selector: 'page-favori',template:/*ion-inline-start:"C:\Users\fouil\Desktop\EFREI\S6\IntroductionSystèmeINFO\GIT\ProjetISI\src\pages\favori\favori.html"*/'\n\n<ion-header>\n\n  <ion-navbar>\n\n    <!-- LEFT SIDE -->\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <!-- CENTER SIDE -->\n\n    <ion-title>Favori</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content>\n\n    <div>\n\n      <div *ngIf="flitre">\n\n        <div *ngFor="let a of data">\n\n          <ion-card (click)="detailAnnonce(a)">\n\n            <img *ngIf="a.image == \'\'" src="assets/imgs/noImage.jpg"/>\n\n            <img *ngIf="a.image != null" src="{{ a.image }}"/>\n\n            <ion-card-content>\n\n                <span class="cp-abs"><ion-label class="cp-rel">{{ a.CP }} - {{ a.VILLE }}</ion-label></span>\n\n              <ion-card-title >\n\n                {{ (a.TITRE.length>50)? (a.TITRE | slice:0:50)+\'..\':(a.TITRE) }}\n\n              </ion-card-title>\n\n              <p>\n\n                {{ (a.DESCRIPTION.length>100)? (a.DESCRIPTION | slice:0:100)+\'..\':(a.DESCRIPTION) }}\n\n              </p>\n\n              <ion-label class="prix-rel">{{ a.PRIX }} €</ion-label>\n\n            </ion-card-content>\n\n          </ion-card>\n\n        </div>\n\n      </div>\n\n      <div *ngIf="!flitre">\n\n        <div *ngFor="let a of annonces">\n\n          <ion-card (click)="detailAnnonce(a)">\n\n            <img *ngIf="a.image == \'\'" src="assets/imgs/noImage.jpg"/>\n\n            <img *ngIf="a.image != null" src="{{ a.image }}"/>\n\n            <ion-card-content>\n\n                <span class="cp-abs"><ion-label class="cp-rel">{{ a.CP }} - {{ a.VILLE }}</ion-label></span>\n\n              <ion-card-title >\n\n                {{ (a.TITRE.length>50)? (a.TITRE | slice:0:50)+\'..\':(a.TITRE) }}\n\n              </ion-card-title>\n\n              <p>\n\n                {{ (a.DESCRIPTION.length>100)? (a.DESCRIPTION | slice:0:100)+\'..\':(a.DESCRIPTION) }}\n\n              </p>\n\n              <ion-label class="prix-rel">{{ a.PRIX }} €</ion-label>\n\n            </ion-card-content>\n\n          </ion-card>\n\n        </div>\n\n      </div>\n\n    </div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\fouil\Desktop\EFREI\S6\IntroductionSystèmeINFO\GIT\ProjetISI\src\pages\favori\favori.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* MenuController */]])
     ], FavoriPage);
     return FavoriPage;
 }());
@@ -162,7 +105,7 @@ var ForgotpswdPage = /** @class */ (function () {
     };
     ForgotpswdPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-forgotpswd',template:/*ion-inline-start:"/Users/benjamin/Documents/GitKraken/ProjetISI/src/pages/forgotpswd/forgotpswd.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Mot de passe oublié ? </ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding style="background-color: #27AE60;" class="no-scroll">\n  \n    <ion-item class="form">\n      <ion-label stacked class="titlelab">Email</ion-label>\n      <ion-input class="input" type="text" [(ngModel)]="email"></ion-input>\n    </ion-item>\n    <button class="btn"ion-button (click)="requestSend()">Envoyer</button>\n</ion-content>\n'/*ion-inline-end:"/Users/benjamin/Documents/GitKraken/ProjetISI/src/pages/forgotpswd/forgotpswd.html"*/,
+            selector: 'page-forgotpswd',template:/*ion-inline-start:"C:\Users\fouil\Desktop\EFREI\S6\IntroductionSystèmeINFO\GIT\ProjetISI\src\pages\forgotpswd\forgotpswd.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Mot de passe oublié ? </ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding style="background-color: #27AE60;" class="no-scroll">\n\n  \n\n    <ion-item class="form">\n\n      <ion-label stacked class="titlelab">Email</ion-label>\n\n      <ion-input class="input" type="text" [(ngModel)]="email"></ion-input>\n\n    </ion-item>\n\n    <button class="btn"ion-button (click)="requestSend()">Envoyer</button>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\fouil\Desktop\EFREI\S6\IntroductionSystèmeINFO\GIT\ProjetISI\src\pages\forgotpswd\forgotpswd.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
     ], ForgotpswdPage);
@@ -180,11 +123,11 @@ var ForgotpswdPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(80);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__profil_profil__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__register_register__ = __webpack_require__(110);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__forgotpswd_forgotpswd__ = __webpack_require__(107);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_auth_auth__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_auth_auth__ = __webpack_require__(83);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -259,11 +202,12 @@ var LoginPage = /** @class */ (function () {
     };
     LoginPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"/Users/benjamin/Documents/GitKraken/ProjetISI/src/pages/login/login.html"*/'<ion-content padding style="background-color: #27AE60;" class="no-scroll">\n    <img  class="logo" align =\'center\' src="assets/imgs/logo-login.png" width="220px" />\n    \n        \n\n        <ion-item class="form">\n            <ion-label class="titlelab" floating>Email</ion-label>\n            <ion-input class="input" type="text" [(ngModel)]="email"></ion-input>\n        </ion-item>\n\n        <ion-item class="form">\n            <ion-label class="titlelab" floating>Password</ion-label>\n            <ion-input class="input" type="password" [(ngModel)]="password"></ion-input>\n        </ion-item>\n\n    <ion-label class="btn-mdp mdpforgot" (click)="mdpforgot()">Mot de passe oublié ?</ion-label>\n    <ion-label class="btn-insc mdpforgot" (click)="register()">Inscription</ion-label>\n    <br/>\n    <button ion-button class="btn" (click)="checkAuthentification()">Connexion</button>\n    \n    \n</ion-content>'/*ion-inline-end:"/Users/benjamin/Documents/GitKraken/ProjetISI/src/pages/login/login.html"*/,
+            selector: 'page-login',template:/*ion-inline-start:"C:\Users\fouil\Desktop\EFREI\S6\IntroductionSystèmeINFO\GIT\ProjetISI\src\pages\login\login.html"*/'<ion-content padding style="background-color: #27AE60;" class="no-scroll">\n\n    <img  class="logo" align =\'center\' src="assets/imgs/logo-login.png" width="220px" />\n\n    \n\n        \n\n\n\n        <ion-item class="form">\n\n            <ion-label class="titlelab" floating>Email</ion-label>\n\n            <ion-input class="input" type="text" [(ngModel)]="email"></ion-input>\n\n        </ion-item>\n\n\n\n        <ion-item class="form">\n\n            <ion-label class="titlelab" floating>Password</ion-label>\n\n            <ion-input class="input" type="password" [(ngModel)]="password"></ion-input>\n\n        </ion-item>\n\n\n\n    <ion-label class="btn-mdp mdpforgot" (click)="mdpforgot()">Mot de passe oublié ?</ion-label>\n\n    <ion-label class="btn-insc mdpforgot" (click)="register()">Inscription</ion-label>\n\n    <br/>\n\n    <button ion-button class="btn" (click)="checkAuthentification()">Connexion</button>\n\n    \n\n    \n\n</ion-content>'/*ion-inline-end:"C:\Users\fouil\Desktop\EFREI\S6\IntroductionSystèmeINFO\GIT\ProjetISI\src\pages\login\login.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_6__providers_auth_auth__["a" /* AuthProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* MenuController */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_6__providers_auth_auth__["a" /* AuthProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__providers_auth_auth__["a" /* AuthProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* MenuController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* MenuController */]) === "function" && _e || Object])
     ], LoginPage);
     return LoginPage;
+    var _a, _b, _c, _d, _e;
 }());
 
 //# sourceMappingURL=login.js.map
@@ -278,7 +222,7 @@ var LoginPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__assets_md5__ = __webpack_require__(163);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_register_register__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_register_register__ = __webpack_require__(82);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__profil_profil__ = __webpack_require__(40);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -363,7 +307,7 @@ var ProfileditPage = /** @class */ (function () {
     };
     ProfileditPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({
-            selector: 'page-profiledit',template:/*ion-inline-start:"/Users/benjamin/Documents/GitKraken/ProjetISI/src/pages/profiledit/profiledit.html"*/'<!--\n  Generated template for the ProfileditPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Edition de votre profil</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding style="background-color: #27AE60; ">\n  <div>\n      <ion-item class="form">\n          <ion-label class="titlelab" stacked>Nom</ion-label>\n          <ion-input class="input" type="text"  value=\'{{ userConnect.NOM }}\' [(ngModel)]="nom"></ion-input>\n        </ion-item>\n      \n        <ion-item class="form">\n          <ion-label class="titlelab" stacked>Prenom</ion-label>\n          <ion-input class="input" type="text" value=\'{{ userConnect.PRENOM }}\'  [(ngModel)]="prenom"></ion-input>\n        </ion-item>\n        \n        <ion-item class="form">\n          <ion-label class="titlelab" stacked>Login</ion-label>\n          <ion-input class="input" readonly=true type="text" value=\'{{ userConnect.LOGIN }}\'  [(ngModel)]="login"></ion-input>\n        </ion-item>\n        \n        <ion-item class="form">\n          <ion-label class="titlelab" stacked>Email</ion-label>\n          <ion-input class="input" type="email"  value=\'{{ userConnect.MAIL }}\' [(ngModel)]="email"></ion-input>\n        </ion-item>\n        \n        <ion-item class="form">\n          <ion-label  class="titlelab" stacked>Adresse</ion-label>\n          <ion-input class="input" type="text" value=\'{{ userConnect.ADRESSE }}\' [(ngModel)]="adresse"></ion-input>\n        </ion-item>\n        \n        <ion-item class="form">\n          <ion-label class="titlelab" stacked>Code Postal</ion-label>\n          <ion-input class="input" type="number"  value=\'{{ userConnect.CP }}\' [(ngModel)]="cp" ></ion-input>\n        </ion-item>\n        \n        <ion-item class="form">\n          <ion-label class="titlelab" stacked>Ville</ion-label>\n          <ion-input class="input" type="text" value=\'{{ userConnect.VILLE }}\' [(ngModel)]="ville"></ion-input>\n        </ion-item>\n        <button ion-button  (click)="checkInputEmpty()">Enregister</button>\n  </div>\n  <!--Partie Mot de passe-->\n  <div>\n    <br>\n    <br>\n    <p class="input">Modification Mot de Passe </p>\n    <ion-item class="form">\n        <ion-label  class="titlelab" stacked>Mot de Passe Actuel</ion-label>\n        <ion-input class="input" type="password"  [(ngModel)]="mdp"></ion-input>\n    </ion-item>\n    <ion-item class="form">\n        <ion-label  class="titlelab" stacked>Nouveau Mot de Passe </ion-label>\n        <ion-input class="input" type="password"  [(ngModel)]="mdpnew"></ion-input>\n    </ion-item>\n\n    <button ion-button  (click)="updatePwd()">Valider</button>\n  </div>\n\n</ion-content>\n'/*ion-inline-end:"/Users/benjamin/Documents/GitKraken/ProjetISI/src/pages/profiledit/profiledit.html"*/,
+            selector: 'page-profiledit',template:/*ion-inline-start:"C:\Users\fouil\Desktop\EFREI\S6\IntroductionSystèmeINFO\GIT\ProjetISI\src\pages\profiledit\profiledit.html"*/'<!--\n  Generated template for the ProfileditPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Edition de votre profil</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding style="background-color: #27AE60; ">\n  <div>\n      <ion-item class="form">\n          <ion-label class="titlelab" stacked>Nom</ion-label>\n          <ion-input class="input" type="text"  value=\'{{ userConnect.NOM }}\' [(ngModel)]="nom"></ion-input>\n        </ion-item>\n      \n        <ion-item class="form">\n          <ion-label class="titlelab" stacked>Prenom</ion-label>\n          <ion-input class="input" type="text" value=\'{{ userConnect.PRENOM }}\'  [(ngModel)]="prenom"></ion-input>\n        </ion-item>\n        \n        <ion-item class="form">\n          <ion-label class="titlelab" stacked>Login</ion-label>\n          <ion-input class="input" readonly=true type="text" value=\'{{ userConnect.LOGIN }}\'  [(ngModel)]="login"></ion-input>\n        </ion-item>\n        \n        <ion-item class="form">\n          <ion-label class="titlelab" stacked>Email</ion-label>\n          <ion-input class="input" type="email"  value=\'{{ userConnect.MAIL }}\' [(ngModel)]="email"></ion-input>\n        </ion-item>\n        \n        <ion-item class="form">\n          <ion-label  class="titlelab" stacked>Adresse</ion-label>\n          <ion-input class="input" type="text" value=\'{{ userConnect.ADRESSE }}\' [(ngModel)]="adresse"></ion-input>\n        </ion-item>\n        \n        <ion-item class="form">\n          <ion-label class="titlelab" stacked>Code Postal</ion-label>\n          <ion-input class="input" type="number"  value=\'{{ userConnect.CP }}\' [(ngModel)]="cp" ></ion-input>\n        </ion-item>\n        \n        <ion-item class="form">\n          <ion-label class="titlelab" stacked>Ville</ion-label>\n          <ion-input class="input" type="text" value=\'{{ userConnect.VILLE }}\' [(ngModel)]="ville"></ion-input>\n        </ion-item>\n        <button ion-button  (click)="checkInputEmpty()">Enregister</button>\n  </div>\n  <!--Partie Mot de passe-->\n  <div>\n    <br>\n    <br>\n    <p class="input">Modification Mot de Passe </p>\n    <ion-item class="form">\n        <ion-label  class="titlelab" stacked>Mot de Passe Actuel</ion-label>\n        <ion-input class="input" type="password"  [(ngModel)]="mdp"></ion-input>\n    </ion-item>\n    <ion-item class="form">\n        <ion-label  class="titlelab" stacked>Nouveau Mot de Passe </ion-label>\n        <ion-input class="input" type="password"  [(ngModel)]="mdpnew"></ion-input>\n    </ion-item>\n\n    <button ion-button  (click)="updatePwd()">Valider</button>\n  </div>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\fouil\Desktop\EFREI\S6\IntroductionSystèmeINFO\GIT\ProjetISI\src\pages\profiledit\profiledit.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_3__providers_register_register__["a" /* RegisterProvider */]])
     ], ProfileditPage);
@@ -382,7 +326,7 @@ var ProfileditPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login_login__ = __webpack_require__(108);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_register_register__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_register_register__ = __webpack_require__(82);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -490,7 +434,7 @@ var RegisterPage = /** @class */ (function () {
     };
     RegisterPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-register',template:/*ion-inline-start:"/Users/benjamin/Documents/GitKraken/ProjetISI/src/pages/register/register.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Inscription</ion-title>\n  </ion-navbar>\n\n</ion-header>\n<ion-content padding style="background-color: #27AE60; ">  \n  \n    <ion-item class="form">\n      <ion-label class="titlelab" stacked>Nom</ion-label>\n      <ion-input class="input" type="text"  [(ngModel)]="nom"></ion-input>\n    </ion-item>\n  \n    <ion-item class="form">\n      <ion-label class="titlelab" stacked>Prenom</ion-label>\n      <ion-input class="input" type="text"   [(ngModel)]="prenom"></ion-input>\n    </ion-item>\n    \n    <ion-item class="form">\n      <ion-label class="titlelab" stacked>Login</ion-label>\n      <ion-input class="input" type="text"  [(ngModel)]="login"></ion-input>\n    </ion-item>\n    \n    <ion-item class="form">\n      <ion-label  class="titlelab" stacked>Mot de Passe</ion-label>\n      <ion-input class="input" type="password"  [(ngModel)]="mdp"></ion-input>\n    </ion-item>\n    \n    <ion-item class="form">\n      <ion-label class="titlelab" stacked>Email</ion-label>\n      <ion-input class="input" type="email"  [(ngModel)]="email"></ion-input>\n    </ion-item>\n    \n    <ion-item class="form">\n      <ion-label  class="titlelab" stacked>Adresse</ion-label>\n      <ion-input class="input" type="text"  [(ngModel)]="adresse"></ion-input>\n    </ion-item>\n    \n    <ion-item class="form">\n      <ion-label class="titlelab" stacked>Code Postal</ion-label>\n      <ion-input class="input" type="number"  [(ngModel)]="cp" ></ion-input>\n    </ion-item>\n    \n    <ion-item class="form">\n      <ion-label class="titlelab" stacked>Ville</ion-label>\n      <ion-input class="input" type="text"  [(ngModel)]="ville"></ion-input>\n    </ion-item>\n\n  \n  <button ion-button class="btn" (click)="checkInputEmpty()">Inscription</button>\n</ion-content>'/*ion-inline-end:"/Users/benjamin/Documents/GitKraken/ProjetISI/src/pages/register/register.html"*/,
+            selector: 'page-register',template:/*ion-inline-start:"C:\Users\fouil\Desktop\EFREI\S6\IntroductionSystèmeINFO\GIT\ProjetISI\src\pages\register\register.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Inscription</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n<ion-content padding style="background-color: #27AE60; ">  \n\n  \n\n    <ion-item class="form">\n\n      <ion-label class="titlelab" stacked>Nom</ion-label>\n\n      <ion-input class="input" type="text"  [(ngModel)]="nom"></ion-input>\n\n    </ion-item>\n\n  \n\n    <ion-item class="form">\n\n      <ion-label class="titlelab" stacked>Prenom</ion-label>\n\n      <ion-input class="input" type="text"   [(ngModel)]="prenom"></ion-input>\n\n    </ion-item>\n\n    \n\n    <ion-item class="form">\n\n      <ion-label class="titlelab" stacked>Login</ion-label>\n\n      <ion-input class="input" type="text"  [(ngModel)]="login"></ion-input>\n\n    </ion-item>\n\n    \n\n    <ion-item class="form">\n\n      <ion-label  class="titlelab" stacked>Mot de Passe</ion-label>\n\n      <ion-input class="input" type="password"  [(ngModel)]="mdp"></ion-input>\n\n    </ion-item>\n\n    \n\n    <ion-item class="form">\n\n      <ion-label class="titlelab" stacked>Email</ion-label>\n\n      <ion-input class="input" type="email"  [(ngModel)]="email"></ion-input>\n\n    </ion-item>\n\n    \n\n    <ion-item class="form">\n\n      <ion-label  class="titlelab" stacked>Adresse</ion-label>\n\n      <ion-input class="input" type="text"  [(ngModel)]="adresse"></ion-input>\n\n    </ion-item>\n\n    \n\n    <ion-item class="form">\n\n      <ion-label class="titlelab" stacked>Code Postal</ion-label>\n\n      <ion-input class="input" type="number"  [(ngModel)]="cp" ></ion-input>\n\n    </ion-item>\n\n    \n\n    <ion-item class="form">\n\n      <ion-label class="titlelab" stacked>Ville</ion-label>\n\n      <ion-input class="input" type="text"  [(ngModel)]="ville"></ion-input>\n\n    </ion-item>\n\n\n\n  \n\n  <button ion-button class="btn" (click)="checkInputEmpty()">Inscription</button>\n\n</ion-content>'/*ion-inline-end:"C:\Users\fouil\Desktop\EFREI\S6\IntroductionSystèmeINFO\GIT\ProjetISI\src\pages\register\register.html"*/,
             styles: ["\n    .ng-valid { border-color: green; }\n    .ng-invalid { border-color: red; }    \n  "]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_3__providers_register_register__["a" /* RegisterProvider */]])
@@ -658,9 +602,10 @@ var AnnonceProvider = /** @class */ (function () {
     ;
     AnnonceProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_http__["a" /* Http */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_http__["a" /* Http */]) === "function" && _a || Object])
     ], AnnonceProvider);
     return AnnonceProvider;
+    var _a;
 }());
 
 //# sourceMappingURL=annonce.js.map
@@ -908,16 +853,16 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_platform_browser_animations__ = __webpack_require__(281);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_component__ = __webpack_require__(283);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_home_home__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_home_home__ = __webpack_require__(80);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_favori_favori__ = __webpack_require__(106);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_profil_profil__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_login_login__ = __webpack_require__(108);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_register_register__ = __webpack_require__(110);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_forgotpswd_forgotpswd__ = __webpack_require__(107);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_profiledit_profiledit__ = __webpack_require__(109);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_annonce_annonce__ = __webpack_require__(105);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__providers_auth_auth__ = __webpack_require__(82);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__providers_register_register__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_annonce_annonce__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__providers_auth_auth__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__providers_register_register__ = __webpack_require__(82);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__providers_annonce_annonce__ = __webpack_require__(162);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1016,9 +961,10 @@ var AppModule = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(206);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(203);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(79);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_favori_favori__ = __webpack_require__(106);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_profil_profil__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_login__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_home_home__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_favori_favori__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_profil_profil__ = __webpack_require__(40);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1032,6 +978,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+// PAGES
+
 
 
 
@@ -1040,13 +988,13 @@ var MyApp = /** @class */ (function () {
         this.platform = platform;
         this.statusBar = statusBar;
         this.splashScreen = splashScreen;
-        this.rootPage = __WEBPACK_IMPORTED_MODULE_4__pages_home_home__["a" /* HomePage */];
+        this.rootPage = __WEBPACK_IMPORTED_MODULE_4__pages_login_login__["a" /* LoginPage */];
         this.initializeApp();
         // used for an example of ngFor and navigation
         this.pages = [
-            { title: 'Annonces Immobilières', component: __WEBPACK_IMPORTED_MODULE_4__pages_home_home__["a" /* HomePage */], icon: 'md-home', color: '' },
-            { title: 'Favoris', component: __WEBPACK_IMPORTED_MODULE_5__pages_favori_favori__["a" /* FavoriPage */], icon: 'star', color: '' },
-            { title: 'Profil', component: __WEBPACK_IMPORTED_MODULE_6__pages_profil_profil__["a" /* ProfilPage */], icon: 'md-contact', color: '' }
+            { title: 'Annonces Immobilières', component: __WEBPACK_IMPORTED_MODULE_5__pages_home_home__["a" /* HomePage */], icon: 'md-home', color: '' },
+            { title: 'Favoris', component: __WEBPACK_IMPORTED_MODULE_6__pages_favori_favori__["a" /* FavoriPage */], icon: 'star', color: '' },
+            { title: 'Profil', component: __WEBPACK_IMPORTED_MODULE_7__pages_profil_profil__["a" /* ProfilPage */], icon: 'md-contact', color: '' }
         ];
     }
     MyApp.prototype.initializeApp = function () {
@@ -1065,14 +1013,15 @@ var MyApp = /** @class */ (function () {
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Nav */]),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Nav */])
+        __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Nav */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Nav */]) === "function" && _a || Object)
     ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/benjamin/Documents/GitKraken/ProjetISI/src/app/app.html"*/'<ion-menu id="Menu" [content]="content" class="side-menu-header no-scroll">\n    <ion-header>\n      <ion-toolbar>\n        <img  class="img" src="assets/imgs/pyramide.png" />\n        <!--<ion-title>Menu</ion-title>-->\n      </ion-toolbar>\n    </ion-header>\n  \n    <ion-content class="side-menu">\n      <ion-list>\n        <button menuClose icon-start ion-item *ngFor="let p of pages" (click)="openPage(p)">\n          <ion-icon name="{{p.icon}}"></ion-icon>\n          {{p.title}}\n        </button>\n      </ion-list>\n    </ion-content>\n  \n  </ion-menu>\n  \n  \n  \n  <!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n  <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"/Users/benjamin/Documents/GitKraken/ProjetISI/src/app/app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\fouil\Desktop\EFREI\S6\IntroductionSystèmeINFO\GIT\ProjetISI\src\app\app.html"*/'<ion-menu id="Menu" [content]="content" class="side-menu-header no-scroll">\n\n    <ion-header>\n\n      <ion-toolbar>\n\n        <img  class="img" src="assets/imgs/pyramide.png" />\n\n        <!--<ion-title>Menu</ion-title>-->\n\n      </ion-toolbar>\n\n    </ion-header>\n\n  \n\n    <ion-content class="side-menu">\n\n      <ion-list>\n\n        <button menuClose icon-start ion-item *ngFor="let p of pages" (click)="openPage(p)">\n\n          <ion-icon name="{{p.icon}}"></ion-icon>\n\n          {{p.title}}\n\n        </button>\n\n      </ion-list>\n\n    </ion-content>\n\n  \n\n  </ion-menu>\n\n  \n\n  \n\n  \n\n  <!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n\n  <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"C:\Users\fouil\Desktop\EFREI\S6\IntroductionSystèmeINFO\GIT\ProjetISI\src\app\app.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]) === "function" && _d || Object])
     ], MyApp);
     return MyApp;
+    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=app.component.js.map
@@ -1087,7 +1036,7 @@ var MyApp = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__profiledit_profiledit__ = __webpack_require__(109);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_auth__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_auth__ = __webpack_require__(83);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1109,33 +1058,103 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var ProfilPage = /** @class */ (function () {
-    function ProfilPage(navCtrl, navParams, auth) {
+    function ProfilPage(navCtrl, navParams, auth, menu) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.auth = auth;
+        this.menu = menu;
         // receive the data send by other pages
         this.userConnect = navParams.get('userCo');
     }
     ProfilPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad ProfilPage');
     };
+    ProfilPage.prototype.ionViewWillEnter = function () {
+        this.menu.enable(true, 'Menu');
+    };
     ProfilPage.prototype.edit = function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__profiledit_profiledit__["a" /* ProfileditPage */], { userCo: this.userConnect });
     };
     ProfilPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-profil',template:/*ion-inline-start:"/Users/benjamin/Documents/GitKraken/ProjetISI/src/pages/profil/profil.html"*/'<!--\n  Generated template for the ProfilPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>pssrofil</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding class="mainDivProfil">\n    <div>\n      <ion-label class="idUser" >ID user : {{ userConnect.ID }} </ion-label>\n      \n      <ion-label class="titlelab" >Nom</ion-label>\n      <ion-label class="infoProfil" >{{ userConnect.NOM }}</ion-label>\n    \n      <ion-label class="titlelab" >Prenom</ion-label>\n      <ion-label class="infoProfil" >{{ userConnect.PRENOM }}</ion-label>\n\n      <ion-label class="titlelab" >Login</ion-label>\n      <ion-label class="infoProfil" >{{ userConnect.LOGIN }}</ion-label>\n\n      <ion-label class="titlelab" >Email</ion-label>\n      <ion-label class="infoProfil" >{{ userConnect.MAIL }}</ion-label>\n\n      <ion-label  class="titlelab" >Adresse</ion-label>\n      <ion-label class="infoProfil" >{{ userConnect.ADRESSE }}</ion-label>\n\n      <ion-label class="titlelab" >Code Postal</ion-label>\n      <ion-label class="infoProfil" >{{ userConnect.CP }}</ion-label>\n\n      <ion-label class="titlelab" >Ville</ion-label>\n      <ion-label class="infoProfil" >{{ userConnect.VILLE }}</ion-label>\n\n    </div>\n\n    \n    <div>\n        \n      <button ion-button  (click)="edit()">edit</button>\n    </div>\n  </ion-content>\n'/*ion-inline-end:"/Users/benjamin/Documents/GitKraken/ProjetISI/src/pages/profil/profil.html"*/,
+            selector: 'page-profil',template:/*ion-inline-start:"C:\Users\fouil\Desktop\EFREI\S6\IntroductionSystèmeINFO\GIT\ProjetISI\src\pages\profil\profil.html"*/'<!--\n\n  Generated template for the ProfilPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <!-- LEFT SIDE -->\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <!-- CENTER SIDE -->\n\n    <ion-title>Profil</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding class="mainDivProfil">\n\n    <div>\n\n      \n\n      <ion-label class="titlelab" >Nom</ion-label>\n\n      <ion-label class="infoProfil" >{{ userConnect.NOM }}</ion-label>\n\n    \n\n      <ion-label class="titlelab" >Prenom</ion-label>\n\n      <ion-label class="infoProfil" >{{ userConnect.PRENOM }}</ion-label>\n\n\n\n      <ion-label class="titlelab" >Login</ion-label>\n\n      <ion-label class="infoProfil" >{{ userConnect.LOGIN }}</ion-label>\n\n\n\n      <ion-label class="titlelab" >Email</ion-label>\n\n      <ion-label class="infoProfil" >{{ userConnect.MAIL }}</ion-label>\n\n\n\n      <ion-label  class="titlelab" >Adresse</ion-label>\n\n      <ion-label class="infoProfil" >{{ userConnect.ADRESSE }}</ion-label>\n\n\n\n      <ion-label class="titlelab" >Code Postal</ion-label>\n\n      <ion-label class="infoProfil" >{{ userConnect.CP }}</ion-label>\n\n\n\n      <ion-label class="titlelab" >Ville</ion-label>\n\n      <ion-label class="infoProfil" >{{ userConnect.VILLE }}</ion-label>\n\n\n\n    </div>\n\n\n\n    \n\n    <div>\n\n        \n\n      <button ion-button class="btn" (click)="edit()">Editer votre profil</button>\n\n    </div>\n\n  </ion-content>\n\n'/*ion-inline-end:"C:\Users\fouil\Desktop\EFREI\S6\IntroductionSystèmeINFO\GIT\ProjetISI\src\pages\profil\profil.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__providers_auth_auth__["a" /* AuthProvider */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__providers_auth_auth__["a" /* AuthProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_auth_auth__["a" /* AuthProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* MenuController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* MenuController */]) === "function" && _d || Object])
     ], ProfilPage);
     return ProfilPage;
+    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=profil.js.map
 
 /***/ }),
 
-/***/ 79:
+/***/ 52:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AnnoncePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var AnnoncePage = /** @class */ (function () {
+    function AnnoncePage(navCtrl, navParams, menu) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.menu = menu;
+        this.imageDispo = false;
+    }
+    AnnoncePage.prototype.ionViewWillEnter = function () {
+    };
+    AnnoncePage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad AnnoncePage');
+        this.menu.enable(false, 'Menu');
+        this.annonce = this.navParams.get('annonce');
+        this.imageDispo = this.annonce.image != "";
+        this.link = this.annonce.LINK;
+        this.titre = this.annonce.TITRE;
+        this.desc = this.annonce.DESCRIPTION;
+        this.cp = this.annonce.CP;
+        this.date = this.annonce.DATE_EN;
+        this.location = this.annonce.LOCATION == 1 ? 'oui' : 'non';
+        this.meuble = this.annonce.MEUBLE == 1 ? 'oui' : 'non';
+        this.nbpiece = this.annonce.NBPIECES;
+        this.prix = this.annonce.PRIX;
+        this.superficie = this.annonce.SUPERFICIE;
+        this.type = this.annonce.TYPEBIEN;
+        this.ville = this.annonce.VILLE;
+        this.comeFrom = this.navParams.get("comeFrom");
+        console.log(this.annonce);
+        console.log(this.comeFrom);
+    };
+    AnnoncePage.prototype.ajouterFav = function () {
+    };
+    AnnoncePage.prototype.retirerFav = function () {
+    };
+    AnnoncePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-annonce',template:/*ion-inline-start:"C:\Users\fouil\Desktop\EFREI\S6\IntroductionSystèmeINFO\GIT\ProjetISI\src\pages\annonce\annonce.html"*/'<ion-header>\n\n    <ion-navbar>\n\n  \n\n      <!-- CENTER SIDE -->\n\n      <ion-title>Annonce</ion-title>\n\n\n\n      <!-- RIGHT SIDE -->\n\n      <a href="{{ link }}">\n\n        <ion-buttons end>\n\n          <button ion-button icon-only>\n\n            <ion-icon name="md-open" style="color: #FFF; padding-right: 10px;"></ion-icon>\n\n          </button>\n\n        </ion-buttons>\n\n      </a>\n\n      \n\n    </ion-navbar>\n\n  </ion-header>\n\n\n\n<ion-content>\n\n    <ion-card>\n\n      <div class="title-annonce">{{ titre }}</div>\n\n      <img *ngIf="!imageDispo" src="assets/imgs/noImage.jpg"/>\n\n      <img *ngIf="imageDispo" src="{{ annonce.image }}"/>\n\n      <span class="cp-abs"><ion-label class="cp-rel">{{ cp }} - {{ ville }}</ion-label></span>\n\n      <ion-item class="prix">{{ prix }}€ TTC</ion-item>\n\n      <div class="desc">{{ desc }}</div>\n\n      <ion-item>\n\n        <ion-icon name="md-home" class="logo"></ion-icon><span class="text-logo">Type de bien </span>\n\n        {{ type }} \n\n      </ion-item>\n\n      <ion-item>\n\n        <ion-icon name="md-resize" class="logo"></ion-icon><span class="text-logo">Superficie </span>\n\n        {{ superficie }} m2\n\n      </ion-item>\n\n      <ion-item>\n\n        <ion-icon name="md-map" class="logo"></ion-icon><span class="text-logo">Nombre de Pièce(s) </span>\n\n        {{ nbpiece }}\n\n      </ion-item>\n\n      <ion-item>\n\n        <ion-icon name="md-cube" class="logo"></ion-icon><span class="text-logo">Meublé ? </span>\n\n        {{ meuble }} \n\n      </ion-item>\n\n      <ion-item>\n\n        <ion-icon name="md-key" class="logo"></ion-icon><span class="text-logo">Location ? </span>\n\n        {{ location }}\n\n      </ion-item>\n\n      <ion-item class="date">{{ (date | slice:8:10) }}-{{ (date | slice:5:7) }}-{{ (date | slice:0:4)}}</ion-item>\n\n      <div *ngIf="comeFrom == \'home\'">\n\n          <button ion-button icon-start full class="fav-ajouter" (click)="ajouterFav()">\n\n            <ion-icon name="md-heart"></ion-icon>\n\n            Mettre en Favori\n\n          </button>\n\n      </div>\n\n      <div *ngIf="comeFrom == \'favori\'">\n\n          <button ion-button icon-start full class="fav-retirer" (click)="retirerFav()">\n\n            <ion-icon name="md-close"></ion-icon>\n\n            Retirer des Favoris\n\n          </button>\n\n        </div>\n\n    </ion-card>\n\n    \n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\fouil\Desktop\EFREI\S6\IntroductionSystèmeINFO\GIT\ProjetISI\src\pages\annonce\annonce.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* MenuController */]])
+    ], AnnoncePage);
+    return AnnoncePage;
+}());
+
+//# sourceMappingURL=annonce.js.map
+
+/***/ }),
+
+/***/ 80:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1143,8 +1162,8 @@ var ProfilPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__providers_annonce_annonce__ = __webpack_require__(162);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_animations__ = __webpack_require__(80);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__annonce_annonce__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_animations__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__annonce_annonce__ = __webpack_require__(52);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1363,7 +1382,7 @@ var HomePage = /** @class */ (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/Users/benjamin/Documents/GitKraken/ProjetISI/src/pages/home/home.html"*/'<ion-header>\n    <ion-navbar>\n  \n      <!-- LEFT SIDE -->\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n  \n      <!-- CENTER SIDE -->\n      <ion-title>Annonces Immobilières</ion-title>\n\n      <!-- RIGHT SIDE -->\n      <div class="left-button">\n        <ion-buttons end>\n          <button (click)="toggleSearchMenu()" ion-button icon-only>\n            <ion-icon name="ios-funnel"></ion-icon>\n          </button>\n        </ion-buttons>\n      </div>\n      \n    </ion-navbar>\n  </ion-header>\n  \n  <ion-content >\n    <div class="search-menu" [@myvisibility]="searchMenuVisible">\n      <br/>\n      <ion-input class="input-search-menu input-ville-cp" type="text" placeholder="Ville ou code postal" [(ngModel)]="ville_cp"></ion-input>\n      <br/>\n      <div class="double-input">\n        <ion-input class="input-search-menu input-short input-left" type="text" placeholder="Loyer Min" [(ngModel)]="loyer_min"></ion-input>\n        <span class="dash">-</span>\n        <ion-input class="input-search-menu input-short input-right" type="text" placeholder="Loyer Max" [(ngModel)]="loyer_max"></ion-input>\n      </div>\n      <br/>\n      <div class="double-input">\n        <ion-input class="input-search-menu input-short input-left" type="text" placeholder="Surface Min" [(ngModel)]="surf_min"></ion-input>\n        <span class="dash">-</span>\n        <ion-input class="input-search-menu input-short input-right" type="text" placeholder="Surface Max" [(ngModel)]="surf_max"></ion-input>\n      </div>\n      <br/>\n      <div class="double-input">\n        <ion-input class="input-search-menu input-short input-left" type="text" placeholder="Pièces Min" [(ngModel)]="piece_min"></ion-input>\n        <span class="dash">-</span>\n        <ion-input class="input-search-menu input-short input-right" type="text" placeholder="Pièces Max" [(ngModel)]="piece_max"></ion-input>\n      </div>\n      <div class="content-checkbox">\n        <ion-label class="title-checkbox">Type</ion-label>\n        <div class="checkbox-div inline-block">\n          <ion-checkbox color="checkbox" checked="false" class=" inline-block" [(ngModel)]="maison"></ion-checkbox>\n          <ion-label class="checkbox-label inline-block">Maison</ion-label>\n        </div>\n        <div class="checkbox-div inline-block">\n          <ion-checkbox color="checkbox" checked="false" class="inline-block" [(ngModel)]="appart"></ion-checkbox>\n          <ion-label class="checkbox-label inline-block">Appartement</ion-label>\n        </div>\n        <div class="checkbox-div inline-block">\n          <ion-checkbox color="checkbox" checked="false" class="inline-block" [(ngModel)]="terrain"></ion-checkbox>\n          <ion-label class="checkbox-label inline-block">Terrain</ion-label>\n        </div>\n        <div class="checkbox-div inline-block">\n          <ion-checkbox color="checkbox" checked="false" class="inline-block" [(ngModel)]="parking"></ion-checkbox>\n          <ion-label class="checkbox-label inline-block">Parking</ion-label>\n        </div>\n        <div class="checkbox-div inline-block">\n            <ion-checkbox color="checkbox" checked="false" class="inline-block" [(ngModel)]="autre"></ion-checkbox>\n            <ion-label class="checkbox-label inline-block">Autre</ion-label>\n        </div>\n        <button color="checkbox" ion-button class="vider" (click)="vider()">Reinitialiser</button>\n        <button color="checkbox" ion-button class="rechercher" (click)="rechercher()">Rechercher</button>\n      </div>\n    </div>\n    <div>\n      <div *ngIf="filtre">\n        <div *ngFor="let a of annoncesfiltr">\n          <ion-card (click)="detailAnnonce(a)">\n            <img *ngIf="a.image == \'\'" src="assets/imgs/noImage.jpg"/>\n            <img *ngIf="a.image != null" src="{{ a.image }}"/>\n            <ion-card-content>\n                <span class="cp-abs"><ion-label class="cp-rel">{{ a.CP }} - {{ a.VILLE }}</ion-label></span>\n              <ion-card-title >\n                {{ (a.TITRE.length>50)? (a.TITRE | slice:0:50)+\'..\':(a.TITRE) }}\n              </ion-card-title>\n              <p>\n                {{ (a.DESCRIPTION.length>100)? (a.DESCRIPTION | slice:0:100)+\'..\':(a.DESCRIPTION) }}\n              </p>\n              <!-- <ion-label class="">{{ (a.DATE_EN | slice:8:10) }}-{{ (a.DATE_EN | slice:5:7) }}-{{ (a.DATE_EN | slice:0:4)}}</ion-label> -->\n              <ion-label class="prix-rel">{{ a.PRIX }} €</ion-label>\n            </ion-card-content>\n          </ion-card>\n        </div>\n      </div>\n      <div *ngIf="!filtre">\n        <div *ngFor="let a of annonces">\n          <ion-card (click)="detailAnnonce(a)">\n            <img *ngIf="a.image == \'\'" src="assets/imgs/noImage.jpg"/>\n            <img *ngIf="a.image != null" src="{{ a.image }}"/>\n            <ion-card-content>\n                <span class="cp-abs"><ion-label class="cp-rel">{{ a.CP }} - {{ a.VILLE }}</ion-label></span>\n              <ion-card-title >\n                {{ (a.TITRE.length>50)? (a.TITRE | slice:0:50)+\'..\':(a.TITRE) }}\n              </ion-card-title>\n              <p>\n                {{ (a.DESCRIPTION.length>100)? (a.DESCRIPTION | slice:0:100)+\'..\':(a.DESCRIPTION) }}\n              </p>\n              <!-- <ion-label class="">{{ (a.DATE_EN | slice:8:10) }}-{{ (a.DATE_EN | slice:5:7) }}-{{ (a.DATE_EN | slice:0:4)}}</ion-label> -->\n              <ion-label class="prix-rel">{{ a.PRIX }} €</ion-label>\n            </ion-card-content>\n          </ion-card>\n        </div>\n      </div>\n    </div>\n\n    \n  </ion-content>'/*ion-inline-end:"/Users/benjamin/Documents/GitKraken/ProjetISI/src/pages/home/home.html"*/,
+            selector: 'page-home',template:/*ion-inline-start:"C:\Users\fouil\Desktop\EFREI\S6\IntroductionSystèmeINFO\GIT\ProjetISI\src\pages\home\home.html"*/'<ion-header>\n\n    <ion-navbar>\n\n  \n\n      <!-- LEFT SIDE -->\n\n      <button ion-button menuToggle>\n\n        <ion-icon name="menu"></ion-icon>\n\n      </button>\n\n  \n\n      <!-- CENTER SIDE -->\n\n      <ion-title>Annonces Immobilières</ion-title>\n\n\n\n      <!-- RIGHT SIDE -->\n\n      <div class="left-button">\n\n        <ion-buttons end>\n\n          <button (click)="toggleSearchMenu()" ion-button icon-only>\n\n            <ion-icon name="ios-funnel"></ion-icon>\n\n          </button>\n\n        </ion-buttons>\n\n      </div>\n\n      \n\n    </ion-navbar>\n\n  </ion-header>\n\n  \n\n  <ion-content >\n\n    <div class="search-menu" [@myvisibility]="searchMenuVisible">\n\n      <br/>\n\n      <ion-input class="input-search-menu input-ville-cp" type="text" placeholder="Ville ou code postal" [(ngModel)]="ville_cp"></ion-input>\n\n      <br/>\n\n      <div class="double-input">\n\n        <ion-input class="input-search-menu input-short input-left" type="text" placeholder="Loyer Min" [(ngModel)]="loyer_min"></ion-input>\n\n        <span class="dash">-</span>\n\n        <ion-input class="input-search-menu input-short input-right" type="text" placeholder="Loyer Max" [(ngModel)]="loyer_max"></ion-input>\n\n      </div>\n\n      <br/>\n\n      <div class="double-input">\n\n        <ion-input class="input-search-menu input-short input-left" type="text" placeholder="Surface Min" [(ngModel)]="surf_min"></ion-input>\n\n        <span class="dash">-</span>\n\n        <ion-input class="input-search-menu input-short input-right" type="text" placeholder="Surface Max" [(ngModel)]="surf_max"></ion-input>\n\n      </div>\n\n      <br/>\n\n      <div class="double-input">\n\n        <ion-input class="input-search-menu input-short input-left" type="text" placeholder="Pièces Min" [(ngModel)]="piece_min"></ion-input>\n\n        <span class="dash">-</span>\n\n        <ion-input class="input-search-menu input-short input-right" type="text" placeholder="Pièces Max" [(ngModel)]="piece_max"></ion-input>\n\n      </div>\n\n      <div class="content-checkbox">\n\n        <ion-label class="title-checkbox">Type</ion-label>\n\n        <div class="checkbox-div inline-block">\n\n          <ion-checkbox color="checkbox" checked="false" class=" inline-block" [(ngModel)]="maison"></ion-checkbox>\n\n          <ion-label class="checkbox-label inline-block">Maison</ion-label>\n\n        </div>\n\n        <div class="checkbox-div inline-block">\n\n          <ion-checkbox color="checkbox" checked="false" class="inline-block" [(ngModel)]="appart"></ion-checkbox>\n\n          <ion-label class="checkbox-label inline-block">Appartement</ion-label>\n\n        </div>\n\n        <div class="checkbox-div inline-block">\n\n          <ion-checkbox color="checkbox" checked="false" class="inline-block" [(ngModel)]="terrain"></ion-checkbox>\n\n          <ion-label class="checkbox-label inline-block">Terrain</ion-label>\n\n        </div>\n\n        <div class="checkbox-div inline-block">\n\n          <ion-checkbox color="checkbox" checked="false" class="inline-block" [(ngModel)]="parking"></ion-checkbox>\n\n          <ion-label class="checkbox-label inline-block">Parking</ion-label>\n\n        </div>\n\n        <div class="checkbox-div inline-block">\n\n            <ion-checkbox color="checkbox" checked="false" class="inline-block" [(ngModel)]="autre"></ion-checkbox>\n\n            <ion-label class="checkbox-label inline-block">Autre</ion-label>\n\n        </div>\n\n        <button color="checkbox" ion-button class="vider" (click)="vider()">Reinitialiser</button>\n\n        <button color="checkbox" ion-button class="rechercher" (click)="rechercher()">Rechercher</button>\n\n      </div>\n\n    </div>\n\n    <div>\n\n      <div *ngIf="filtre">\n\n        <div *ngFor="let a of annoncesfiltr">\n\n          <ion-card (click)="detailAnnonce(a)">\n\n            <img *ngIf="a.image == \'\'" src="assets/imgs/noImage.jpg"/>\n\n            <img *ngIf="a.image != null" src="{{ a.image }}"/>\n\n            <ion-card-content>\n\n                <span class="cp-abs"><ion-label class="cp-rel">{{ a.CP }} - {{ a.VILLE }}</ion-label></span>\n\n              <ion-card-title >\n\n                {{ (a.TITRE.length>50)? (a.TITRE | slice:0:50)+\'..\':(a.TITRE) }}\n\n              </ion-card-title>\n\n              <p>\n\n                {{ (a.DESCRIPTION.length>100)? (a.DESCRIPTION | slice:0:100)+\'..\':(a.DESCRIPTION) }}\n\n              </p>\n\n              <!-- <ion-label class="">{{ (a.DATE_EN | slice:8:10) }}-{{ (a.DATE_EN | slice:5:7) }}-{{ (a.DATE_EN | slice:0:4)}}</ion-label> -->\n\n              <ion-label class="prix-rel">{{ a.PRIX }} €</ion-label>\n\n            </ion-card-content>\n\n          </ion-card>\n\n        </div>\n\n      </div>\n\n      <div *ngIf="!filtre">\n\n        <div *ngFor="let a of annonces">\n\n          <ion-card (click)="detailAnnonce(a)">\n\n            <img *ngIf="a.image == \'\'" src="assets/imgs/noImage.jpg"/>\n\n            <img *ngIf="a.image != null" src="{{ a.image }}"/>\n\n            <ion-card-content>\n\n                <span class="cp-abs"><ion-label class="cp-rel">{{ a.CP }} - {{ a.VILLE }}</ion-label></span>\n\n              <ion-card-title >\n\n                {{ (a.TITRE.length>50)? (a.TITRE | slice:0:50)+\'..\':(a.TITRE) }}\n\n              </ion-card-title>\n\n              <p>\n\n                {{ (a.DESCRIPTION.length>100)? (a.DESCRIPTION | slice:0:100)+\'..\':(a.DESCRIPTION) }}\n\n              </p>\n\n              <!-- <ion-label class="">{{ (a.DATE_EN | slice:8:10) }}-{{ (a.DATE_EN | slice:5:7) }}-{{ (a.DATE_EN | slice:0:4)}}</ion-label> -->\n\n              <ion-label class="prix-rel">{{ a.PRIX }} €</ion-label>\n\n            </ion-card-content>\n\n          </ion-card>\n\n        </div>\n\n      </div>\n\n    </div>\n\n\n\n    \n\n  </ion-content>'/*ion-inline-end:"C:\Users\fouil\Desktop\EFREI\S6\IntroductionSystèmeINFO\GIT\ProjetISI\src\pages\home\home.html"*/,
             animations: [
                 Object(__WEBPACK_IMPORTED_MODULE_3__angular_animations__["k" /* trigger */])('myvisibility', [
                     Object(__WEBPACK_IMPORTED_MODULE_3__angular_animations__["h" /* state */])('visible', Object(__WEBPACK_IMPORTED_MODULE_3__angular_animations__["i" /* style */])({ height: 500, opacity: 1, visibility: 'visible' })),
@@ -1385,17 +1404,16 @@ var HomePage = /** @class */ (function () {
                 ])
             ]
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__providers_annonce_annonce__["a" /* AnnonceProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__providers_annonce_annonce__["a" /* AnnonceProvider */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* NavParams */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* MenuController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* MenuController */]) === "function" && _d || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_0__providers_annonce_annonce__["a" /* AnnonceProvider */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* MenuController */]])
     ], HomePage);
     return HomePage;
-    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=home.js.map
 
 /***/ }),
 
-/***/ 81:
+/***/ 82:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1457,7 +1475,7 @@ var RegisterProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 82:
+/***/ 83:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
