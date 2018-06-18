@@ -65,13 +65,13 @@
             <ion-checkbox color="checkbox" checked="false" class="inline-block" [(ngModel)]="autre"></ion-checkbox>
             <ion-label class="checkbox-label inline-block">Autre</ion-label>
         </div>
-        <button color="checkbox" ion-button class="vider" (click)="vider()">Vider</button>
+        <button color="checkbox" ion-button class="vider" (click)="vider()">Reinitialiser</button>
         <button color="checkbox" ion-button class="rechercher" (click)="rechercher()">Rechercher</button>
       </div>
     </div>
     <div>
-      <div *ngIf="flitre">
-        <div *ngFor="let a of data">
+      <div *ngIf="filtre">
+        <div *ngFor="let a of annoncesfiltr">
           <ion-card (click)="detailAnnonce(a)">
             <img *ngIf="a.image == ''" src="assets/imgs/noImage.jpg"/>
             <img *ngIf="a.image != null" src="{{ a.image }}"/>
@@ -89,7 +89,7 @@
           </ion-card>
         </div>
       </div>
-      <div *ngIf="!flitre">
+      <div *ngIf="!filtre">
         <div *ngFor="let a of annonces">
           <ion-card (click)="detailAnnonce(a)">
             <img *ngIf="a.image == ''" src="assets/imgs/noImage.jpg"/>

@@ -37,29 +37,22 @@ var AnnoncePage = /** @class */ (function () {
         this.desc = this.annonce.DESCRIPTION;
         this.cp = this.annonce.CP;
         this.date = this.annonce.DATE_EN;
-        this.location = this.annonce.LOCATION == 1 ? 'oui' : 'non';
-        this.meuble = this.annonce.MEUBLE == 1 ? 'oui' : 'non';
+        this.location = this.annonce.LOCATION == 1 ? true : false;
+        this.meuble = this.annonce.MEUBLE == 1 ? true : false;
         this.nbpiece = this.annonce.NBPIECES;
         this.prix = this.annonce.PRIX;
         this.superficie = this.annonce.SUPERFICIE;
         this.type = this.annonce.TYPEBIEN;
         this.ville = this.annonce.VILLE;
-        this.comeFrom = this.navParams.get("comeFrom");
         console.log(this.annonce);
-        console.log(this.comeFrom);
-    };
-    AnnoncePage.prototype.ajouterFav = function () {
-    };
-    AnnoncePage.prototype.retirerFav = function () {
     };
     AnnoncePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-annonce',template:/*ion-inline-start:"/Users/benjamin/Documents/GitKraken/ProjetISI/src/pages/annonce/annonce.html"*/'<ion-header>\n    <ion-navbar>\n  \n      <!-- CENTER SIDE -->\n      <ion-title>Annonce</ion-title>\n\n      <!-- RIGHT SIDE -->\n      <a href="{{ link }}">\n        <ion-buttons end>\n          <button ion-button icon-only>\n            <ion-icon name="md-open" style="color: #FFF; padding-right: 10px;"></ion-icon>\n          </button>\n        </ion-buttons>\n      </a>\n      \n    </ion-navbar>\n  </ion-header>\n\n<ion-content>\n    <ion-card>\n      <div class="title-annonce">{{ titre }}</div>\n      <img *ngIf="!imageDispo" src="assets/imgs/noImage.jpg"/>\n      <img *ngIf="imageDispo" src="{{ annonce.image }}"/>\n      <span class="cp-abs"><ion-label class="cp-rel">{{ cp }} - {{ ville }}</ion-label></span>\n      <ion-item class="prix">{{ prix }}€ TTC</ion-item>\n      <div class="desc">{{ desc }}</div>\n      <ion-item>\n        <ion-icon name="md-home" class="logo"></ion-icon><span class="text-logo">Type de bien </span>\n        {{ type }} \n      </ion-item>\n      <ion-item>\n        <ion-icon name="md-resize" class="logo"></ion-icon><span class="text-logo">Superficie </span>\n        {{ superficie }} m2\n      </ion-item>\n      <ion-item>\n        <ion-icon name="md-map" class="logo"></ion-icon><span class="text-logo">Nombre de Pièce(s) </span>\n        {{ nbpiece }}\n      </ion-item>\n      <ion-item>\n        <ion-icon name="md-cube" class="logo"></ion-icon><span class="text-logo">Meublé ? </span>\n        {{ meuble }} \n      </ion-item>\n      <ion-item>\n        <ion-icon name="md-key" class="logo"></ion-icon><span class="text-logo">Location ? </span>\n        {{ location }}\n      </ion-item>\n      <ion-item class="date">{{ (date | slice:8:10) }}-{{ (date | slice:5:7) }}-{{ (date | slice:0:4)}}</ion-item>\n      <div *ngIf="comeFrom == \'home\'">\n          <button ion-button icon-start full class="fav-ajouter" (click)="ajouterFav()">\n            <ion-icon name="md-heart"></ion-icon>\n            Mettre en Favori\n          </button>\n      </div>\n      <div *ngIf="comeFrom == \'favori\'">\n          <button ion-button icon-start full class="fav-retirer" (click)="retirerFav()">\n            <ion-icon name="md-close"></ion-icon>\n            Retirer des Favoris\n          </button>\n        </div>\n    </ion-card>\n    \n</ion-content>\n'/*ion-inline-end:"/Users/benjamin/Documents/GitKraken/ProjetISI/src/pages/annonce/annonce.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* MenuController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* MenuController */]) === "function" && _c || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* MenuController */]])
     ], AnnoncePage);
     return AnnoncePage;
-    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=annonce.js.map
@@ -73,7 +66,6 @@ var AnnoncePage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FavoriPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__annonce_annonce__ = __webpack_require__(105);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -85,31 +77,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-
+/**
+ * Generated class for the FavoriPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
 var FavoriPage = /** @class */ (function () {
-    function FavoriPage(navCtrl, navParams, menu) {
+    function FavoriPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.menu = menu;
-        this.annonces = [{ "ID": 1, "TITRE": "T2 - Metro Motte Picquet Grenelle", "DESCRIPTION": "Description Loue appartement type 2 de 35m2 entre les métros motte picquet grenelle et commerce   Loué non meublé  Situé en RDC sur cour arborée  Cuisine ouverte sur le salon Salle d,eau avec douche à l,italienne  Chambre   Dispo début juin   1200Euro(s)/mois CC", "SUPERFICIE": 35, "CP": 75014, "DELETED": 0, "DATE_EN": "2018-05-20T00:00:00.000Z", "ID_AUTHOR": 1, "PRIX": 1200, "LINK": "https://www.leboncoin.fr/locations/1435318623.htm/?ca=12_s", "TYPEBIEN": "Appartement", "MEUBLE": 0, "NBPIECES": 2, "VILLE": "Paris", "LOCATION": 1, "image": "http://mmf.logic-immo.com/mmf/ads/photo-prop-800x600/837/1/16c0455f-7770-4bfc-8501-b21652fd54b4.jpg" }, { "ID": 2, "TITRE": "T3 - Metro Motte Picquet Grenelle", "DESCRIPTION": "Description Loue appartement type 3 de 40m2 entre les métros motte picquet grenelle et commerce   Loué non meublé  Situé en RDC sur cour arborée  Cuisine ouverte sur le salon Salle d,eau avec douche à l,italienne  Chambre   Dispo début juin   1500Euro(s)/mois CC", "SUPERFICIE": 40, "CP": 75015, "DELETED": 0, "DATE_EN": "2017-11-12T00:00:00.000Z", "ID_AUTHOR": 2, "PRIX": 1500, "LINK": "https://www.leboncoin.fr/locations/1435318623.htm/?ca=12_s", "TYPEBIEN": "Appartement", "MEUBLE": 1, "NBPIECES": 3, "VILLE": "Paris", "LOCATION": 1, "image": "" }];
+        // C'est la que l'on recupère les datas
+        this.data = navParams.get('data');
     }
     FavoriPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad FavoriPage');
-    };
-    FavoriPage.prototype.ionViewWillEnter = function () {
-        this.menu.enable(true, 'Menu');
-    };
-    FavoriPage.prototype.detailAnnonce = function (a) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__annonce_annonce__["a" /* AnnoncePage */], { "annonce": a, "comeFrom": "favori" });
     };
     FavoriPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-favori',template:/*ion-inline-start:"/Users/benjamin/Documents/GitKraken/ProjetISI/src/pages/favori/favori.html"*/'\n<ion-header>\n  <ion-navbar>\n    <!-- LEFT SIDE -->\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <!-- CENTER SIDE -->\n    <ion-title>Favori</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n    <div>\n      <div *ngIf="flitre">\n        <div *ngFor="let a of data">\n          <ion-card (click)="detailAnnonce(a)">\n            <img *ngIf="a.image == \'\'" src="assets/imgs/noImage.jpg"/>\n            <img *ngIf="a.image != null" src="{{ a.image }}"/>\n            <ion-card-content>\n                <span class="cp-abs"><ion-label class="cp-rel">{{ a.CP }} - {{ a.VILLE }}</ion-label></span>\n              <ion-card-title >\n                {{ (a.TITRE.length>50)? (a.TITRE | slice:0:50)+\'..\':(a.TITRE) }}\n              </ion-card-title>\n              <p>\n                {{ (a.DESCRIPTION.length>100)? (a.DESCRIPTION | slice:0:100)+\'..\':(a.DESCRIPTION) }}\n              </p>\n              <ion-label class="prix-rel">{{ a.PRIX }} €</ion-label>\n            </ion-card-content>\n          </ion-card>\n        </div>\n      </div>\n      <div *ngIf="!flitre">\n        <div *ngFor="let a of annonces">\n          <ion-card (click)="detailAnnonce(a)">\n            <img *ngIf="a.image == \'\'" src="assets/imgs/noImage.jpg"/>\n            <img *ngIf="a.image != null" src="{{ a.image }}"/>\n            <ion-card-content>\n                <span class="cp-abs"><ion-label class="cp-rel">{{ a.CP }} - {{ a.VILLE }}</ion-label></span>\n              <ion-card-title >\n                {{ (a.TITRE.length>50)? (a.TITRE | slice:0:50)+\'..\':(a.TITRE) }}\n              </ion-card-title>\n              <p>\n                {{ (a.DESCRIPTION.length>100)? (a.DESCRIPTION | slice:0:100)+\'..\':(a.DESCRIPTION) }}\n              </p>\n              <ion-label class="prix-rel">{{ a.PRIX }} €</ion-label>\n            </ion-card-content>\n          </ion-card>\n        </div>\n      </div>\n    </div>\n</ion-content>\n'/*ion-inline-end:"/Users/benjamin/Documents/GitKraken/ProjetISI/src/pages/favori/favori.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* MenuController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* MenuController */]) === "function" && _c || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
     ], FavoriPage);
     return FavoriPage;
-    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=favori.js.map
@@ -1176,10 +1166,23 @@ var HomePage = /** @class */ (function () {
         this.annonceP = annonceP;
         this.navParams = navParams;
         this.menu = menu;
+        // Recherche variable
+        this.ville_cp = "";
+        this.loyer_min = "";
+        this.loyer_max = "";
+        this.surf_min = "";
+        this.surf_max = "";
+        this.piece_min = "";
+        this.piece_max = "";
+        this.maison = false;
+        this.appart = false;
+        this.terrain = false;
+        this.parking = false;
+        this.autre = false;
         this.annonces = [{ "ID": 1, "TITRE": "T2 - Metro Motte Picquet Grenelle", "DESCRIPTION": "Description Loue appartement type 2 de 35m2 entre les métros motte picquet grenelle et commerce   Loué non meublé  Situé en RDC sur cour arborée  Cuisine ouverte sur le salon Salle d,eau avec douche à l,italienne  Chambre   Dispo début juin   1200Euro(s)/mois CC", "SUPERFICIE": 35, "CP": 75014, "DELETED": 0, "DATE_EN": "2018-05-20T00:00:00.000Z", "ID_AUTHOR": 1, "PRIX": 1200, "LINK": "https://www.leboncoin.fr/locations/1435318623.htm/?ca=12_s", "TYPEBIEN": "Appartement", "MEUBLE": 0, "NBPIECES": 2, "VILLE": "Paris", "LOCATION": 1, "image": "http://mmf.logic-immo.com/mmf/ads/photo-prop-800x600/837/1/16c0455f-7770-4bfc-8501-b21652fd54b4.jpg" }, { "ID": 2, "TITRE": "T3 - Metro Motte Picquet Grenelle", "DESCRIPTION": "Description Loue appartement type 3 de 40m2 entre les métros motte picquet grenelle et commerce   Loué non meublé  Situé en RDC sur cour arborée  Cuisine ouverte sur le salon Salle d,eau avec douche à l,italienne  Chambre   Dispo début juin   1500Euro(s)/mois CC", "SUPERFICIE": 40, "CP": 75015, "DELETED": 0, "DATE_EN": "2017-11-12T00:00:00.000Z", "ID_AUTHOR": 2, "PRIX": 1500, "LINK": "https://www.leboncoin.fr/locations/1435318623.htm/?ca=12_s", "TYPEBIEN": "Appartement", "MEUBLE": 1, "NBPIECES": 3, "VILLE": "Paris", "LOCATION": 1, "image": "" }];
-        this.annoncesfiltr = null;
+        this.annoncesfiltr = [];
         this.data = [];
-        this.flitre = false;
+        this.filtre = false;
         this.searchMenuVisible = 'invisible';
         this.annonceP.getHttpAnnonce();
         this.userConnect = navParams.get('userCo');
@@ -1192,34 +1195,175 @@ var HomePage = /** @class */ (function () {
     };
     HomePage.prototype.toggleSearchMenu = function () {
         this.searchMenuVisible = (this.searchMenuVisible == 'visible') ? 'invisible' : 'visible';
+        if (!this.checkFiltre()) {
+            this.filtre = false;
+        }
     };
     HomePage.prototype.rechercher = function () {
+        this.annoncesfiltr = [];
         this.filtrer();
         this.toggleSearchMenu();
     };
     HomePage.prototype.filtrer = function () {
-        var _this = this;
-        if (this.checkFiltre) {
-            this.flitre = true;
+        if (this.checkFiltre()) {
+            this.annoncesfiltr = this.annonces;
+            var annonceTemp = [];
+            this.filtre = true;
+            // VILE - CP
             if (this.ville_cp != "") {
-                this.data = this.annonces.filter(function (item) {
-                    var cp = item.CP;
-                    console.log("item cp", item.CP);
-                    return cp.toLowerCase().indexOf(_this.ville_cp.toLowerCase()) > -1;
-                    ;
-                });
+                for (var _i = 0, _a = this.annoncesfiltr; _i < _a.length; _i++) {
+                    var a = _a[_i];
+                    var ville = a.VILLE;
+                    if (this.ville_cp.toLowerCase() == ville.toLowerCase() || this.ville_cp == a.CP) {
+                        annonceTemp.push(a);
+                    }
+                }
+                this.annoncesfiltr = annonceTemp;
+                annonceTemp = [];
             }
+            // LOYER MIN
+            if (this.loyer_min != "" && this.annoncesfiltr != []) {
+                for (var _b = 0, _c = this.annoncesfiltr; _b < _c.length; _b++) {
+                    var a = _c[_b];
+                    if (a.PRIX >= this.loyer_min) {
+                        annonceTemp.push(a);
+                    }
+                }
+                this.annoncesfiltr = annonceTemp;
+                annonceTemp = [];
+            }
+            // LOYER MAX
+            if (this.loyer_max != "" && this.annoncesfiltr != []) {
+                for (var _d = 0, _e = this.annoncesfiltr; _d < _e.length; _d++) {
+                    var a = _e[_d];
+                    if (a.PRIX <= this.loyer_max) {
+                        annonceTemp.push(a);
+                    }
+                }
+                this.annoncesfiltr = annonceTemp;
+                annonceTemp = [];
+            }
+            // SURFACE MIN
+            if (this.surf_min != "" && this.annoncesfiltr != []) {
+                for (var _f = 0, _g = this.annoncesfiltr; _f < _g.length; _f++) {
+                    var a = _g[_f];
+                    if (a.SUPERFICIE >= this.surf_min) {
+                        annonceTemp.push(a);
+                    }
+                }
+                this.annoncesfiltr = annonceTemp;
+                annonceTemp = [];
+            }
+            // SURFACE MAX
+            if (this.surf_max != "" && this.annoncesfiltr != []) {
+                for (var _h = 0, _j = this.annoncesfiltr; _h < _j.length; _h++) {
+                    var a = _j[_h];
+                    if (a.SUPERFICIE <= this.surf_max) {
+                        annonceTemp.push(a);
+                    }
+                }
+                this.annoncesfiltr = annonceTemp;
+                annonceTemp = [];
+            }
+            // PIECE MIN
+            if (this.piece_min != "" && this.annoncesfiltr != []) {
+                for (var _k = 0, _l = this.annoncesfiltr; _k < _l.length; _k++) {
+                    var a = _l[_k];
+                    if (a.NBPIECES >= this.piece_min) {
+                        annonceTemp.push(a);
+                    }
+                }
+                this.annoncesfiltr = annonceTemp;
+                annonceTemp = [];
+            }
+            // PIECE MAX
+            if (this.piece_max != "" && this.annoncesfiltr != []) {
+                for (var _m = 0, _o = this.annoncesfiltr; _m < _o.length; _m++) {
+                    var a = _o[_m];
+                    if (a.NBPIECES <= this.piece_max) {
+                        annonceTemp.push(a);
+                    }
+                }
+                this.annoncesfiltr = annonceTemp;
+                annonceTemp = [];
+            }
+            // MAISON
+            if (this.maison != "" && this.annoncesfiltr != []) {
+                for (var _p = 0, _q = this.annoncesfiltr; _p < _q.length; _p++) {
+                    var a = _q[_p];
+                    if (a.TYPEBIEN == 'Maison') {
+                        annonceTemp.push(a);
+                    }
+                }
+            }
+            // APPARTEMENT
+            if (this.appart != "" && this.annoncesfiltr != []) {
+                for (var _r = 0, _s = this.annoncesfiltr; _r < _s.length; _r++) {
+                    var a = _s[_r];
+                    if (a.TYPEBIEN == 'Appartement') {
+                        annonceTemp.push(a);
+                    }
+                }
+            }
+            // PARKING
+            if (this.parking != "" && this.annoncesfiltr != []) {
+                for (var _t = 0, _u = this.annoncesfiltr; _t < _u.length; _t++) {
+                    var a = _u[_t];
+                    if (a.TYPEBIEN == 'Parking') {
+                        annonceTemp.push(a);
+                    }
+                }
+            }
+            // TERRAIN
+            if (this.terrain != "" && this.annoncesfiltr != []) {
+                for (var _v = 0, _w = this.annoncesfiltr; _v < _w.length; _v++) {
+                    var a = _w[_v];
+                    if (a.TYPEBIEN == 'Terrain') {
+                        annonceTemp.push(a);
+                    }
+                }
+            }
+            // AUTRE
+            if (this.autre != "" && this.annoncesfiltr != []) {
+                for (var _x = 0, _y = this.annoncesfiltr; _x < _y.length; _x++) {
+                    var a = _y[_x];
+                    if (a.TYPEBIEN == 'Autre') {
+                        annonceTemp.push(a);
+                    }
+                }
+            }
+            this.annoncesfiltr = (this.maison != "" || this.terrain != "" || this.autre != "" || this.appart != "" || this.parking != "") ? annonceTemp : this.annoncesfiltr;
+        }
+        else {
+            this.filtre = false;
         }
     };
     HomePage.prototype.checkFiltre = function () {
-        return this.ville_cp != null || this.loyer_min != null || this.loyer_max != null || this.surf_max != null || this.surf_min != null || this.piece_min != null || this.piece_max != null || this.maison || this.terrain || this.parking || this.appart || this.autre;
+        var check = this.ville_cp != "" || this.loyer_min != "" || this.loyer_max != "" || this.surf_max != "" || this.surf_min != "" || this.piece_min != "" || this.piece_max != "" || this.maison || this.terrain || this.parking || this.appart || this.autre;
+        console.log("check ", check);
+        return check;
     };
     HomePage.prototype.detailAnnonce = function (a) {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__annonce_annonce__["a" /* AnnoncePage */], { "annonce": a, "comeFrom": "home" });
     };
+    HomePage.prototype.vider = function () {
+        this.ville_cp = "";
+        this.loyer_min = "";
+        this.loyer_max = "";
+        this.surf_min = "";
+        this.surf_max = "";
+        this.piece_min = "";
+        this.piece_max = "";
+        this.maison = false;
+        this.appart = false;
+        this.terrain = false;
+        this.parking = false;
+        this.autre = false;
+        this.filtre = false;
+    };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/Users/benjamin/Documents/GitKraken/ProjetISI/src/pages/home/home.html"*/'<ion-header>\n    <ion-navbar>\n  \n      <!-- LEFT SIDE -->\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n  \n      <!-- CENTER SIDE -->\n      <ion-title>Annonces Immobilières</ion-title>\n\n      <!-- RIGHT SIDE -->\n      <div class="left-button">\n        <ion-buttons end>\n          <button (click)="toggleSearchMenu()" ion-button icon-only>\n            <ion-icon name="ios-funnel"></ion-icon>\n          </button>\n        </ion-buttons>\n      </div>\n      \n    </ion-navbar>\n  </ion-header>\n  \n  <ion-content >\n    <div class="search-menu" [@myvisibility]="searchMenuVisible">\n      <br/>\n      <ion-input class="input-search-menu input-ville-cp" type="text" placeholder="Ville ou code postal" [(ngModel)]="ville_cp"></ion-input>\n      <br/>\n      <div class="double-input">\n        <ion-input class="input-search-menu input-short input-left" type="text" placeholder="Loyer Min" [(ngModel)]="loyer_min"></ion-input>\n        <span class="dash">-</span>\n        <ion-input class="input-search-menu input-short input-right" type="text" placeholder="Loyer Max" [(ngModel)]="loyer_max"></ion-input>\n      </div>\n      <br/>\n      <div class="double-input">\n        <ion-input class="input-search-menu input-short input-left" type="text" placeholder="Surface Min" [(ngModel)]="surf_min"></ion-input>\n        <span class="dash">-</span>\n        <ion-input class="input-search-menu input-short input-right" type="text" placeholder="Surface Max" [(ngModel)]="surf_max"></ion-input>\n      </div>\n      <br/>\n      <div class="double-input">\n        <ion-input class="input-search-menu input-short input-left" type="text" placeholder="Pièces Min" [(ngModel)]="piece_min"></ion-input>\n        <span class="dash">-</span>\n        <ion-input class="input-search-menu input-short input-right" type="text" placeholder="Pièces Max" [(ngModel)]="piece_max"></ion-input>\n      </div>\n      <div class="content-checkbox">\n        <ion-label class="title-checkbox">Type</ion-label>\n        <div class="checkbox-div inline-block">\n          <ion-checkbox color="checkbox" checked="false" class=" inline-block" [(ngModel)]="maison"></ion-checkbox>\n          <ion-label class="checkbox-label inline-block">Maison</ion-label>\n        </div>\n        <div class="checkbox-div inline-block">\n          <ion-checkbox color="checkbox" checked="false" class="inline-block" [(ngModel)]="appart"></ion-checkbox>\n          <ion-label class="checkbox-label inline-block">Appartement</ion-label>\n        </div>\n        <div class="checkbox-div inline-block">\n          <ion-checkbox color="checkbox" checked="false" class="inline-block" [(ngModel)]="terrain"></ion-checkbox>\n          <ion-label class="checkbox-label inline-block">Terrain</ion-label>\n        </div>\n        <div class="checkbox-div inline-block">\n          <ion-checkbox color="checkbox" checked="false" class="inline-block" [(ngModel)]="parking"></ion-checkbox>\n          <ion-label class="checkbox-label inline-block">Parking</ion-label>\n        </div>\n        <div class="checkbox-div inline-block">\n            <ion-checkbox color="checkbox" checked="false" class="inline-block" [(ngModel)]="autre"></ion-checkbox>\n            <ion-label class="checkbox-label inline-block">Autre</ion-label>\n        </div>\n        <button color="checkbox" ion-button class="vider" (click)="vider()">Vider</button>\n        <button color="checkbox" ion-button class="rechercher" (click)="rechercher()">Rechercher</button>\n      </div>\n    </div>\n    <div>\n      <div *ngIf="flitre">\n        <div *ngFor="let a of data">\n          <ion-card (click)="detailAnnonce(a)">\n            <img *ngIf="a.image == \'\'" src="assets/imgs/noImage.jpg"/>\n            <img *ngIf="a.image != null" src="{{ a.image }}"/>\n            <ion-card-content>\n                <span class="cp-abs"><ion-label class="cp-rel">{{ a.CP }} - {{ a.VILLE }}</ion-label></span>\n              <ion-card-title >\n                {{ (a.TITRE.length>50)? (a.TITRE | slice:0:50)+\'..\':(a.TITRE) }}\n              </ion-card-title>\n              <p>\n                {{ (a.DESCRIPTION.length>100)? (a.DESCRIPTION | slice:0:100)+\'..\':(a.DESCRIPTION) }}\n              </p>\n              <!-- <ion-label class="">{{ (a.DATE_EN | slice:8:10) }}-{{ (a.DATE_EN | slice:5:7) }}-{{ (a.DATE_EN | slice:0:4)}}</ion-label> -->\n              <ion-label class="prix-rel">{{ a.PRIX }} €</ion-label>\n            </ion-card-content>\n          </ion-card>\n        </div>\n      </div>\n      <div *ngIf="!flitre">\n        <div *ngFor="let a of annonces">\n          <ion-card (click)="detailAnnonce(a)">\n            <img *ngIf="a.image == \'\'" src="assets/imgs/noImage.jpg"/>\n            <img *ngIf="a.image != null" src="{{ a.image }}"/>\n            <ion-card-content>\n                <span class="cp-abs"><ion-label class="cp-rel">{{ a.CP }} - {{ a.VILLE }}</ion-label></span>\n              <ion-card-title >\n                {{ (a.TITRE.length>50)? (a.TITRE | slice:0:50)+\'..\':(a.TITRE) }}\n              </ion-card-title>\n              <p>\n                {{ (a.DESCRIPTION.length>100)? (a.DESCRIPTION | slice:0:100)+\'..\':(a.DESCRIPTION) }}\n              </p>\n              <!-- <ion-label class="">{{ (a.DATE_EN | slice:8:10) }}-{{ (a.DATE_EN | slice:5:7) }}-{{ (a.DATE_EN | slice:0:4)}}</ion-label> -->\n              <ion-label class="prix-rel">{{ a.PRIX }} €</ion-label>\n            </ion-card-content>\n          </ion-card>\n        </div>\n      </div>\n    </div>\n\n    \n  </ion-content>'/*ion-inline-end:"/Users/benjamin/Documents/GitKraken/ProjetISI/src/pages/home/home.html"*/,
+            selector: 'page-home',template:/*ion-inline-start:"/Users/benjamin/Documents/GitKraken/ProjetISI/src/pages/home/home.html"*/'<ion-header>\n    <ion-navbar>\n  \n      <!-- LEFT SIDE -->\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n  \n      <!-- CENTER SIDE -->\n      <ion-title>Annonces Immobilières</ion-title>\n\n      <!-- RIGHT SIDE -->\n      <div class="left-button">\n        <ion-buttons end>\n          <button (click)="toggleSearchMenu()" ion-button icon-only>\n            <ion-icon name="ios-funnel"></ion-icon>\n          </button>\n        </ion-buttons>\n      </div>\n      \n    </ion-navbar>\n  </ion-header>\n  \n  <ion-content >\n    <div class="search-menu" [@myvisibility]="searchMenuVisible">\n      <br/>\n      <ion-input class="input-search-menu input-ville-cp" type="text" placeholder="Ville ou code postal" [(ngModel)]="ville_cp"></ion-input>\n      <br/>\n      <div class="double-input">\n        <ion-input class="input-search-menu input-short input-left" type="text" placeholder="Loyer Min" [(ngModel)]="loyer_min"></ion-input>\n        <span class="dash">-</span>\n        <ion-input class="input-search-menu input-short input-right" type="text" placeholder="Loyer Max" [(ngModel)]="loyer_max"></ion-input>\n      </div>\n      <br/>\n      <div class="double-input">\n        <ion-input class="input-search-menu input-short input-left" type="text" placeholder="Surface Min" [(ngModel)]="surf_min"></ion-input>\n        <span class="dash">-</span>\n        <ion-input class="input-search-menu input-short input-right" type="text" placeholder="Surface Max" [(ngModel)]="surf_max"></ion-input>\n      </div>\n      <br/>\n      <div class="double-input">\n        <ion-input class="input-search-menu input-short input-left" type="text" placeholder="Pièces Min" [(ngModel)]="piece_min"></ion-input>\n        <span class="dash">-</span>\n        <ion-input class="input-search-menu input-short input-right" type="text" placeholder="Pièces Max" [(ngModel)]="piece_max"></ion-input>\n      </div>\n      <div class="content-checkbox">\n        <ion-label class="title-checkbox">Type</ion-label>\n        <div class="checkbox-div inline-block">\n          <ion-checkbox color="checkbox" checked="false" class=" inline-block" [(ngModel)]="maison"></ion-checkbox>\n          <ion-label class="checkbox-label inline-block">Maison</ion-label>\n        </div>\n        <div class="checkbox-div inline-block">\n          <ion-checkbox color="checkbox" checked="false" class="inline-block" [(ngModel)]="appart"></ion-checkbox>\n          <ion-label class="checkbox-label inline-block">Appartement</ion-label>\n        </div>\n        <div class="checkbox-div inline-block">\n          <ion-checkbox color="checkbox" checked="false" class="inline-block" [(ngModel)]="terrain"></ion-checkbox>\n          <ion-label class="checkbox-label inline-block">Terrain</ion-label>\n        </div>\n        <div class="checkbox-div inline-block">\n          <ion-checkbox color="checkbox" checked="false" class="inline-block" [(ngModel)]="parking"></ion-checkbox>\n          <ion-label class="checkbox-label inline-block">Parking</ion-label>\n        </div>\n        <div class="checkbox-div inline-block">\n            <ion-checkbox color="checkbox" checked="false" class="inline-block" [(ngModel)]="autre"></ion-checkbox>\n            <ion-label class="checkbox-label inline-block">Autre</ion-label>\n        </div>\n        <button color="checkbox" ion-button class="vider" (click)="vider()">Reinitialiser</button>\n        <button color="checkbox" ion-button class="rechercher" (click)="rechercher()">Rechercher</button>\n      </div>\n    </div>\n    <div>\n      <div *ngIf="filtre">\n        <div *ngFor="let a of annoncesfiltr">\n          <ion-card (click)="detailAnnonce(a)">\n            <img *ngIf="a.image == \'\'" src="assets/imgs/noImage.jpg"/>\n            <img *ngIf="a.image != null" src="{{ a.image }}"/>\n            <ion-card-content>\n                <span class="cp-abs"><ion-label class="cp-rel">{{ a.CP }} - {{ a.VILLE }}</ion-label></span>\n              <ion-card-title >\n                {{ (a.TITRE.length>50)? (a.TITRE | slice:0:50)+\'..\':(a.TITRE) }}\n              </ion-card-title>\n              <p>\n                {{ (a.DESCRIPTION.length>100)? (a.DESCRIPTION | slice:0:100)+\'..\':(a.DESCRIPTION) }}\n              </p>\n              <!-- <ion-label class="">{{ (a.DATE_EN | slice:8:10) }}-{{ (a.DATE_EN | slice:5:7) }}-{{ (a.DATE_EN | slice:0:4)}}</ion-label> -->\n              <ion-label class="prix-rel">{{ a.PRIX }} €</ion-label>\n            </ion-card-content>\n          </ion-card>\n        </div>\n      </div>\n      <div *ngIf="!filtre">\n        <div *ngFor="let a of annonces">\n          <ion-card (click)="detailAnnonce(a)">\n            <img *ngIf="a.image == \'\'" src="assets/imgs/noImage.jpg"/>\n            <img *ngIf="a.image != null" src="{{ a.image }}"/>\n            <ion-card-content>\n                <span class="cp-abs"><ion-label class="cp-rel">{{ a.CP }} - {{ a.VILLE }}</ion-label></span>\n              <ion-card-title >\n                {{ (a.TITRE.length>50)? (a.TITRE | slice:0:50)+\'..\':(a.TITRE) }}\n              </ion-card-title>\n              <p>\n                {{ (a.DESCRIPTION.length>100)? (a.DESCRIPTION | slice:0:100)+\'..\':(a.DESCRIPTION) }}\n              </p>\n              <!-- <ion-label class="">{{ (a.DATE_EN | slice:8:10) }}-{{ (a.DATE_EN | slice:5:7) }}-{{ (a.DATE_EN | slice:0:4)}}</ion-label> -->\n              <ion-label class="prix-rel">{{ a.PRIX }} €</ion-label>\n            </ion-card-content>\n          </ion-card>\n        </div>\n      </div>\n    </div>\n\n    \n  </ion-content>'/*ion-inline-end:"/Users/benjamin/Documents/GitKraken/ProjetISI/src/pages/home/home.html"*/,
             animations: [
                 Object(__WEBPACK_IMPORTED_MODULE_3__angular_animations__["k" /* trigger */])('myvisibility', [
                     Object(__WEBPACK_IMPORTED_MODULE_3__angular_animations__["h" /* state */])('visible', Object(__WEBPACK_IMPORTED_MODULE_3__angular_animations__["i" /* style */])({ height: 500, opacity: 1, visibility: 'visible' })),
