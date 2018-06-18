@@ -49,7 +49,7 @@
           <ion-label class="titlelab" stacked>Ville</ion-label>
           <ion-input class="input" type="text" value='{{ userConnect.VILLE }}' [(ngModel)]="ville"></ion-input>
         </ion-item>
-        <button ion-button  (click)="checkInputEmpty()">Enregister</button>
+        <button ion-button  (click)="checkInputEmpty()" class="btn">Enregister</button>
   </div>
   <!--Partie Mot de passe-->
   <div>
@@ -65,7 +65,7 @@
         <ion-input class="input" type="password"  [(ngModel)]="mdpnew"></ion-input>
     </ion-item>
 
-    <button ion-button  (click)="updatePwd()">Valider</button>
+    <button ion-button  (click)="updatePwd()" class="btn">Valider</button>
   </div>
 
 </ion-content>

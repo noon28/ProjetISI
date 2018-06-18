@@ -18,27 +18,42 @@
 
 <ion-content padding class="mainDivProfil">
     <div>
-      
-      <ion-label class="titlelab" >Nom</ion-label>
-      <ion-label class="infoProfil" >{{ userConnect.NOM }}</ion-label>
-    
-      <ion-label class="titlelab" >Prenom</ion-label>
-      <ion-label class="infoProfil" >{{ userConnect.PRENOM }}</ion-label>
-
-      <ion-label class="titlelab" >Login</ion-label>
-      <ion-label class="infoProfil" >{{ userConnect.LOGIN }}</ion-label>
-
-      <ion-label class="titlelab" >Email</ion-label>
-      <ion-label class="infoProfil" >{{ userConnect.MAIL }}</ion-label>
-
-      <ion-label  class="titlelab" >Adresse</ion-label>
-      <ion-label class="infoProfil" >{{ userConnect.ADRESSE }}</ion-label>
-
-      <ion-label class="titlelab" >Code Postal</ion-label>
-      <ion-label class="infoProfil" >{{ userConnect.CP }}</ion-label>
-
-      <ion-label class="titlelab" >Ville</ion-label>
-      <ion-label class="infoProfil" >{{ userConnect.VILLE }}</ion-label>
+      <ion-list>
+        <ion-item>
+          <span class="titlelab" >Nom</span>
+          <span class="infoProfil" >{{ userConnect.NOM }}</span>
+        </ion-item>
+        
+        <ion-item>
+          <span class="titlelab" >Prenom</span>
+          <span class="infoProfil" >{{ userConnect.PRENOM }}</span>
+        </ion-item>
+  
+        <ion-item>
+          <span class="titlelab" >Login</span>
+          <span class="infoProfil" >{{ userConnect.LOGIN }}</span>
+        </ion-item>
+  
+        <ion-item>
+          <span class="titlelab" >Email</span>
+          <span class="infoProfil" >{{ userConnect.MAIL }}</span>
+        </ion-item>
+  
+        <ion-item>
+          <span  class="titlelab" >Adresse</span>
+          <span class="infoProfil" >{{ userConnect.ADRESSE }}</span>
+        </ion-item>
+  
+        <ion-item>
+          <span class="titlelab" >Code Postal</span>
+          <span class="infoProfil" >{{ userConnect.CP }}</span>
+        </ion-item>
+  
+        <ion-item>
+          <span class="titlelab" >Ville</span>
+          <span class="infoProfil" >{{ userConnect.VILLE }}</span>
+        </ion-item>
+      </ion-list>
 
     </div>
 

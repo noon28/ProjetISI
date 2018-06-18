@@ -1,12 +1,12 @@
 page-profil {
     .titlelab{
-        color:white !important;
+        color:#27AE60 !important;
         font-size: 18px;
         padding-left: 21px;
     }
 
     .infoProfil{
-        color:white ;
+        color:#000 ;
         margin: 10px;
         font-size: 15px;
         padding-left: 18px;
@@ -19,7 +19,6 @@ page-profil {
     }
 
     .mainDivProfil{
-        background-color: #3bdb7e;
         $base-padding: 16px;
     }
     .btn {
@@ -30,5 +29,9 @@ page-profil {
         margin-left: auto;
         margin-right: auto;
         
+    }
+
+    ion-icon{
+        color: white !important;
     }
 }

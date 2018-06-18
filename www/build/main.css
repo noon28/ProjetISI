@@ -33741,13 +33741,13 @@ page-login .btn-mdp {
 }
 
 page-profil .titlelab {
-  color: white !important;
+  color: #27AE60 !important;
   font-size: 18px;
   padding-left: 21px;
 }
 
 page-profil .infoProfil {
-  color: white;
+  color: #000;
   margin: 10px;
   font-size: 15px;
   padding-left: 18px;
@@ -33757,10 +33757,6 @@ page-profil .idUser {
   color: #ecf0f1 !important;
 }
 
-page-profil .mainDivProfil {
-  background-color: #3bdb7e;
-}
-
 page-profil .btn {
   margin-top: 10%;
   background-color: #27AE60 !important;
@@ -33768,6 +33764,10 @@ page-profil .btn {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+page-profil ion-icon {
+  color: white !important;
 }
 
 page-profiledit .btn {
